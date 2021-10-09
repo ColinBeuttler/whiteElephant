@@ -6,5 +6,7 @@ class Disc {
         this.weight = weight;
     }
 
-    
+
 }
+
+export default Disc;
