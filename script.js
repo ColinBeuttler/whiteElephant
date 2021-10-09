@@ -118,6 +118,11 @@ btnRoll.addEventListener("click", function () {
   document.querySelector(".discdisplay").innerHTML = JSON.stringify(discs[0]);
 });
 
+// const discSort= function(discs){
+//   discs.sort(() => Math.random() - 0.5);
+//   btnHold.clicked = false;
+// }
+
 btnHold.addEventListener("click", function () {
   // add html to active player
   document.querySelector(".currentPlayer").innerHTML = JSON.stringify(discs[0]);
