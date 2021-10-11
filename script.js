@@ -91,6 +91,11 @@ let discs = [
   },
 ];
 
+// Event Listeners
+btnRoll.addEventListener("click", discSort);
+
+btnHold.addEventListener("click", discSelect);
+
 for (let i = 0; i < partipants.length; i++) {
   console.log(partipants[i]);
 }
@@ -110,32 +115,23 @@ for (let i = 0; i < partipants.length; i++) {
 //   return copy;
 // }
 
-btnRoll.addEventListener("click", function () {
-  // roll a random disc
+// Button Functions
+function discSort() {
   discs.sort(() => Math.random() - 0.5);
   btnHold.clicked = false;
-  // display the object to html
   document.querySelector(".discdisplay").innerHTML = JSON.stringify(discs[0]);
-});
+}
 
-// const discSort= function(discs){
-//   discs.sort(() => Math.random() - 0.5);
-//   btnHold.clicked = false;
-// }
-
-btnHold.addEventListener("click", function () {
+function discSelect() {
   // add html to active player
   document.querySelector(".currentPlayer").innerHTML = JSON.stringify(discs[0]);
   btnHold.clicked = true;
   // cut current roll from array
-  if (btnHold.clicked !== true) {
-    discs.splice(0, 1);
-    console.log(discs);
-  }
+  discs.splice(0, 1);
+  console.log(discs);
 
   // move to next active player
-});
+}
+
 // const select = document.createElement('select');
 // select.innerHTML = discs.map(fucntion(arr){
-
-console.log();
