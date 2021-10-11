@@ -6,7 +6,7 @@ const playerEl = document.querySelector(".boxclass");
 const btnRoll = document.querySelector(".btn--roll");
 const btnHold = document.querySelector(".btn--hold");
 
-const partipants = ["Colin", "Gabe", "Dad", "Beth", "Mom", "McKyla"];
+const players = ["Colin", "Gabe", "Dad"];
 
 let discs = [
   {
@@ -96,10 +96,6 @@ btnRoll.addEventListener("click", discSort);
 
 btnHold.addEventListener("click", discSelect);
 
-for (let i = 0; i < partipants.length; i++) {
-  console.log(partipants[i]);
-}
-
 // const switchPlayer = function () {
 //   document.getElementById(`current--${activePlayer}`).textContent = 0;
 // };
@@ -107,13 +103,6 @@ for (let i = 0; i < partipants.length; i++) {
 //   let copy = [],
 //     n = arr.length,
 //     i;
-
-//   while (n) {
-//     i = Math.floor(Math.random() * n--);
-//     copy.push(arr.splice(i, 1)[0]);
-//   }
-//   return copy;
-// }
 
 // Button Functions
 function discSort() {
@@ -129,8 +118,17 @@ function discSelect() {
   // cut current roll from array
   discs.splice(0, 1);
   console.log(discs);
+}
 
-  // move to next active player
+let currentPlayer = player[0];
+
+function switchPlayers() {
+  let playerIndex = 0;
+  if (currentPlayer < players.length) {
+    currentPlayer = players[playerIndex]++;
+  } else {
+    currentPlayer = player[0];
+  }
 }
 
 // const select = document.createElement('select');
