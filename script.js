@@ -113,7 +113,7 @@ function discSort() {
 
 function discSelect() {
   // add html to active player
-  document.querySelector(".currentPlayer").innerHTML = JSON.stringify(discs[0]);
+  document.querySelector(".playerDisc").innerHTML = JSON.stringify(discs[0]);
   btnHold.clicked = true;
   // cut current roll from array
   discs.splice(0, 1);
@@ -129,6 +129,16 @@ function switchPlayers() {
   } else {
     currentPlayer = player[0];
   }
+}
+
+function renderPlayer() {
+  let html = `<div class="boxclass">
+  <h1>${player.name}</h1>
+  <div class="playerDisc">
+    <!-- <select id="selector"></select> -->
+    <p id="Name1"></p>
+  </div>
+</div>`;
 }
 
 // const select = document.createElement('select');
