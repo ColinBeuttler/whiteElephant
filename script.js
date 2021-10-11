@@ -120,7 +120,7 @@ function discSelect() {
   console.log(discs);
 }
 
-let currentPlayer = player[0];
+// let currentPlayer = player[0];
 
 function switchPlayers() {
   let playerIndex = 0;
