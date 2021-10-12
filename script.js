@@ -131,13 +131,5 @@ function switchPlayers() {
   }
 }
 
-function renderPlayer() {
-  let html = `<div class="boxclass">
-  <h1>${player.name}</h1>
-  <div class="playerDisc">
-  </div>
-</div>`;
-}
-
 // const select = document.createElement('select');
 // select.innerHTML = discs.map(fucntion(arr){
