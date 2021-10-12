@@ -135,8 +135,6 @@ function renderPlayer() {
   let html = `<div class="boxclass">
   <h1>${player.name}</h1>
   <div class="playerDisc">
-    <!-- <select id="selector"></select> -->
-    <p id="Name1"></p>
   </div>
 </div>`;
 }
