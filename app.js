@@ -15,9 +15,13 @@ class App {
   constructor() {
     btnRoll.addEventListener("click", this._discSort);
 
-    btnHold.addEventListener("click", this._discSelect);
+    btnHold.addEventListener("click", this._discSelect, this._switchPlayers);
 
-    btnPlayerForm.addEventListener("submit", this._renderPlayer);
+    btnPlayerForm.addEventListener(
+      "submit",
+      this._renderPlayer,
+      this._renderPlayer
+    );
   }
 
   _createPlayer(e) {
@@ -36,14 +40,10 @@ class App {
     <p>${this.disc}</p>
     </div>
   </div>`;
-  }
-
-  _displayPlayer() {
-    playerObj.push(Json.stringify(this.player, this.disc));
+    playerEl.insertAdjacentHTML("afterend", html);
   }
 
   _switchPlayers() {
-    let playerIndex = 0;
     if (currentPlayer < players.length) {
       currentPlayer = players[playerIndex]++;
     } else {

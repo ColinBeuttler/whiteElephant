@@ -1,5 +1,5 @@
 "use strict";
-import App from "./app";
+// import App from "./app";
 
 const discEl = document.querySelector(".dicsdisplay");
 const playerEl = document.querySelector(".boxclass");
@@ -95,9 +95,9 @@ let discs = [
 class GameApp {
   discObj = [];
   constructor() {
-    btnRoll.addEventListener("click", _discSort);
+    btnRoll.addEventListener("click", this._discSort);
 
-    btnHold.addEventListener("click", _discSelect);
+    btnHold.addEventListener("click", this._discSelect);
   }
 
   // Button Functions
@@ -117,36 +117,7 @@ class GameApp {
   }
 }
 
-// Event Listeners
-btnRoll.addEventListener("click", discSort);
-
-btnHold.addEventListener("click", discSelect);
-
-// const switchPlayer = function () {
-//   document.getElementById(`current--${activePlayer}`).textContent = 0;
-// };
-// function shuffle(arr) {
-//   let copy = [],
-//     n = arr.length,
-//     i;
-
-// Button Functions
-function discSort() {
-  discs.sort(() => Math.random() - 0.5);
-  btnHold.clicked = false;
-  document.querySelector(".discdisplay").innerHTML = JSON.stringify(discs[0]);
-}
-
-function discSelect() {
-  // add html to active player
-  document.querySelector(".playerDisc").innerHTML = JSON.stringify(discs[0]);
-  btnHold.clicked = true;
-  // cut current roll from array
-  discs.splice(0, 1);
-  console.log(discs);
-}
-
 // const select = document.createElement('select');
 // select.innerHTML = discs.map(fucntion(arr){
 
-const app = new GameApp();
+const game = new GameApp();
