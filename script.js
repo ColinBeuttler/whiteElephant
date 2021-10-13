@@ -1,4 +1,5 @@
 "use strict";
+import App from "./app";
 
 const discEl = document.querySelector(".dicsdisplay");
 const playerEl = document.querySelector(".boxclass");
@@ -91,6 +92,31 @@ let discs = [
   },
 ];
 
+class GameApp {
+  discObj = [];
+  constructor() {
+    btnRoll.addEventListener("click", _discSort);
+
+    btnHold.addEventListener("click", _discSelect);
+  }
+
+  // Button Functions
+  _discSort() {
+    discs.sort(() => Math.random() - 0.5);
+    btnHold.clicked = false;
+    document.querySelector(".discdisplay").innerHTML = JSON.stringify(discs[0]);
+  }
+
+  _discSelect() {
+    // add html to active player
+    document.querySelector(".playerDisc").innerHTML = JSON.stringify(discs[0]);
+    btnHold.clicked = true;
+    // cut current roll from array
+    discs.splice(0, 1);
+    console.log(discs);
+  }
+}
+
 // Event Listeners
 btnRoll.addEventListener("click", discSort);
 
@@ -120,16 +146,7 @@ function discSelect() {
   console.log(discs);
 }
 
-// let currentPlayer = player[0];
-
-function switchPlayers() {
-  let playerIndex = 0;
-  if (currentPlayer < players.length) {
-    currentPlayer = players[playerIndex]++;
-  } else {
-    currentPlayer = player[0];
-  }
-}
-
 // const select = document.createElement('select');
 // select.innerHTML = discs.map(fucntion(arr){
+
+const app = new GameApp();

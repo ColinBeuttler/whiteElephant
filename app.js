@@ -1,4 +1,5 @@
 import Player from "./players";
+import Disc from "./discObj";
 
 const discEl = document.querySelector(".dicsdisplay");
 const playerEl = document.querySelector(".boxclass");
@@ -40,4 +41,17 @@ class App {
   _displayPlayer() {
     playerObj.push(Json.stringify(this.player, this.disc));
   }
+
+  _switchPlayers() {
+    let playerIndex = 0;
+    if (currentPlayer < players.length) {
+      currentPlayer = players[playerIndex]++;
+    } else {
+      currentPlayer = player[0];
+    }
+  }
 }
+
+const playerApp = new App();
+
+export default App;
