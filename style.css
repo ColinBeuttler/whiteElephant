@@ -103,6 +103,6 @@ body {
   padding: 0.5%;
 }
 
-input {
-  display: -webkit-box;
+input#discInput {
+  display: block;
 }
