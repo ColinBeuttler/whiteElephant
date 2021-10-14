@@ -4,7 +4,8 @@ body {
   height: 100vh;
   color: #333;
   background-image: linear-gradient(to top left, #684ff8 0%, #f369dc 100%);
-  display: block;
+  margin-left: 7%;
+  margin-top: 5%;
 }
 .boxclass {
   height: 10rem;
@@ -74,4 +75,34 @@ body {
 /* Change the background color of the dropdown button when the dropdown content is shown */
 .dropdown:hover .dropbtn {
   background-color: #3e8e41;
+}
+
+.hidden {
+  transform: translate3d();
+  height: 0;
+  padding: 0;
+  display: none;
+}
+
+.newPlayer {
+  margin-bottom: 3%;
+  margin-right: 5%;
+  background-color: white;
+  border: black;
+  border-style: ridge;
+  padding: 0.5%;
+}
+
+.newDisc {
+  margin-bottom: 3%;
+  float: right;
+  margin-right: 5%;
+  background-color: white;
+  border: black;
+  border-style: ridge;
+  padding: 0.5%;
+}
+
+input {
+  display: -webkit-box;
 }

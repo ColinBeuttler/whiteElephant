@@ -1,4 +1,5 @@
 import Player from "./players";
+import Disc from "./discObj";
 
 const discEl = document.querySelector(".dicsdisplay");
 const playerEl = document.querySelector(".boxclass");
@@ -14,9 +15,13 @@ class App {
   constructor() {
     btnRoll.addEventListener("click", this._discSort);
 
-    btnHold.addEventListener("click", this._discSelect);
+    btnHold.addEventListener("click", this._discSelect, this._switchPlayers);
 
-    btnPlayerForm.addEventListener("submit", this._renderPlayer);
+    btnPlayerForm.addEventListener(
+      "submit",
+      this._renderPlayer,
+      this._renderPlayer
+    );
   }
 
   _createPlayer(e) {
@@ -35,9 +40,18 @@ class App {
     <p>${this.disc}</p>
     </div>
   </div>`;
+    playerEl.insertAdjacentHTML("afterend", html);
   }
 
-  _displayPlayer() {
-    playerObj.push(Json.stringify(this.player, this.disc));
+  _switchPlayers() {
+    if (currentPlayer < players.length) {
+      currentPlayer = players[playerIndex]++;
+    } else {
+      currentPlayer = player[0];
+    }
   }
 }
+
+const playerApp = new App();
+
+export default App;
