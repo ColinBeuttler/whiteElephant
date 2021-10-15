@@ -4,6 +4,8 @@ import Disc from "./discObj";
 const discEl = document.querySelector(".dicsdisplay");
 const playerEl = document.querySelector(".boxclass");
 
+const inputNameEl = document.querySelector(".form__input--playerName");
+
 const btnRoll = document.querySelector(".btn--roll");
 const btnHold = document.querySelector(".btn--hold");
 const btnPlayerForm = document.querySelector(".newPlayerForm");
@@ -19,18 +21,23 @@ class App {
 
     btnPlayerForm.addEventListener(
       "submit",
-      this._renderPlayer,
+      this._createPlayer,
       this._renderPlayer
     );
   }
 
   _createPlayer(e) {
-    e.preventDefault();
+    const playerName = inputNameEl.value;
+
     let player;
+    e.preventDefault();
 
     if (!validInput) return alert("Enter valid Input");
-
-    player = new Player(name, disc);
+    {
+      player = new Player(playerName);
+      console.log(player);
+    }
+    this.playerObj.push(player);
   }
 
   _renderPlayer(playerObj) {
