@@ -1,5 +1,5 @@
-import Player from "./players";
-import Disc from "./discObj";
+import Player from "./players.js";
+import Disc from "./discObj.js";
 
 const discEl = document.querySelector(".dicsdisplay");
 const playerEl = document.querySelector(".boxclass");
@@ -10,10 +10,10 @@ const btnRoll = document.querySelector(".btn--roll");
 const btnHold = document.querySelector(".btn--hold");
 const btnPlayerForm = document.querySelector(".newPlayerForm");
 
-class App {
-  playerObj = [];
-  currentPlayer = playerObj[0];
+let playerObj = [];
+let currentPlayer = playerObj[0];
 
+class App {
   constructor() {
     btnRoll.addEventListener("click", this._discSort);
 
@@ -28,6 +28,7 @@ class App {
 
   _createPlayer(e) {
     const playerName = inputNameEl.value;
+    const validInput = input.value;
 
     let player;
     e.preventDefault();
