@@ -1,7 +1,6 @@
 class Player {
-  constructor(name, disc) {
+  constructor(name) {
     this.name = name;
-    this.disc = disc || null;
   }
 }
 

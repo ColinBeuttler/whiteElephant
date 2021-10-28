@@ -34,10 +34,10 @@ class App {
 
     if (this.hasOwnProperty(playerName)) return alert("Enter valid Input");
     {
-      player = new Player(playerName, "");
+      player = new Player(playerName);
       console.log(player);
+      this.playerObj.push(player);
     }
-    this.playerObj.push(player);
   }
 
   _renderPlayer(playerObj) {
