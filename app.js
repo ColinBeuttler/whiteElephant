@@ -36,8 +36,9 @@ class App {
     {
       player = new Player(playerName);
       console.log(player);
-      this.playerObj.push(player);
     }
+    playerObj.push(this.player);
+    console.log(this.playerObj);
   }
 
   _renderPlayer(playerObj) {
