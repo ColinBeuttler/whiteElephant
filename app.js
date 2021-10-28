@@ -28,14 +28,13 @@ class App {
 
   _createPlayer(e) {
     const playerName = inputNameEl.value;
-    const validInput = input.value;
 
     let player;
     e.preventDefault();
 
-    if (!validInput) return alert("Enter valid Input");
+    if (this.hasOwnProperty(playerName)) return alert("Enter valid Input");
     {
-      player = new Player(playerName);
+      player = new Player(playerName, "");
       console.log(player);
     }
     this.playerObj.push(player);
