@@ -10,7 +10,7 @@ const btnRoll = document.querySelector(".btn--roll");
 const btnHold = document.querySelector(".btn--hold");
 const btnPlayerForm = document.querySelector(".newPlayerForm");
 
-// let
+let playerObj;
 
 // let currentPlayer = playerObj[0];
 
@@ -22,7 +22,7 @@ class App {
     btnHold.addEventListener("click", this._discSelect, this._switchPlayers);
 
     btnPlayerForm.addEventListener(
-      "submit",
+      "Click",
       this._createPlayer,
       this._renderPlayer
     );
