@@ -10,23 +10,25 @@ const btnRoll = document.querySelector(".btn--roll");
 const btnHold = document.querySelector(".btn--hold");
 const btnPlayerForm = document.querySelector(".newPlayerForm");
 
-let playerObj = [];
-let currentPlayer = playerObj[0];
+let playerObj;
+
+// let currentPlayer = playerObj[0];
 
 class App {
+  playerObj = [];
   constructor() {
     btnRoll.addEventListener("click", this._discSort);
 
     btnHold.addEventListener("click", this._discSelect, this._switchPlayers);
 
     btnPlayerForm.addEventListener(
-      "submit",
+      "Click",
       this._createPlayer,
       this._renderPlayer
     );
   }
 
-  _createPlayer(e) {
+  _createPlayer(e, playerObj) {
     const playerName = inputNameEl.value;
 
     let player;
@@ -37,8 +39,8 @@ class App {
       player = new Player(playerName);
       console.log(player);
     }
-    playerObj.push(this.player);
-    console.log(this.playerObj);
+    this.playerObj.push(player);
+    console.log(playerObj);
   }
 
   _renderPlayer(playerObj) {
