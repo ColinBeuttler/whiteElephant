@@ -1,15 +1,11 @@
 import Player from "./players.js";
 
+// Player Form elements
 const playerEl = document.querySelector(".boxclass");
-
 const inputNameEl = document.querySelector(".form__input--playerName");
-
-const btnRoll = document.querySelector(".btn--roll");
-const btnHold = document.querySelector(".btn--hold");
 const btnPlayerForm = document.querySelector(".btn--playerSub");
 
 // button Calls
-
 btnPlayerForm.addEventListener("click", createPlayer, renderPlayer);
 
 // button Functions
