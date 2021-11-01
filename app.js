@@ -8,19 +8,18 @@ const btnRoll = document.querySelector(".btn--roll");
 const btnHold = document.querySelector(".btn--hold");
 const btnPlayerForm = document.querySelector(".btn--playerSub");
 
-let playerObj = [];
-
-let currentPlayer = playerObj[0];
-
 // button Calls
 
 btnPlayerForm.addEventListener("click", createPlayer, renderPlayer);
 
 // button Functions
-function createPlayer(e, playerObj) {
-  const playerName = inputNameEl.value;
+function createPlayer(e) {
+  let playerName = inputNameEl.value;
+  let playerObj = [];
 
+  let currentPlayer = playerObj[0];
   let player;
+
   e.preventDefault();
 
   // if (inputNameEl.hasOwnProperty(playerName)) return alert("Enter valid Input");
@@ -30,6 +29,7 @@ function createPlayer(e, playerObj) {
 
   playerObj.push(player);
   console.log(playerObj);
+  return playerObj;
 }
 
 function renderPlayer(playerObj) {
