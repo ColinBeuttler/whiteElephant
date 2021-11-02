@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="style.css" />
     <script defer src="script.js"></script>
     <script type="module" src="app.js"></script>
+    <script type="module" src="discObj.js"></script>
   </head>
   <body>
     <div class="newPlayer">
@@ -17,10 +18,10 @@
     </div>  
      <div class="newDisc">
       <form class="newDiscForm">
-        <input type="text" placeholder="Disc Mold" id="discInput" />
-        <input type="text" placeholder="Disc Plastic" id="discInput"/>
-        <input type="text" placeholder="Disc Color" id="discInput"/>
-        <input type="text" placeholder="Disc Weight" id="discInput"/>
+        <input type="text" placeholder="Disc Mold" class="input--mold" id="discInput" />
+        <input type="text" placeholder="Disc Plastic" class="input--plastic" id="discInput"/>
+        <input type="text" placeholder="Disc Color" class="input--color" id="discInput"/>
+        <input type="text" placeholder="Disc Weight" class="input--weight" id="discInput"/>
         <input type="button" value="Add Disc" class="btn btn--discSub"></input>
       </form>
     </div>

@@ -1,67 +1,38 @@
 import Player from "./players.js";
-import Disc from "./discObj.js";
 
-const discEl = document.querySelector(".dicsdisplay");
+// Player Form elements
 const playerEl = document.querySelector(".boxclass");
-
 const inputNameEl = document.querySelector(".form__input--playerName");
+const btnPlayerForm = document.querySelector(".btn--playerSub");
 
-const btnRoll = document.querySelector(".btn--roll");
-const btnHold = document.querySelector(".btn--hold");
-const btnPlayerForm = document.querySelector(".newPlayerForm");
+// button Calls
+btnPlayerForm.addEventListener("click", createPlayer, renderPlayer);
 
-let playerObj;
+// button Functions
+function createPlayer(e) {
+  let playerName = inputNameEl.value;
+  let playerObj = [];
 
-// let currentPlayer = playerObj[0];
+  let currentPlayer = playerObj[0];
+  let player;
 
-class App {
-  playerObj = [];
-  constructor() {
-    btnRoll.addEventListener("click", this._discSort);
+  e.preventDefault();
 
-    btnHold.addEventListener("click", this._discSelect, this._switchPlayers);
+  // if (inputNameEl.hasOwnProperty(playerName)) return alert("Enter valid Input");
 
-    btnPlayerForm.addEventListener(
-      "Click",
-      this._createPlayer,
-      this._renderPlayer
-    );
-  }
+  player = new Player(playerName);
+  console.log(player);
 
-  _createPlayer(e, playerObj) {
-    const playerName = inputNameEl.value;
-
-    let player;
-    e.preventDefault();
-
-    if (this.hasOwnProperty(playerName)) return alert("Enter valid Input");
-    {
-      player = new Player(playerName);
-      console.log(player);
-    }
-    this.playerObj.push(player);
-    console.log(playerObj);
-  }
-
-  _renderPlayer(playerObj) {
-    let html = `<div class="boxclass">
-    <h1>${this.player}</h1>
-    <div class="playerDisc">
-    <p>${this.disc}</p>
-    </div>
-  </div>`;
-    playerEl.insertAdjacentHTML("afterend", html);
-  }
-
-  _switchPlayers() {
-    if (currentPlayer < players.length) {
-      currentPlayer = players[playerIndex]++;
-    } else {
-      currentPlayer = player[0];
-    }
-  }
+  playerObj.push(player);
+  console.log(playerObj);
+  return playerObj;
 }
 
-const playerApp = new App();
-
-export default App;
+function renderPlayer(playerObj) {
+  let html = `<div class="boxclass">
+    <h1>${playerObj.player}</h1>
+    <div class="playerDisc">
+    </div>
+  </div>`;
+  playerEl.insertAdjacentHTML("afterend", html);
+}

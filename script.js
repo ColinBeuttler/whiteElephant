@@ -1,5 +1,4 @@
 "use strict";
-// import App from "./app";
 
 const discEl = document.querySelector(".dicsdisplay");
 const playerEl = document.querySelector(".boxclass");
@@ -114,6 +113,14 @@ class GameApp {
     // cut current roll from array
     discs.splice(0, 1);
     console.log(discs);
+  }
+
+  __switchPlayers() {
+    if (currentPlayer < players.length) {
+      currentPlayer = players[playerIndex]++;
+    } else {
+      currentPlayer = player[0];
+    }
   }
 }
 
