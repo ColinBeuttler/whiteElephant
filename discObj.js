@@ -1,8 +1,8 @@
 // Create new Disc Form elements
-const moldEl = document.querySelector(".input--mold").value;
-const plasticEl = document.querySelector(".input--plastic").value;
-const colorEl = document.querySelector(".input--color").value;
-const weightEl = document.querySelector(".input--weight").value;
+const moldEl = document.querySelector(".input--mold");
+const plasticEl = document.querySelector(".input--plastic");
+const colorEl = document.querySelector(".input--color");
+const weightEl = document.querySelector(".input--weight");
 
 //Submit button element
 const submitNewDisc = document.querySelector(".btn--discSub");
@@ -22,14 +22,16 @@ submitNewDisc.addEventListener("click", createDisc);
 
 // Button Function
 
-function createDisc(moldEl, plasticEl, colorEl, weightEl) {
+function createDisc() {
+  let mold = moldEl.value;
+  let plastic = plasticEl.value;
+  let color = colorEl.value;
+  let weight = weightEl.value;
   let discObjs = [];
   let disc;
 
-  disc = new Disc(moldEl, plasticEl, colorEl, weightEl);
+  disc = new Disc(mold, plastic, color, weight);
   console.log(disc);
   discObjs.push(disc);
   console.log(discObjs);
 }
-
-export default Disc;
