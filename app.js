@@ -12,11 +12,7 @@ class Player {
 class PlayerAdd {
   constructor() {
     // button Calls
-    btnPlayerForm.addEventListener(
-      "click",
-      this._createPlayer,
-      this._renderPlayer
-    );
+    btnPlayerForm.addEventListener("click", this._createPlayer.bind(this));
   }
   // button Functions
   _createPlayer(e) {
@@ -33,12 +29,12 @@ class PlayerAdd {
 
     playerObj.push(player);
     console.log(playerObj);
-    return playerObj;
+    this._renderPlayer(player);
   }
 
-  _renderPlayer(playerObj) {
+  _renderPlayer(Player) {
     let html = `<div class="boxclass">
-    <h1>${playerObj.player}</h1>
+    <h1>${Player.name}</h1>
     <div class="playerDisc">
     </div>
   </div>`;
