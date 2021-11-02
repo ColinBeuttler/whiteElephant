@@ -1,9 +1,13 @@
-import Player from "./players.js";
-
 // Player Form elements
 const playerEl = document.querySelector(".boxclass");
 const inputNameEl = document.querySelector(".form__input--playerName");
 const btnPlayerForm = document.querySelector(".btn--playerSub");
+
+class Player {
+  constructor(name) {
+    this.name = name;
+  }
+}
 
 class PlayerAdd {
   constructor() {
@@ -18,8 +22,6 @@ class PlayerAdd {
   _createPlayer(e) {
     let playerName = inputNameEl.value;
     let playerObj = [];
-
-    let currentPlayer = playerObj[0];
     let player;
 
     e.preventDefault();
