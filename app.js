@@ -2,6 +2,7 @@
 const playerEl = document.querySelector(".boxclass");
 const inputNameEl = document.querySelector(".form__input--playerName");
 const btnPlayerForm = document.querySelector(".btn--playerSub");
+const playerList = document.querySelector(".playerList");
 
 class Player {
   constructor(name) {
@@ -38,7 +39,7 @@ class PlayerAdd {
     <div class="playerDisc">
     </div>
   </div>`;
-    playerEl.insertAdjacentHTML("afterend", html);
+    playerList.insertAdjacentHTML("beforeend", html);
   }
 }
 
