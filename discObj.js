@@ -20,7 +20,7 @@ class Disc {
 class DiscApp {
   constructor() {
     // Button Submit Call
-    submitNewDisc.addEventListener("click", this._createDisc);
+    submitNewDisc.addEventListener("click", this._createDisc.bind(this));
   }
   // Button Function
 
