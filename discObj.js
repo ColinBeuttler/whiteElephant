@@ -17,21 +17,28 @@ class Disc {
   }
 }
 
-// Button Submit Call
-submitNewDisc.addEventListener("click", createDisc);
+class DiscApp {
+  constructor() {
+    // Button Submit Call
+    submitNewDisc.addEventListener("click", this._createDisc);
+  }
+  // Button Function
 
-// Button Function
+  _createDisc() {
+    let mold = moldEl.value;
+    let plastic = plasticEl.value;
+    let color = colorEl.value;
+    let weight = weightEl.value;
+    let discObjs = [];
+    let disc;
 
-function createDisc() {
-  let mold = moldEl.value;
-  let plastic = plasticEl.value;
-  let color = colorEl.value;
-  let weight = weightEl.value;
-  let discObjs = [];
-  let disc;
-
-  disc = new Disc(mold, plastic, color, weight);
-  console.log(disc);
-  discObjs.push(disc);
-  console.log(discObjs);
+    disc = new Disc(mold, plastic, color, weight);
+    console.log(disc);
+    discObjs.push(disc);
+    console.log(discObjs);
+  }
 }
+
+const DiscGame = new DiscApp();
+
+export default DiscGame;
