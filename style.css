@@ -12,10 +12,10 @@ body {
   width: 10rem;
   margin-left: 5rem;
   margin-top: 5rem;
-  display: inline;
-  float: left;
+  display: inline-block;
+  /* float: left; */
   word-wrap: break-word;
-  margin-bottom: 10rem;
+  /* margin-bottom: 10rem; */
 }
 #currentPlayer {
   background-color: #ddd;

@@ -1,5 +1,4 @@
 // Player Form elements
-const playerEl = document.querySelector(".boxclass");
 const inputNameEl = document.querySelector(".form__input--playerName");
 const btnPlayerForm = document.querySelector(".btn--playerSub");
 const playerList = document.querySelector(".playerList");
