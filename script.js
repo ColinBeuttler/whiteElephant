@@ -94,9 +94,9 @@ let discs = [
 class GameApp {
   discObj = [];
   constructor() {
-    btnRoll.addEventListener("click", this._discSort);
+    btnRoll.addEventListener("click", this._discSort.bind(this));
 
-    btnHold.addEventListener("click", this._discSelect);
+    btnHold.addEventListener("click", this._discSelect.bind(this));
   }
 
   // Button Functions
