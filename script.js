@@ -115,7 +115,7 @@ class GameApp {
     console.log(discs);
   }
 
-  __switchPlayers() {
+  _switchPlayers() {
     let currentPlayer = playerObj[0];
 
     if (currentPlayer < players.length) {

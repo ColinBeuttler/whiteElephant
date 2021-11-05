@@ -1,12 +1,13 @@
 class SwapRound {
   constructor() {
     // Button iniates for swaping discs
+    swapDiscEl.addEventListener("click", this._swapDisc.bind(this));
   }
 
   // Methods for swaping
   _swapDisc() {}
 
-  __switchPlayers() {
+  _switchPlayers() {
     let currentPlayer = playerObj[0];
 
     if (currentPlayer < players.length) {
