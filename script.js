@@ -94,6 +94,10 @@ let discs = [
 class GameApp {
   discObj = [];
   constructor() {
+    // find current players and discs
+    this._getLocalStorage();
+
+    // Set up button calls
     btnRoll.addEventListener("click", this._discSort.bind(this));
 
     btnHold.addEventListener("click", this._discSelect.bind(this));
