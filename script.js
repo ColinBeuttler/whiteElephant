@@ -125,8 +125,6 @@ class GameApp {
   }
 
   _discSelect() {
-    // add html to active player
-    // document.querySelector(".playerDisc").innerHTML = JSON.stringify(discs[0]);
     btnHold.clicked = true;
     // cut current roll from array
     discs.splice(0, 1);
