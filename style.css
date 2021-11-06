@@ -107,3 +107,13 @@ body {
 input#discInput {
   display: block;
 }
+
+.gameBtns {
+  margin-bottom: 3%;
+  float: left;
+  margin-right: 5%;
+  background-color: white;
+  border: black;
+  border-style: ridge;
+  padding: 0.5%;
+}

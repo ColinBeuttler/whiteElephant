@@ -1,3 +1,5 @@
+const swapDiscEl = document.querySelector();
+
 class SwapRound {
   constructor() {
     // find current players and discs
@@ -25,3 +27,7 @@ class SwapRound {
     if (!data) return;
   }
 }
+
+const swapRound = new SwapRound();
+
+export default swapRound;
