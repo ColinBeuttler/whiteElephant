@@ -94,6 +94,10 @@ let discs = [
 class GameApp {
   discObj = [];
   constructor() {
+    // find current players and discs
+    // this._getLocalStorage();
+
+    // Set up button calls
     btnRoll.addEventListener("click", this._discSort.bind(this));
 
     btnHold.addEventListener("click", this._discSelect.bind(this));
@@ -103,19 +107,33 @@ class GameApp {
   _discSort() {
     discs.sort(() => Math.random() - 0.5);
     btnHold.clicked = false;
-    document.querySelector(".discdisplay").innerHTML = JSON.stringify(discs[0]);
+    console.log(discs[0]);
+    this._renderDisc(discs[0]);
+
+    // document.querySelector(".discdisplay").innerHTML = JSON.stringify(discs[0]);
+  }
+
+  _renderDisc(discs) {
+    let html = `<div class="discObj">
+    <p class="discMold">${discs.Mold}</p>
+    <p class="discPlastic">${discs.Plastic}</p>
+    <p class="discColor">${discs.Color}</p>
+    <p class="discWeight">${discs.Weight}</p>
+  </div>`;
+    document.querySelector(".playerDisc").innerHTML = html;
+    // discEl.insertAdjacentHTML("afterbegin ", html);
   }
 
   _discSelect() {
     // add html to active player
-    document.querySelector(".playerDisc").innerHTML = JSON.stringify(discs[0]);
+    // document.querySelector(".playerDisc").innerHTML = JSON.stringify(discs[0]);
     btnHold.clicked = true;
     // cut current roll from array
     discs.splice(0, 1);
     console.log(discs);
   }
 
-  __switchPlayers() {
+  _switchPlayers() {
     let currentPlayer = playerObj[0];
 
     if (currentPlayer < players.length) {
