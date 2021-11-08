@@ -1,8 +1,12 @@
-// Player Form elements
+// Player Form elements to use ffor event listeners
 const inputNameEl = document.querySelector(".form__input--playerName");
 const btnPlayerForm = document.querySelector(".btn--playerSub");
 const playerList = document.querySelector(".playerList");
 
+// player objects global variable
+let players = [];
+
+// new player object prototype
 class Player {
   constructor(name) {
     this.name = name;
@@ -20,7 +24,6 @@ class PlayerAdd {
   // button Functions
   _createPlayer(e) {
     let playerName = inputNameEl.value;
-    let playerObj = [];
     let player;
 
     e.preventDefault();
@@ -30,10 +33,10 @@ class PlayerAdd {
     player = new Player(playerName);
     console.log(player);
 
-    playerObj.push(player);
-    console.log(playerObj);
+    players.push(player);
+    console.log(players);
     this._renderPlayer(player);
-    this._setLocalStorage(playerObj);
+    this._setLocalStorage(players);
   }
 
   _renderPlayer(Player) {
@@ -45,8 +48,8 @@ class PlayerAdd {
     playerList.insertAdjacentHTML("beforeend", html);
   }
 
-  _setLocalStorage(playerObj) {
-    localStorage.setItem("players", JSON.stringify(playerObj));
+  _setLocalStorage(players) {
+    localStorage.setItem("players", JSON.stringify(players));
     console.log(localStorage);
   }
 }
