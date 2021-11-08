@@ -11,6 +11,9 @@ class Player {
 
 class PlayerAdd {
   constructor() {
+    // set local storage with new player objects
+    // this._setLocalStorage();
+
     // button Calls
     btnPlayerForm.addEventListener("click", this._createPlayer.bind(this));
   }
@@ -30,6 +33,7 @@ class PlayerAdd {
     playerObj.push(player);
     console.log(playerObj);
     this._renderPlayer(player);
+    this._setLocalStorage(playerObj);
   }
 
   _renderPlayer(Player) {
@@ -39,6 +43,11 @@ class PlayerAdd {
     </div>
   </div>`;
     playerList.insertAdjacentHTML("beforeend", html);
+  }
+
+  _setLocalStorage(playerObj) {
+    localStorage.setItem("players", JSON.stringify(playerObj));
+    console.log(localStorage);
   }
 }
 
