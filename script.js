@@ -5,6 +5,7 @@ const playerEl = document.querySelector(".boxclass");
 
 const btnRoll = document.querySelector(".btn--roll");
 const btnHold = document.querySelector(".btn--hold");
+const btnNew = document.querySelector(".btn--new");
 
 const players = ["Colin", "Gabe", "Dad"];
 
@@ -101,6 +102,8 @@ class GameApp {
     btnRoll.addEventListener("click", this._discSort.bind(this));
 
     btnHold.addEventListener("click", this._discSelect.bind(this));
+
+    btnNew.addEventListener("click", this._clearGame.bind(this));
   }
 
   // Button Functions
@@ -125,8 +128,6 @@ class GameApp {
   }
 
   _discSelect() {
-    // add html to active player
-    // document.querySelector(".playerDisc").innerHTML = JSON.stringify(discs[0]);
     btnHold.clicked = true;
     // cut current roll from array
     discs.splice(0, 1);
@@ -141,6 +142,11 @@ class GameApp {
     } else {
       currentPlayer = player[0];
     }
+  }
+
+  _clearGame() {
+    localStorage.clear();
+    console.log(localStorage);
   }
 }
 
