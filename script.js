@@ -5,6 +5,7 @@ const playerEl = document.querySelector(".boxclass");
 
 const btnRoll = document.querySelector(".btn--roll");
 const btnHold = document.querySelector(".btn--hold");
+const btnNew = document.querySelector(".btn--new");
 
 const players = ["Colin", "Gabe", "Dad"];
 
@@ -101,6 +102,8 @@ class GameApp {
     btnRoll.addEventListener("click", this._discSort.bind(this));
 
     btnHold.addEventListener("click", this._discSelect.bind(this));
+
+    btnNew.addEventListener("click", this.clearGame.bind(this));
   }
 
   // Button Functions

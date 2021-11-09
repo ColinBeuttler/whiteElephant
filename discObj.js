@@ -7,6 +7,9 @@ const weightEl = document.querySelector(".input--weight");
 //Submit button element
 const submitNewDisc = document.querySelector(".btn--discSub");
 
+// disc array for local storage
+let discs = [];
+
 // disc class constructor
 class Disc {
   constructor(mold, plastic, color, weight) {
@@ -19,7 +22,7 @@ class Disc {
 
 class DiscApp {
   constructor() {
-    // Button Submit Call
+    // Button Call
     submitNewDisc.addEventListener("click", this._createDisc.bind(this));
   }
   // Button Function
@@ -29,13 +32,17 @@ class DiscApp {
     let plastic = plasticEl.value;
     let color = colorEl.value;
     let weight = weightEl.value;
-    let discObjs = [];
     let disc;
 
     disc = new Disc(mold, plastic, color, weight);
     console.log(disc);
-    discObjs.push(disc);
-    console.log(discObjs);
+    discs.push(disc);
+    console.log(discs);
+    this._setLocalStorage(discs);
+  }
+  _setLocalStorage(discs) {
+    localStorage.setItem("discs", JSON.stringify(discs));
+    console.log(localStorage);
   }
 }
 
