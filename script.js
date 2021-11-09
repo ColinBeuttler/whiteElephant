@@ -96,7 +96,7 @@ class GameApp {
   discObj = [];
   constructor() {
     // find current players and discs
-    // this._getLocalStorage();
+    this._getLocalStorage();
 
     // Set up button calls
     btnRoll.addEventListener("click", this._discSort.bind(this));
@@ -147,6 +147,13 @@ class GameApp {
   _clearGame() {
     localStorage.clear();
     console.log(localStorage);
+  }
+
+  _getLocalStorage() {
+    const discsArr = JSON.parse(localStorage.getItem("discs"));
+    const playersArr = JSON.parse(localStorage.getItem("players"));
+
+    if (!discsArr || !playersArr) return;
   }
 }
 
