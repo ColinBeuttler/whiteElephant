@@ -10,7 +10,8 @@ const btnNew = document.querySelector(".btn--new");
 // turn into method handled by confirm listener
 const currentplayerFunc = (playerEl) => {
   for (let i = 0; i < playerEl.length; i++) {
-    playerEl[i].classList.add("currentPlayer");
+    let currentplayer = playerEl[i];
+    currentplayer.classList.add("currentPlayer");
   }
 };
 currentplayerFunc(playerEl);
