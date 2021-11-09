@@ -7,7 +7,7 @@ const btnRoll = document.querySelector(".btn--roll");
 const btnHold = document.querySelector(".btn--hold");
 const btnNew = document.querySelector(".btn--new");
 
-const players = ["Colin", "Gabe", "Dad"];
+const players = [];
 
 let discs = [
   {
@@ -94,6 +94,7 @@ let discs = [
 
 class GameApp {
   discObj = [];
+  playersObj = [];
   constructor() {
     // find current players and discs
     this._getLocalStorage();
@@ -146,6 +147,7 @@ class GameApp {
 
   _clearGame() {
     localStorage.clear();
+    location.reload();
     console.log(localStorage);
   }
 
@@ -154,6 +156,14 @@ class GameApp {
     const playersArr = JSON.parse(localStorage.getItem("players"));
 
     if (!discsArr || !playersArr) return;
+
+    this.playersObj = playersArr;
+
+    console.log(this.playersArr);
+
+    // this.discs.forEach((disc) => {
+    //   this._renderDisc(disc);
+    // });
   }
 }
 
