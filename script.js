@@ -103,7 +103,7 @@ class GameApp {
 
     btnHold.addEventListener("click", this._discSelect.bind(this));
 
-    btnNew.addEventListener("click", this.clearGame.bind(this));
+    btnNew.addEventListener("click", this._clearGame.bind(this));
   }
 
   // Button Functions
@@ -142,6 +142,11 @@ class GameApp {
     } else {
       currentPlayer = player[0];
     }
+  }
+
+  _clearGame() {
+    localStorage.clear();
+    console.log(localStorage);
   }
 }
 
