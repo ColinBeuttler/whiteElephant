@@ -7,9 +7,11 @@ const btnRoll = document.querySelector(".btn--roll");
 const btnHold = document.querySelector(".btn--hold");
 const btnNew = document.querySelector(".btn--new");
 
-for (let i = 0; i < playerEl.length; i++) {
-  playerEl[i].classList.add("currentPlayer");
-}
+const currentplayerFunc = (playerEl) => {
+  for (let i = 0; i < playerEl.length; i++) {
+    playerEl[i].classList.add("currentPlayer");
+  }
+};
 
 const players = [];
 
@@ -128,8 +130,9 @@ class GameApp {
     <p class="discColor">${discs.Color}</p>
     <p class="discWeight">${discs.Weight}</p>
   </div>`;
+    // Change this to add to currentplayer boxclass once it works
     document.querySelector(".playerDisc").innerHTML = html;
-    // discEl.insertAdjacentHTML("afterbegin ", html);
+    // discEl.insertAdjacentHTML("beforeend", html);
   }
 
   _discSelect() {
