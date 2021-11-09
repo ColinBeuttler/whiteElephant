@@ -17,7 +17,7 @@ body {
   word-wrap: break-word;
   /* margin-bottom: 10rem; */
 }
-#currentPlayer {
+.currentPlayer {
   background-color: #ddd;
 }
 

@@ -1,11 +1,15 @@
 "use strict";
 
 const discEl = document.querySelector(".dicsdisplay");
-const playerEl = document.querySelector(".boxclass");
+const playerEl = document.querySelectorAll(".boxclass");
 
 const btnRoll = document.querySelector(".btn--roll");
 const btnHold = document.querySelector(".btn--hold");
 const btnNew = document.querySelector(".btn--new");
+
+for (let i = 0; i < playerEl.length; i++) {
+  playerEl[i].classList.add("currentPlayer");
+}
 
 const players = [];
 
