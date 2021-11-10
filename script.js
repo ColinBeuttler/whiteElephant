@@ -7,10 +7,10 @@ const btnRoll = document.querySelector(".btn--roll");
 const btnHold = document.querySelector(".btn--hold");
 const btnNew = document.querySelector(".btn--new");
 
+const currentplayer = playerEl[0];
 // turn into method handled by confirm listener
 const currentplayerFunc = (playerEl) => {
   for (let i = 0; i < playerEl.length; i++) {
-    let currentplayer = playerEl[i];
     currentplayer.classList.add("currentPlayer");
   }
 };
@@ -133,9 +133,8 @@ class GameApp {
     <p class="discColor">${discs.Color}</p>
     <p class="discWeight">${discs.Weight}</p>
   </div>`;
-    // Change this to add to currentplayer boxclass once it works
-    document.querySelector(".playerDisc").innerHTML = html;
-    // discEl.insertAdjacentHTML("beforeend", html);
+    // display to currentplayer html
+    currentplayer.insertAdjacentHTML("beforeend", html);
   }
 
   _discSelect() {
@@ -145,13 +144,13 @@ class GameApp {
     console.log(discs);
   }
 
-  _switchPlayers() {
-    let currentPlayer = playerObj[0];
+  _switchPlayers(currentplayer) {
+    // let currentPlayer = playerObj[0];
 
-    if (currentPlayer < players.length) {
-      currentPlayer = players[playerIndex]++;
+    if (currentplayer < players.length) {
+      currentplayer = players[playerIndex]++;
     } else {
-      currentPlayer = player[0];
+      currentplayer = player[0];
     }
   }
 
