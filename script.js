@@ -7,7 +7,9 @@ const btnRoll = document.querySelector(".btn--roll");
 const btnHold = document.querySelector(".btn--hold");
 const btnNew = document.querySelector(".btn--new");
 
-const currentplayer = playerEl[0];
+let currentIndex = 0;
+const currentplayer = playerEl[currentIndex];
+
 // turn into method handled by confirm listener
 const currentplayerFunc = (playerEl) => {
   for (let i = 0; i < playerEl.length; i++) {
@@ -144,13 +146,13 @@ class GameApp {
     console.log(discs);
   }
 
-  _switchPlayers(currentplayer) {
+  _switchPlayers(playerEl, playerIndex) {
     // let currentPlayer = playerObj[0];
 
-    if (currentplayer < playerEl.length) {
-      currentplayer = playerEl[i]++;
+    if (playerIndex < playerEl.length) {
+      playerIndex++;
     } else {
-      currentplayer = player[0];
+      playerIndex = 0;
     }
   }
 
