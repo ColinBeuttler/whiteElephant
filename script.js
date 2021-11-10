@@ -1,13 +1,22 @@
 "use strict";
 
 const discEl = document.querySelector(".dicsdisplay");
-const playerEl = document.querySelector(".boxclass");
+const playerEl = document.querySelectorAll(".boxclass");
 
 const btnRoll = document.querySelector(".btn--roll");
 const btnHold = document.querySelector(".btn--hold");
 const btnNew = document.querySelector(".btn--new");
 
-const players = ["Colin", "Gabe", "Dad"];
+const currentplayer = playerEl[0];
+// turn into method handled by confirm listener
+const currentplayerFunc = (playerEl) => {
+  for (let i = 0; i < playerEl.length; i++) {
+    currentplayer.classList.add("currentPlayer");
+  }
+};
+currentplayerFunc(playerEl);
+
+const players = [];
 
 let discs = [
   {
@@ -94,9 +103,10 @@ let discs = [
 
 class GameApp {
   discObj = [];
+  playersObj = [];
   constructor() {
     // find current players and discs
-    // this._getLocalStorage();
+    this._getLocalStorage();
 
     // Set up button calls
     btnRoll.addEventListener("click", this._discSort.bind(this));
@@ -123,8 +133,8 @@ class GameApp {
     <p class="discColor">${discs.Color}</p>
     <p class="discWeight">${discs.Weight}</p>
   </div>`;
-    document.querySelector(".playerDisc").innerHTML = html;
-    // discEl.insertAdjacentHTML("afterbegin ", html);
+    // display to currentplayer html
+    currentplayer.insertAdjacentHTML("beforeend", html);
   }
 
   _discSelect() {
@@ -134,19 +144,35 @@ class GameApp {
     console.log(discs);
   }
 
-  _switchPlayers() {
-    let currentPlayer = playerObj[0];
+  _switchPlayers(currentplayer) {
+    // let currentPlayer = playerObj[0];
 
-    if (currentPlayer < players.length) {
-      currentPlayer = players[playerIndex]++;
+    if (currentplayer < playerEl.length) {
+      currentplayer = playerEl[i]++;
     } else {
-      currentPlayer = player[0];
+      currentplayer = player[0];
     }
   }
 
   _clearGame() {
     localStorage.clear();
+    location.reload();
     console.log(localStorage);
+  }
+
+  _getLocalStorage() {
+    const discsArr = JSON.parse(localStorage.getItem("discs"));
+    const playersArr = JSON.parse(localStorage.getItem("players"));
+
+    if (!discsArr || !playersArr) return;
+
+    this.playersObj = playersArr;
+
+    console.log(this.playersArr);
+
+    // this.discs.forEach((disc) => {
+    //   this._renderDisc(disc);
+    // });
   }
 }
 
