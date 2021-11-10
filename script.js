@@ -147,8 +147,8 @@ class GameApp {
   _switchPlayers(currentplayer) {
     // let currentPlayer = playerObj[0];
 
-    if (currentplayer < players.length) {
-      currentplayer = players[playerIndex]++;
+    if (currentplayer < playerEl.length) {
+      currentplayer = playerEl[i]++;
     } else {
       currentplayer = player[0];
     }
