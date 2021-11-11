@@ -7,8 +7,8 @@ const btnRoll = document.querySelector(".btn--roll");
 const btnHold = document.querySelector(".btn--hold");
 const btnNew = document.querySelector(".btn--new");
 
-// let currentIndex = 0;
-// const currentplayer = playerEl[currentIndex];
+let currentIndex = 0;
+const currentplayer = playerEl[currentIndex];
 
 const players = [];
 
@@ -131,7 +131,7 @@ class GameApp {
     <p class="discWeight">${discs.Weight}</p>
   </div>`;
     // display to currentplayer html
-
+    currentplayer.insertAdjacentHTML("beforeend", html);
     // document.getElementsByClassName("playerDisc").innerHTML = html;
   }
 
@@ -160,8 +160,6 @@ class GameApp {
 
   // turn into method handled by confirm listener
   _currentplayerFunc = () => {
-    let currentIndex = 0;
-    const currentplayer = playerEl[currentIndex];
     currentplayer.classList.add("currentPlayer");
   };
 
