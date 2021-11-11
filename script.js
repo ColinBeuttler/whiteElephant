@@ -131,7 +131,8 @@ class GameApp {
     <p class="discWeight">${discs.Weight}</p>
   </div>`;
     // display to currentplayer html
-    currentplayer.insertAdjacentHTML("beforeend", html);
+
+    // document.getElementsByClassName("playerDisc").innerHTML = html;
   }
 
   _discSelect() {
