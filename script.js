@@ -140,16 +140,17 @@ class GameApp {
     // cut current roll from array
     discs.splice(0, 1);
     console.log(discs);
+    this._switchPlayers();
   }
 
   _switchPlayers(playerEl, playerIndex) {
     // let currentPlayer = playerObj[0];
-
     if (playerIndex < playerEl.length) {
       playerIndex++;
     } else {
       playerIndex = 0;
     }
+    this._currentplayerFunc(currentplayer);
   }
 
   _clearGame() {
