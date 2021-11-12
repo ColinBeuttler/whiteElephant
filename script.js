@@ -147,6 +147,7 @@ class GameApp {
   _switchPlayers() {
     // currentIndex < playerEl.length ? currentIndex++ : (currentIndex = 0);
     if (currentIndex < playerEl.length) {
+      console.log(true);
       currentIndex++;
     } else {
       currentIndex = 0;
