@@ -7,14 +7,8 @@ const btnRoll = document.querySelector(".btn--roll");
 const btnHold = document.querySelector(".btn--hold");
 const btnNew = document.querySelector(".btn--new");
 
-const currentplayer = playerEl[0];
-// turn into method handled by confirm listener
-const currentplayerFunc = (playerEl) => {
-  for (let i = 0; i < playerEl.length; i++) {
-    currentplayer.classList.add("currentPlayer");
-  }
-};
-currentplayerFunc(playerEl);
+let currentIndex = 0;
+const currentplayer = playerEl[currentIndex];
 
 const players = [];
 
@@ -108,6 +102,9 @@ class GameApp {
     // find current players and discs
     this._getLocalStorage();
 
+    // add CSS to currentplayer
+    this._currentplayerFunc();
+
     // Set up button calls
     btnRoll.addEventListener("click", this._discSort.bind(this));
 
@@ -135,6 +132,7 @@ class GameApp {
   </div>`;
     // display to currentplayer html
     currentplayer.insertAdjacentHTML("beforeend", html);
+    // document.getElementsByClassName("playerDisc").innerHTML = html;
   }
 
   _discSelect() {
@@ -142,16 +140,17 @@ class GameApp {
     // cut current roll from array
     discs.splice(0, 1);
     console.log(discs);
+    this._switchPlayers();
   }
 
-  _switchPlayers(currentplayer) {
+  _switchPlayers(playerEl, playerIndex) {
     // let currentPlayer = playerObj[0];
-
-    if (currentplayer < playerEl.length) {
-      currentplayer = playerEl[i]++;
+    if (playerIndex < playerEl.length) {
+      playerIndex++;
     } else {
-      currentplayer = player[0];
+      playerIndex = 0;
     }
+    this._currentplayerFunc(currentplayer);
   }
 
   _clearGame() {
@@ -159,6 +158,11 @@ class GameApp {
     location.reload();
     console.log(localStorage);
   }
+
+  // turn into method handled by confirm listener
+  _currentplayerFunc = () => {
+    currentplayer.classList.add("currentPlayer");
+  };
 
   _getLocalStorage() {
     const discsArr = JSON.parse(localStorage.getItem("discs"));
