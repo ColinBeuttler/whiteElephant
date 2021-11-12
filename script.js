@@ -8,9 +8,9 @@ const btnHold = document.querySelector(".btn--hold");
 const btnNew = document.querySelector(".btn--new");
 
 let currentIndex = 0;
-const currentplayer = playerEl[currentIndex];
+let currentplayer = playerEl[currentIndex];
 
-const players = [];
+// const players = [];
 
 let discs = [
   {
@@ -99,6 +99,7 @@ class GameApp {
   discObj = [];
   playersObj = [];
   constructor() {
+    // console.log(playerEl.length);
     // find current players and discs
     this._getLocalStorage();
 
@@ -143,13 +144,14 @@ class GameApp {
     this._switchPlayers();
   }
 
-  _switchPlayers(playerEl, playerIndex) {
-    // let currentPlayer = playerObj[0];
-    if (playerIndex < playerEl.length) {
-      playerIndex++;
+  _switchPlayers() {
+    // currentIndex < playerEl.length ? currentIndex++ : (currentIndex = 0);
+    if (currentIndex < playerEl.length) {
+      currentIndex++;
     } else {
-      playerIndex = 0;
+      currentIndex = 0;
     }
+    console.log(currentplayer);
     this._currentplayerFunc(currentplayer);
   }
 
@@ -160,9 +162,9 @@ class GameApp {
   }
 
   // turn into method handled by confirm listener
-  _currentplayerFunc = () => {
+  _currentplayerFunc() {
     currentplayer.classList.add("currentPlayer");
-  };
+  }
 
   _getLocalStorage() {
     const discsArr = JSON.parse(localStorage.getItem("discs"));
