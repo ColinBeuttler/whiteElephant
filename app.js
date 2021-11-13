@@ -1,4 +1,4 @@
-// Player Form elements to use ffor event listeners
+// Player Form elements for event listeners
 const inputNameEl = document.querySelector(".form__input--playerName");
 const btnPlayerForm = document.querySelector(".btn--playerSub");
 const playerList = document.querySelector(".playerList");
@@ -30,7 +30,6 @@ class PlayerAdd {
     // if (inputNameEl.hasOwnProperty(playerName)) return alert("Enter valid Input");
 
     player = new Player(playerName);
-    console.log(player);
 
     players.push(player);
     console.log(players);
