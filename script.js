@@ -10,13 +10,6 @@ let playerEl = document.querySelectorAll(".boxclass");
 let currentIndex = 0;
 let currentplayer = playerEl[currentIndex];
 
-// if (currentIndex < playerEl.length) {
-//   currentIndex++;
-//   console.log(currentplayer);
-// } else {
-//   currentIndex = 0;
-// }
-
 // const players = [];
 
 let discs = [
