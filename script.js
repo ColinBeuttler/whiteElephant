@@ -1,11 +1,11 @@
 "use strict";
 
 const discEl = document.querySelector(".dicsdisplay");
-const playerEl = document.querySelectorAll(".boxclass");
-
 const btnRoll = document.querySelector(".btn--roll");
 const btnHold = document.querySelector(".btn--hold");
 const btnNew = document.querySelector(".btn--new");
+
+let playerEl = document.querySelectorAll(".boxclass");
 
 let currentIndex = 0;
 let currentplayer = playerEl[currentIndex];
@@ -152,6 +152,7 @@ class GameApp {
   }
 
   _switchPlayers() {
+    playerEl = document.querySelectorAll(".boxclass");
     currentplayer.classList.remove("currentPlayer");
     currentIndex < playerEl.length - 1 ? currentIndex++ : (currentIndex = 0);
     currentplayer = playerEl[currentIndex];
