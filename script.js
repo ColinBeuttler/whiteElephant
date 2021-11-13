@@ -145,13 +145,12 @@ class GameApp {
   }
 
   _switchPlayers() {
-    // currentIndex < playerEl.length ? currentIndex++ : (currentIndex = 0);
-    if (currentIndex < playerEl.length) {
-      console.log(true);
-      currentIndex++;
-    } else {
-      currentIndex = 0;
-    }
+    currentIndex < playerEl.length ? currentIndex++ : (currentIndex = 0);
+    // if (currentIndex < playerEl.length) {
+    //   currentIndex++;
+    // } else {
+    //   currentIndex = 0;
+    // }
     console.log(currentplayer);
     this._currentplayerFunc(currentplayer);
   }
