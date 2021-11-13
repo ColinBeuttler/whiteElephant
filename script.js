@@ -10,6 +10,13 @@ const btnNew = document.querySelector(".btn--new");
 let currentIndex = 0;
 let currentplayer = playerEl[currentIndex];
 
+// if (currentIndex < playerEl.length) {
+//   currentIndex++;
+//   console.log(currentplayer);
+// } else {
+//   currentIndex = 0;
+// }
+
 // const players = [];
 
 let discs = [
@@ -145,12 +152,9 @@ class GameApp {
   }
 
   _switchPlayers() {
-    currentIndex < playerEl.length ? currentIndex++ : (currentIndex = 0);
-    // if (currentIndex < playerEl.length) {
-    //   currentIndex++;
-    // } else {
-    //   currentIndex = 0;
-    // }
+    currentplayer.classList.remove("currentPlayer");
+    currentIndex < playerEl.length - 1 ? currentIndex++ : (currentIndex = 0);
+    currentplayer = playerEl[currentIndex];
     console.log(currentplayer);
     this._currentplayerFunc(currentplayer);
   }
