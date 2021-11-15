@@ -27,6 +27,8 @@ class PlayerAdd {
 
     e.preventDefault();
 
+    if (playerName.length == 0) return alert("Player Name Cannot be Empty");
+
     // if (inputNameEl.hasOwnProperty(playerName)) return alert("Enter valid Input");
 
     player = new Player(playerName);
