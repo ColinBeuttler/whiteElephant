@@ -2,7 +2,7 @@
 
 const discEl = document.querySelector(".dicsdisplay");
 const btnRoll = document.querySelector(".btn--roll");
-const btnHold = document.querySelector(".btn--hold");
+// const btnHold = document.querySelector(".btn--hold");
 const btnNew = document.querySelector(".btn--new");
 
 let playerEl = document.querySelectorAll(".boxclass");
@@ -109,7 +109,7 @@ class GameApp {
     // Set up button calls
     btnRoll.addEventListener("click", this._discSort.bind(this));
 
-    btnHold.addEventListener("click", this._discSelect.bind(this));
+    // btnHold.addEventListener("click", this._discSelect.bind(this));
 
     btnNew.addEventListener("click", this._clearGame.bind(this));
   }
@@ -117,9 +117,9 @@ class GameApp {
   // Button Functions
   _discSort() {
     discs.sort(() => Math.random() - 0.5);
-    btnHold.clicked = false;
-    console.log(discs[0]);
+
     this._renderDisc(discs[0]);
+    this._discSelect();
 
     // document.querySelector(".discdisplay").innerHTML = JSON.stringify(discs[0]);
   }
@@ -137,7 +137,6 @@ class GameApp {
   }
 
   _discSelect() {
-    btnHold.clicked = true;
     // cut current roll from array
     discs.splice(0, 1);
     console.log(discs);

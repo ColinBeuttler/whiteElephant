@@ -22,13 +22,17 @@ class PlayerAdd {
   }
   // button Functions
   _createPlayer(e) {
-    let playerName = inputNameEl.value;
+    const playerName = inputNameEl.value;
+
     let player;
 
     e.preventDefault();
     console.log(playerName);
 
-    if (players.includes(playerName)) return alert("Player already exists");
+    // fix check for existing player name
+    // if (players.includes(playerName)) return alert("Player already exists");
+
+    // check if empty
     if (playerName.length == 0) return alert("Player Name Cannot be Empty");
 
     // if (inputNameEl.hasOwnProperty(playerName)) return alert("Enter valid Input");
