@@ -1,16 +1,16 @@
 "use strict";
 
 const discEl = document.querySelector(".dicsdisplay");
-const playerEl = document.querySelectorAll(".boxclass");
-
 const btnRoll = document.querySelector(".btn--roll");
-const btnHold = document.querySelector(".btn--hold");
+// const btnHold = document.querySelector(".btn--hold");
 const btnNew = document.querySelector(".btn--new");
 
-let currentIndex = 0;
-const currentplayer = playerEl[currentIndex];
+let playerEl = document.querySelectorAll(".boxclass");
 
-const players = [];
+let currentIndex = 0;
+let currentplayer = playerEl[currentIndex];
+
+// const players = [];
 
 let discs = [
   {
@@ -99,6 +99,7 @@ class GameApp {
   discObj = [];
   playersObj = [];
   constructor() {
+    // console.log(playerEl.length);
     // find current players and discs
     this._getLocalStorage();
 
@@ -108,7 +109,7 @@ class GameApp {
     // Set up button calls
     btnRoll.addEventListener("click", this._discSort.bind(this));
 
-    btnHold.addEventListener("click", this._discSelect.bind(this));
+    // btnHold.addEventListener("click", this._discSelect.bind(this));
 
     btnNew.addEventListener("click", this._clearGame.bind(this));
   }
@@ -116,9 +117,9 @@ class GameApp {
   // Button Functions
   _discSort() {
     discs.sort(() => Math.random() - 0.5);
-    btnHold.clicked = false;
-    console.log(discs[0]);
+
     this._renderDisc(discs[0]);
+    this._discSelect();
 
     // document.querySelector(".discdisplay").innerHTML = JSON.stringify(discs[0]);
   }
@@ -136,20 +137,18 @@ class GameApp {
   }
 
   _discSelect() {
-    btnHold.clicked = true;
     // cut current roll from array
     discs.splice(0, 1);
     console.log(discs);
     this._switchPlayers();
   }
 
-  _switchPlayers(playerEl, playerIndex) {
-    // let currentPlayer = playerObj[0];
-    if (playerIndex < playerEl.length) {
-      playerIndex++;
-    } else {
-      playerIndex = 0;
-    }
+  _switchPlayers() {
+    playerEl = document.querySelectorAll(".boxclass");
+    currentplayer.classList.remove("currentPlayer");
+    currentIndex < playerEl.length - 1 ? currentIndex++ : (currentIndex = 0);
+    currentplayer = playerEl[currentIndex];
+    console.log(currentplayer);
     this._currentplayerFunc(currentplayer);
   }
 
@@ -160,9 +159,9 @@ class GameApp {
   }
 
   // turn into method handled by confirm listener
-  _currentplayerFunc = () => {
+  _currentplayerFunc() {
     currentplayer.classList.add("currentPlayer");
-  };
+  }
 
   _getLocalStorage() {
     const discsArr = JSON.parse(localStorage.getItem("discs"));

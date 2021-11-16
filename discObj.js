@@ -34,6 +34,14 @@ class DiscApp {
     let weight = weightEl.value;
     let disc;
 
+    if (
+      mold.length == 0 ||
+      plastic.length == 0 ||
+      color.length == 0 ||
+      weight.length == 0
+    )
+      return alert("Cannot Leave Fields Empty");
+
     disc = new Disc(mold, plastic, color, weight);
     console.log(disc);
     discs.push(disc);
