@@ -26,7 +26,9 @@ class PlayerAdd {
     let player;
 
     e.preventDefault();
+    console.log(playerName);
 
+    if (players.includes(playerName)) return alert("Player already exists");
     if (playerName.length == 0) return alert("Player Name Cannot be Empty");
 
     // if (inputNameEl.hasOwnProperty(playerName)) return alert("Enter valid Input");
