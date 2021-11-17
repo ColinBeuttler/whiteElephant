@@ -1,4 +1,4 @@
-const swapDiscEl = document.querySelector();
+const swapDiscEl = document.querySelector(".btn--swap");
 
 class SwapRound {
   constructor() {
@@ -9,16 +9,8 @@ class SwapRound {
   }
 
   // Methods for swaping
-  _swapDisc() {}
-
-  _switchPlayers() {
-    let currentPlayer = playerObj[0];
-
-    if (currentPlayer < players.length) {
-      currentPlayer = players[playerIndex]++;
-    } else {
-      currentPlayer = player[0];
-    }
+  _swapDisc() {
+    console.log("yes working");
   }
 
   _getLocalStorage() {
