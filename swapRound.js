@@ -1,4 +1,4 @@
-import { currentplayer } from "./script";
+import { currentplayer } from "./script.js";
 
 const swapDiscEl = document.querySelector(".btn--swap");
 

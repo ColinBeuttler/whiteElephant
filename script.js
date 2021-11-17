@@ -181,4 +181,4 @@ class GameApp {
 
 const game = new GameApp();
 
-export let currentplayer;
+export { currentplayer };
