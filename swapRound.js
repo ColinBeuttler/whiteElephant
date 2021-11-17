@@ -1,3 +1,5 @@
+import { currentplayer } from "./script";
+
 const swapDiscEl = document.querySelector(".btn--swap");
 
 class SwapRound {
@@ -10,7 +12,8 @@ class SwapRound {
 
   // Methods for swaping
   _swapDisc() {
-    console.log("yes working");
+    console.log(currentplayer);
+    // Element.parentNode.insertBefore(elem, elem.parentNode.firstChild);
   }
 
   _getLocalStorage() {

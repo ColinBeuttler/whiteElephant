@@ -179,7 +179,6 @@ class GameApp {
   }
 }
 
-// const select = document.createElement('select');
-// select.innerHTML = discs.map(fucntion(arr){
-
 const game = new GameApp();
+
+export let currentplayer;
