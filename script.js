@@ -1,6 +1,6 @@
 "use strict";
 
-const discEl = document.querySelector(".dicsdisplay");
+const discEl = document.querySelector(".playerDisc");
 const btnRoll = document.querySelector(".btn--roll");
 // const btnHold = document.querySelector(".btn--hold");
 const btnNew = document.querySelector(".btn--new");
