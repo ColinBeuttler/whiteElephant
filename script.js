@@ -119,7 +119,6 @@ class GameApp {
     discs.sort(() => Math.random() - 0.5);
 
     this._renderDisc(discs[0]);
-    this._discSelect();
 
     // document.querySelector(".discdisplay").innerHTML = JSON.stringify(discs[0]);
   }
@@ -131,8 +130,12 @@ class GameApp {
     <p class="discColor">${discs.Color}</p>
     <p class="discWeight">${discs.Weight}</p>
   </div>`;
+    console.log(currentplayer.childNodes.length);
+    if (currentplayer.childNodes.length >= 6)
+      return alert("cannot draw another disc");
     // display to currentplayer html
     currentplayer.insertAdjacentHTML("beforeend", html);
+    this._discSelect();
     // document.getElementsByClassName("playerDisc").innerHTML = html;
   }
 

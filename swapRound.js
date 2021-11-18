@@ -1,6 +1,6 @@
 import { currentplayer } from "./script.js";
 
-const discEl = document.querySelectorAll(".playerDisc");
+const discEl = document.querySelector(".playerDisc");
 const swapDiscEl = document.querySelector(".btn--swap");
 
 class SwapRound {
