@@ -124,6 +124,7 @@ class GameApp {
   }
 
   _renderDisc(discs) {
+    // let discObjEl = currentplayer.getElementsByClassName("discObj") != null;
     let html = `<div class="discObj">
     <p class="discMold">${discs.Mold}</p>
     <p class="discPlastic">${discs.Plastic}</p>
