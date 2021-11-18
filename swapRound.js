@@ -9,7 +9,7 @@ class SwapRound {
     this._getLocalStorage();
     // Button iniates for swaping discs
     swapDiscEl.addEventListener("click", this._swapDisc.bind(this));
-    discEl.addEventListener("click", this._initiateClick.bind(this));
+    // discEl.addEventListener("click", this._initiateClick.bind(this));
   }
 
   // Methods for swaping

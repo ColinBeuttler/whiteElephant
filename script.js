@@ -124,16 +124,19 @@ class GameApp {
   }
 
   _renderDisc(discs) {
-    // let discObjEl = currentplayer.getElementsByClassName("discObj") != null;
+    let discObjEl = document.getElementsByClassName("discObj");
     let html = `<div class="discObj">
-    <p class="discMold">${discs.Mold}</p>
-    <p class="discPlastic">${discs.Plastic}</p>
-    <p class="discColor">${discs.Color}</p>
-    <p class="discWeight">${discs.Weight}</p>
+    <p id="discMold">${discs.Mold}</p>
+    <p id="discPlastic">${discs.Plastic}</p>
+    <p id="discColor">${discs.Color}</p>
+    <p id="discWeight">${discs.Weight}</p>
   </div>`;
-    console.log(currentplayer.discObj);
-    if (currentplayer.childNodes.length >= 6)
-      return alert("cannot draw another disc");
+
+    if (currentplayer.childNodes.length >= 6) {
+      document.removeChild(discObjEl);
+      // return alert("Must swap currrent Disc")
+    }
+
     // display to currentplayer html
     currentplayer.insertAdjacentHTML("beforeend", html);
     this._discSelect();
