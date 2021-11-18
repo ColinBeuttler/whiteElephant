@@ -131,7 +131,7 @@ class GameApp {
     <p class="discColor">${discs.Color}</p>
     <p class="discWeight">${discs.Weight}</p>
   </div>`;
-    console.log(currentplayer.childNodes.length);
+    console.log(currentplayer.discObj);
     if (currentplayer.childNodes.length >= 6)
       return alert("cannot draw another disc");
     // display to currentplayer html
