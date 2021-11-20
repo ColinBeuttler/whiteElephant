@@ -1,14 +1,18 @@
 "use strict";
 
-const discEl = document.querySelector(".dicsdisplay");
+// Html dom consts
 const btnRoll = document.querySelector(".btn--roll");
 // const btnHold = document.querySelector(".btn--hold");
 const btnNew = document.querySelector(".btn--new");
 
+// non-const html collections
+let discEl = document.querySelectorAll(".playerDisc");
 let playerEl = document.querySelectorAll(".boxclass");
 
+// determines current player and disc turns
 let currentIndex = 0;
 let currentplayer = playerEl[currentIndex];
+let currentDisc = discEl[currentIndex];
 
 // const players = [];
 
@@ -119,20 +123,31 @@ class GameApp {
     discs.sort(() => Math.random() - 0.5);
 
     this._renderDisc(discs[0]);
-    this._discSelect();
 
     // document.querySelector(".discdisplay").innerHTML = JSON.stringify(discs[0]);
   }
 
   _renderDisc(discs) {
+    // let discObjEl = document.getElementsByClassName("discObj");
     let html = `<div class="discObj">
-    <p class="discMold">${discs.Mold}</p>
-    <p class="discPlastic">${discs.Plastic}</p>
-    <p class="discColor">${discs.Color}</p>
-    <p class="discWeight">${discs.Weight}</p>
+    <p id="discMold">${discs.Mold}</p>
+    <p id="discPlastic">${discs.Plastic}</p>
+    <p id="discColor">${discs.Color}</p>
+    <p id="discWeight">${discs.Weight}</p>
   </div>`;
+
+    console.log(html);
+
+    // checks if disc object is child
+    if (currentplayer.childNodes.length >= 6) {
+      // deletes old disc html
+      document.getElementsByClassName("discObj")[currentIndex].remove();
+      // return alert("Must swap currrent Disc")
+    }
+
     // display to currentplayer html
     currentplayer.insertAdjacentHTML("beforeend", html);
+    this._discSelect();
     // document.getElementsByClassName("playerDisc").innerHTML = html;
   }
 
@@ -179,7 +194,6 @@ class GameApp {
   }
 }
 
-// const select = document.createElement('select');
-// select.innerHTML = discs.map(fucntion(arr){
-
 const game = new GameApp();
+
+export { currentplayer };

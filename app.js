@@ -48,7 +48,7 @@ class PlayerAdd {
   _renderPlayer(player) {
     let html = `<div class="boxclass">
     <h1>${player.name}</h1>
-    <div class="playerDisc">
+    <div id="playerDisc">
     </div>
   </div>`;
     playerList.insertAdjacentHTML("beforeend", html);
