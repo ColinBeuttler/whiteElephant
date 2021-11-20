@@ -57,3 +57,5 @@ class DiscApp {
 const DiscGame = new DiscApp();
 
 export default DiscGame;
+
+export { Disc };
