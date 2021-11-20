@@ -1,14 +1,18 @@
 "use strict";
 
-const discEl = document.querySelector(".playerDisc");
+// Html dom consts
 const btnRoll = document.querySelector(".btn--roll");
 // const btnHold = document.querySelector(".btn--hold");
 const btnNew = document.querySelector(".btn--new");
 
+// non-const html collections
+let discEl = document.querySelectorAll(".playerDisc");
 let playerEl = document.querySelectorAll(".boxclass");
 
+// determines current player and disc turns
 let currentIndex = 0;
 let currentplayer = playerEl[currentIndex];
+let currentDisc = discEl[currentIndex];
 
 // const players = [];
 
@@ -124,7 +128,7 @@ class GameApp {
   }
 
   _renderDisc(discs) {
-    let discObjEl = document.getElementsByClassName("discObj");
+    // let discObjEl = document.getElementsByClassName("discObj");
     let html = `<div class="discObj">
     <p id="discMold">${discs.Mold}</p>
     <p id="discPlastic">${discs.Plastic}</p>
@@ -132,8 +136,12 @@ class GameApp {
     <p id="discWeight">${discs.Weight}</p>
   </div>`;
 
+    console.log(html);
+
+    // checks if disc object is child
     if (currentplayer.childNodes.length >= 6) {
-      document.removeChild(discObjEl);
+      // deletes old disc html
+      document.getElementsByClassName("discObj")[currentIndex].remove();
       // return alert("Must swap currrent Disc")
     }
 
