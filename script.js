@@ -110,7 +110,6 @@ class GameApp {
   }
 
   _renderDisc(discs) {
-    let htmlDisc;
     let html = `<div class="discObj">
     <p class="discMold">${discs.mold}</p>
     <p class="discPlastic">${discs.plastic}</p>
@@ -120,30 +119,35 @@ class GameApp {
 
     // checks if disc object is child
     if (currentplayer.childNodes.length >= 6) {
-      // Get values from html for discs
-      let moldEl =
-        document.getElementsByClassName("discMold")[currentIndex].innerHTML;
-      let plasticEl =
-        document.getElementsByClassName("discPlastic")[currentIndex].innerHTML;
-      let colorEl =
-        document.getElementsByClassName("discColor")[currentIndex].innerHTML;
-      let weightEl =
-        document.getElementsByClassName("discWeight")[currentIndex].innerHTML;
-
-      // Use Html to create and push discs back to array
-      htmlDisc = new Disc(moldEl, plasticEl, colorEl, weightEl);
-      console.log(htmlDisc);
-      discs.push(htmlDisc);
-
-      // deletes old disc html
-      document.getElementsByClassName("discObj")[currentIndex].remove();
-      // return alert("Must swap currrent Disc")
+      this._replaceFromHtml();
     }
 
     // display to currentplayer html
     currentplayer.insertAdjacentHTML("beforeend", html);
     this._discSelect();
     // document.getElementsByClassName("playerDisc").innerHTML = html;
+  }
+
+  _replaceFromHtml() {
+    // Get values from html for discs
+    let htmlDisc;
+    let moldEl =
+      document.getElementsByClassName("discMold")[currentIndex].innerHTML;
+    let plasticEl =
+      document.getElementsByClassName("discPlastic")[currentIndex].innerHTML;
+    let colorEl =
+      document.getElementsByClassName("discColor")[currentIndex].innerHTML;
+    let weightEl =
+      document.getElementsByClassName("discWeight")[currentIndex].innerHTML;
+
+    // Use Html to create and push discs back to array
+    htmlDisc = new Disc(moldEl, plasticEl, colorEl, weightEl);
+    console.log(htmlDisc);
+    discs.push(htmlDisc);
+
+    // deletes old disc html
+    document.getElementsByClassName("discObj")[currentIndex].remove();
+    // return alert("Must swap currrent Disc")
   }
 
   _discSelect() {
