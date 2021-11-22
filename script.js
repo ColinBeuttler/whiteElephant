@@ -1,4 +1,6 @@
 "use strict";
+// get needed imports
+// import { Disc } from "./discObj";
 
 // Html dom consts
 const btnRoll = document.querySelector(".btn--roll");
@@ -128,7 +130,6 @@ class GameApp {
   }
 
   _renderDisc(discs) {
-    let moldEl = document.getElementsByClassName("discMold")[currentIndex];
     let html = `<div class="discObj">
     <p class="discMold">${discs.Mold}</p>
     <p class="discPlastic">${discs.Plastic}</p>
@@ -136,10 +137,17 @@ class GameApp {
     <p class="discWeight">${discs.Weight}</p>
   </div>`;
 
-    console.log(moldEl);
-
     // checks if disc object is child
     if (currentplayer.childNodes.length >= 6) {
+      let moldEl =
+        document.getElementsByClassName("discMold")[currentIndex].innerHTML;
+      let plasticEl =
+        document.getElementsByClassName("discPlastic")[currentIndex].innerHTML;
+      let colorEl =
+        document.getElementsByClassName("discColor")[currentIndex].innerHTML;
+      let weightEl =
+        document.getElementsByClassName("discWeight")[currentIndex].innerHTML;
+      console.log(moldEl, plasticEl, colorEl, weightEl);
       // deletes old disc html
       document.getElementsByClassName("discObj")[currentIndex].remove();
       // return alert("Must swap currrent Disc")
@@ -163,7 +171,7 @@ class GameApp {
     currentplayer.classList.remove("currentPlayer");
     currentIndex < playerEl.length - 1 ? currentIndex++ : (currentIndex = 0);
     currentplayer = playerEl[currentIndex];
-    console.log(currentplayer);
+    // console.log(currentplayer);
     this._currentplayerFunc(currentplayer);
   }
 
