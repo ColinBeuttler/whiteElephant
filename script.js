@@ -128,14 +128,15 @@ class GameApp {
   }
 
   _renderDisc(discs) {
+    let moldEl = document.getElementsByClassName("discMold")[currentIndex];
     let html = `<div class="discObj">
-    <p id="discMold">${discs.Mold}</p>
-    <p id="discPlastic">${discs.Plastic}</p>
-    <p id="discColor">${discs.Color}</p>
-    <p id="discWeight">${discs.Weight}</p>
+    <p class="discMold">${discs.Mold}</p>
+    <p class="discPlastic">${discs.Plastic}</p>
+    <p class="discColor">${discs.Color}</p>
+    <p class="discWeight">${discs.Weight}</p>
   </div>`;
 
-    console.log(html);
+    console.log(moldEl);
 
     // checks if disc object is child
     if (currentplayer.childNodes.length >= 6) {
