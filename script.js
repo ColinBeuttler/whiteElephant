@@ -115,6 +115,7 @@ class GameApp {
     <p class="discPlastic">${discs.plastic}</p>
     <p class="discColor">${discs.color}</p>
     <p class="discWeight">${discs.weight}</p>
+    <button class="btn btn--swap">Swap Disc</button>
   </div>`;
 
     // checks if disc object is child
@@ -142,7 +143,7 @@ class GameApp {
 
     // Use Html to create and push discs back to array
     htmlDisc = new Disc(moldEl, plasticEl, colorEl, weightEl);
-    console.log(htmlDisc);
+    // console.log(htmlDisc);
     discs.push(htmlDisc);
 
     // deletes old disc html
