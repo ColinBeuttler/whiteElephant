@@ -1,4 +1,4 @@
-import { currentplayer } from "./script.js";
+// import { currentplayer } from "./script.js";
 
 const discEl = document.querySelector(".playerDisc");
 let swapDiscEl = document.querySelectorAll(".btn--swap");
@@ -8,16 +8,17 @@ class SwapRound {
     // find current players and discs
     this._getLocalStorage();
     // Button iniates for swaping discs
-    for (let i = 0; i <= swapDiscEl.length; i++) {
-      swapDiscEl[i].addEventListener("click", this._swapDisc.bind(this));
-    }
+
+    swapDiscEl.forEach((ele) => {
+      ele.addEventListener("click", this._swapDisc.bind(this));
+    });
 
     // discEl.addEventListener("click", this._initiateClick.bind(this));
   }
 
   // Methods for swaping
   _swapDisc() {
-    console.log(currentplayer);
+    console.log("swap disc");
     // Element.parentNode.insertBefore(elem, elem.parentNode.firstChild);
   }
 
