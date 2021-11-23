@@ -1,7 +1,9 @@
 // import { currentplayer } from "./script.js";
 
 const discEl = document.querySelector(".playerDisc");
-let swapDiscEl = document.querySelectorAll(".btn--swap");
+let swapDiscEl = document.getElementsByClassName(".btn--swap");
+
+console.log(swapDiscEl);
 
 class SwapRound {
   constructor() {
@@ -9,9 +11,7 @@ class SwapRound {
     this._getLocalStorage();
     // Button iniates for swaping discs
 
-    swapDiscEl.forEach((ele) => {
-      ele.addEventListener("click", this._swapDisc.bind(this));
-    });
+    swapDiscEl.addEventListener("click", this._swapDisc.bind(this));
 
     // discEl.addEventListener("click", this._initiateClick.bind(this));
   }
