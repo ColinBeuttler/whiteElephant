@@ -115,7 +115,6 @@ class GameApp {
     <p class="discPlastic">${discs.plastic}</p>
     <p class="discColor">${discs.color}</p>
     <p class="discWeight">${discs.weight}</p>
-    <button class="btn btn--swap">Swap Disc</button>
   </div>`;
 
     // checks if disc object is child

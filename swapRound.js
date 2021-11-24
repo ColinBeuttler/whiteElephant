@@ -1,9 +1,20 @@
 // import { currentplayer } from "./script.js";
 
-const discEl = document.querySelector(".playerDisc");
-let swapDiscEl = document.getElementsByClassName(".btn--swap");
+// const discEl = document.querySelector(".playerDisc");
+const swapDiscEl = document.querySelector(".btn--swap");
+const select = document.getElementById("selector");
 
-console.log(swapDiscEl);
+let discOptions = document.getElementsByClassName("discObj");
+
+console.log(discOptions);
+
+for (let i = 0; i < discOptions.length; i++) {
+  let opt = discOptions[i];
+  let el = document.createElement("option");
+  el.textContent = opt;
+  el.value = opt;
+  select.add(el);
+}
 
 class SwapRound {
   constructor() {
