@@ -1,4 +1,6 @@
 "use strict";
+// get needed imports
+import { Disc } from "./discObj.js";
 
 // Html dom consts
 const btnRoll = document.querySelector(".btn--roll");
@@ -18,84 +20,64 @@ let currentDisc = discEl[currentIndex];
 
 let discs = [
   {
-    Brand: "Dynamic Discs",
-    Mold: "Trespass",
-    Plastic: "Lucid",
-    Weight: "169g",
-    Color: "Yellow",
-    Flight: "12 5 -0.5 3",
+    mold: "Trespass",
+    plastic: "Lucid",
+    weight: "169g",
+    color: "Yellow",
   },
   {
-    Brand: "Latitude 64",
-    Mold: "Ballista",
-    Plastic: "Opto",
-    Weight: "169g",
-    Color: "Red",
-    Flight: "14 4 0 3",
+    mold: "Ballista",
+    plastic: "Opto",
+    weight: "169g",
+    color: "Red",
   },
   {
-    Brand: "Dynamic Discs",
-    Mold: "Sheriff",
-    Plastic: "Lucid",
-    Weight: "171g",
-    Color: "Pearl",
-    Flight: "13 5 -1 2",
+    mold: "Sheriff",
+    plastic: "Lucid",
+    weight: "171g",
+    color: "Pearl",
   },
   {
-    Brand: "Latitude 64",
-    Mold: "Ballista",
-    Plastic: "Gold",
-    Weight: "176g",
-    Color: "White",
-    Flight: "14 4 0 3",
+    mold: "Ballista",
+    plastic: "Gold",
+    weight: "176g",
+    color: "White",
   },
   {
-    Brand: "Latitude 64",
-    Mold: "Explorer",
-    Plastic: "Opto",
-    Weight: "173g",
-    Color: "Blue",
-    Flight: "7 5 0 2",
+    mold: "Explorer",
+    plastic: "Opto",
+    weight: "173g",
+    color: "Blue",
   },
   {
-    Brand: "Latitude 64",
-    Mold: "Diamond",
-    Plastic: "Opto",
-    Weight: "156g",
-    Color: "Yellow",
-    Flight: "8 6 -3 1",
+    mold: "Diamond",
+    plastic: "Opto",
+    weight: "156g",
+    color: "Yellow",
   },
   {
-    Brand: "Latitude 64",
-    Mold: "Fuse",
-    Plastic: "Opto",
-    Weight: "173g",
-    Color: "Yellow",
-    Flight: "5 6 -1 0",
+    mold: "Fuse",
+    plastic: "Opto",
+    weight: "173g",
+    color: "Yellow",
   },
   {
-    Brand: "Latitude 64",
-    Mold: "Compass",
-    Plastic: "Opto",
-    Weight: "177g",
-    Color: "Teal",
-    Flight: "5 5 0 1",
+    mold: "Compass",
+    plastic: "Opto",
+    weight: "177g",
+    color: "Teal",
   },
   {
-    Brand: "Latitude 64",
-    Mold: "Pirate",
-    Plastic: "base",
-    Weight: "unknown",
-    Color: "White",
-    Flight: "5 6 -2 0",
+    mold: "Pirate",
+    plastic: "base",
+    weight: "unknown",
+    color: "White",
   },
   {
-    Brand: "Westside Discs",
-    Mold: "Crown",
-    Plastic: "Orgio Burst",
-    Weight: "174",
-    Color: "Grey",
-    Flight: "3 4 0 1",
+    mold: "Crown",
+    plastic: "Orgio Burst",
+    weight: "174",
+    color: "Grey",
   },
 ];
 
@@ -128,27 +110,44 @@ class GameApp {
   }
 
   _renderDisc(discs) {
-    // let discObjEl = document.getElementsByClassName("discObj");
     let html = `<div class="discObj">
-    <p id="discMold">${discs.Mold}</p>
-    <p id="discPlastic">${discs.Plastic}</p>
-    <p id="discColor">${discs.Color}</p>
-    <p id="discWeight">${discs.Weight}</p>
+    <p class="discMold">${discs.mold}</p>
+    <p class="discPlastic">${discs.plastic}</p>
+    <p class="discColor">${discs.color}</p>
+    <p class="discWeight">${discs.weight}</p>
   </div>`;
-
-    console.log(html);
 
     // checks if disc object is child
     if (currentplayer.childNodes.length >= 6) {
-      // deletes old disc html
-      document.getElementsByClassName("discObj")[currentIndex].remove();
-      // return alert("Must swap currrent Disc")
+      this._replaceFromHtml();
     }
 
     // display to currentplayer html
     currentplayer.insertAdjacentHTML("beforeend", html);
     this._discSelect();
     // document.getElementsByClassName("playerDisc").innerHTML = html;
+  }
+
+  _replaceFromHtml() {
+    // Get values from html for discs
+    let htmlDisc;
+    let moldEl =
+      document.getElementsByClassName("discMold")[currentIndex].innerHTML;
+    let plasticEl =
+      document.getElementsByClassName("discPlastic")[currentIndex].innerHTML;
+    let colorEl =
+      document.getElementsByClassName("discColor")[currentIndex].innerHTML;
+    let weightEl =
+      document.getElementsByClassName("discWeight")[currentIndex].innerHTML;
+
+    // Use Html to create and push discs back to array
+    htmlDisc = new Disc(moldEl, plasticEl, colorEl, weightEl);
+    // console.log(htmlDisc);
+    discs.push(htmlDisc);
+
+    // deletes old disc html
+    document.getElementsByClassName("discObj")[currentIndex].remove();
+    // return alert("Must swap currrent Disc")
   }
 
   _discSelect() {
@@ -163,7 +162,7 @@ class GameApp {
     currentplayer.classList.remove("currentPlayer");
     currentIndex < playerEl.length - 1 ? currentIndex++ : (currentIndex = 0);
     currentplayer = playerEl[currentIndex];
-    console.log(currentplayer);
+    // console.log(currentplayer);
     this._currentplayerFunc(currentplayer);
   }
 

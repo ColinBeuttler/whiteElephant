@@ -1,20 +1,35 @@
-import { currentplayer } from "./script.js";
+// import { currentplayer } from "./script.js";
 
-const discEl = document.querySelector(".playerDisc");
+// const discEl = document.querySelector(".playerDisc");
 const swapDiscEl = document.querySelector(".btn--swap");
+const select = document.getElementById("selector");
+
+let discOptions = document.getElementsByClassName("discObj");
+
+console.log(discOptions);
+
+for (let i = 0; i < discOptions.length; i++) {
+  let opt = discOptions[i];
+  let el = document.createElement("option");
+  el.textContent = opt;
+  el.value = opt;
+  select.add(el);
+}
 
 class SwapRound {
   constructor() {
     // find current players and discs
     this._getLocalStorage();
     // Button iniates for swaping discs
+
     swapDiscEl.addEventListener("click", this._swapDisc.bind(this));
+
     // discEl.addEventListener("click", this._initiateClick.bind(this));
   }
 
   // Methods for swaping
   _swapDisc() {
-    console.log(currentplayer);
+    console.log("swap disc");
     // Element.parentNode.insertBefore(elem, elem.parentNode.firstChild);
   }
 
