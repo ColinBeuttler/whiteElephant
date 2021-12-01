@@ -139,6 +139,7 @@ class GameApp {
       el.textContent = opt;
       el.value = opt;
       select.add(el);
+      console.log(el);
     }
   }
 
