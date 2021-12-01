@@ -125,7 +125,21 @@ class GameApp {
     // display to currentplayer html
     currentplayer.insertAdjacentHTML("beforeend", html);
     this._discSelect();
+    this._createOption();
     // document.getElementsByClassName("playerDisc").innerHTML = html;
+  }
+
+  _createOption() {
+    const select = document.getElementById("selector");
+    let discOptions = document.getElementsByClassName("discObj");
+    console.log(discOptions);
+    for (let i = 0; i < discOptions.length; i++) {
+      let opt = discOptions[i];
+      let el = document.createElement("option");
+      el.textContent = opt;
+      el.value = opt;
+      select.add(el);
+    }
   }
 
   _replaceFromHtml() {
