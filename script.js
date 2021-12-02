@@ -124,8 +124,9 @@ class GameApp {
 
     // display to currentplayer html
     currentplayer.insertAdjacentHTML("beforeend", html);
-    this._discSelect();
     this._createOption();
+    this._discSelect();
+
     // document.getElementsByClassName("playerDisc").innerHTML = html;
   }
 
@@ -140,6 +141,8 @@ class GameApp {
     el.value = opt;
     select.add(el);
     console.log(el);
+
+    console.log(opt);
   }
 
   _replaceFromHtml() {
