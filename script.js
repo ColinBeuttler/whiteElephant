@@ -133,14 +133,13 @@ class GameApp {
     const select = document.getElementById("selector");
     let discOptions = document.getElementsByClassName("discObj");
     console.log(discOptions);
-    for (let i = 0; i < discOptions.length; i++) {
-      let opt = discOptions[i];
-      let el = document.createElement("option");
-      el.textContent = opt;
-      el.value = opt;
-      select.add(el);
-      console.log(el);
-    }
+
+    let opt = discOptions[currentIndex];
+    let el = document.createElement("option");
+    el.textContent = opt;
+    el.value = opt;
+    select.add(el);
+    console.log(el);
   }
 
   _replaceFromHtml() {
