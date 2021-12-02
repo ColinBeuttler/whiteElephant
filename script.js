@@ -124,8 +124,25 @@ class GameApp {
 
     // display to currentplayer html
     currentplayer.insertAdjacentHTML("beforeend", html);
+    this._createOption();
     this._discSelect();
+
     // document.getElementsByClassName("playerDisc").innerHTML = html;
+  }
+
+  _createOption() {
+    const select = document.getElementById("selector");
+    let discOptions = document.getElementsByClassName("discObj");
+    console.log(discOptions);
+
+    let opt = discOptions[currentIndex];
+    let el = document.createElement("option");
+    el.textContent = opt;
+    el.value = opt;
+    select.add(el);
+    console.log(el);
+
+    console.log(opt);
   }
 
   _replaceFromHtml() {
