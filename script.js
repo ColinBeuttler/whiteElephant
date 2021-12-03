@@ -147,7 +147,7 @@ class GameApp {
     let opt = [moldEl, plasticEl, colorEl, weightEl];
     let el = document.createElement("option");
     el.textContent = opt;
-    el.value = opt;
+    el.classList.add("selectorOption");
     select.add(el);
   }
 
