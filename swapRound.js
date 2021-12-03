@@ -20,11 +20,10 @@ class SwapRound {
   _swapDisc() {
     let optCollection = document.getElementsByClassName("selectorOption");
     console.log("swap disc");
-    if (!optCollection[currentIndex]) {
-      alert("Cannot Swap Nothing");
-    } else {
-      console.log(optCollection[currentIndex]);
-    }
+
+    !optCollection[currentIndex]
+      ? alert("Cannot Swap Nothing")
+      : console.log(optCollection[currentIndex]);
 
     // Element.parentNode.insertBefore(elem, elem.parentNode.firstChild);
   }
