@@ -132,6 +132,7 @@ class GameApp {
 
   _createOption() {
     const select = document.getElementById("selector");
+    let children = select.childNodes;
     let moldEl =
       document.getElementsByClassName("discMold")[currentIndex].innerHTML;
     let plasticEl =
@@ -141,7 +142,7 @@ class GameApp {
     let weightEl =
       document.getElementsByClassName("discWeight")[currentIndex].innerHTML;
 
-    // console.log(discOptions);
+    console.log(children);
 
     let opt = [moldEl, plasticEl, colorEl, weightEl];
     let el = document.createElement("option");
@@ -169,7 +170,7 @@ class GameApp {
 
     // deletes old disc html
     document.getElementsByClassName("discObj")[currentIndex].remove();
-    document.getElementById("options")[currentIndex].remove();
+    document.getElementsByClassName("options")[currentIndex].remove();
 
     // return alert("Must swap currrent Disc")
   }
