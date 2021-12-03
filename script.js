@@ -169,6 +169,8 @@ class GameApp {
 
     // deletes old disc html
     document.getElementsByClassName("discObj")[currentIndex].remove();
+    document.getElementById("options")[currentIndex].remove();
+
     // return alert("Must swap currrent Disc")
   }
 
