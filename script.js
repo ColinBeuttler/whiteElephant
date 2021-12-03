@@ -132,17 +132,22 @@ class GameApp {
 
   _createOption() {
     const select = document.getElementById("selector");
-    let discOptions = document.getElementsByClassName("discObj");
-    console.log(discOptions);
+    let moldEl =
+      document.getElementsByClassName("discMold")[currentIndex].innerHTML;
+    let plasticEl =
+      document.getElementsByClassName("discPlastic")[currentIndex].innerHTML;
+    let colorEl =
+      document.getElementsByClassName("discColor")[currentIndex].innerHTML;
+    let weightEl =
+      document.getElementsByClassName("discWeight")[currentIndex].innerHTML;
 
-    let opt = discOptions[currentIndex];
+    // console.log(discOptions);
+
+    let opt = [moldEl, plasticEl, colorEl, weightEl];
     let el = document.createElement("option");
     el.textContent = opt;
     el.value = opt;
     select.add(el);
-    console.log(el);
-
-    console.log(opt);
   }
 
   _replaceFromHtml() {
