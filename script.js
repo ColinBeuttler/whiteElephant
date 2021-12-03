@@ -170,7 +170,7 @@ class GameApp {
 
     // deletes old disc html
     document.getElementsByClassName("discObj")[currentIndex].remove();
-    document.getElementsByClassName("options")[currentIndex].remove();
+    // document.getElementsByClassName("options")[currentIndex].remove();
 
     // return alert("Must swap currrent Disc")
   }
@@ -220,4 +220,4 @@ class GameApp {
 
 const game = new GameApp();
 
-export { currentplayer };
+export { currentplayer, currentIndex };
