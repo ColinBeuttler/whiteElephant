@@ -153,6 +153,7 @@ class GameApp {
 
   _replaceFromHtml() {
     // Get values from html for discs
+    let selectOpt = document.getElementById("selector");
     let htmlDisc;
     let moldEl =
       document.getElementsByClassName("discMold")[currentIndex].innerHTML;
@@ -163,14 +164,17 @@ class GameApp {
     let weightEl =
       document.getElementsByClassName("discWeight")[currentIndex].innerHTML;
 
+    selectOpt.remove(currentIndex);
     // Use Html to create and push discs back to array
     htmlDisc = new Disc(moldEl, plasticEl, colorEl, weightEl);
     // console.log(htmlDisc);
     discs.push(htmlDisc);
 
     // deletes old disc html
+
     document.getElementsByClassName("discObj")[currentIndex].remove();
-    // document.getElementsByClassName("options")[currentIndex].remove();
+
+    // console.log(selectOpt[currentIndex]);
 
     // return alert("Must swap currrent Disc")
   }
