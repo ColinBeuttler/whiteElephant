@@ -1,4 +1,5 @@
 // import { currentplayer } from "./script.js";
+import { currentIndex } from "./script.js";
 
 // const discEl = document.querySelector(".playerDisc");
 const swapDiscEl = document.querySelector(".btn--swap");
@@ -17,7 +18,13 @@ class SwapRound {
 
   // Methods for swaping
   _swapDisc() {
+    let optCollection = document.getElementsByClassName("selectorOption");
     console.log("swap disc");
+
+    !optCollection[currentIndex]
+      ? alert("Cannot Swap Nothing")
+      : console.log(optCollection[currentIndex]);
+
     // Element.parentNode.insertBefore(elem, elem.parentNode.firstChild);
   }
 

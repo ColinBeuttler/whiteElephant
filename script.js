@@ -132,21 +132,28 @@ class GameApp {
 
   _createOption() {
     const select = document.getElementById("selector");
-    let discOptions = document.getElementsByClassName("discObj");
-    console.log(discOptions);
+    let children = select.childNodes;
+    let moldEl =
+      document.getElementsByClassName("discMold")[currentIndex].innerHTML;
+    let plasticEl =
+      document.getElementsByClassName("discPlastic")[currentIndex].innerHTML;
+    let colorEl =
+      document.getElementsByClassName("discColor")[currentIndex].innerHTML;
+    let weightEl =
+      document.getElementsByClassName("discWeight")[currentIndex].innerHTML;
 
-    let opt = discOptions[currentIndex];
+    console.log(children);
+
+    let opt = [moldEl, plasticEl, colorEl, weightEl];
     let el = document.createElement("option");
     el.textContent = opt;
     el.value = opt;
     select.add(el);
-    console.log(el);
-
-    console.log(opt);
   }
 
   _replaceFromHtml() {
     // Get values from html for discs
+    let selectOpt = document.getElementById("selector");
     let htmlDisc;
     let moldEl =
       document.getElementsByClassName("discMold")[currentIndex].innerHTML;
@@ -157,13 +164,18 @@ class GameApp {
     let weightEl =
       document.getElementsByClassName("discWeight")[currentIndex].innerHTML;
 
+    selectOpt.remove(currentIndex);
     // Use Html to create and push discs back to array
     htmlDisc = new Disc(moldEl, plasticEl, colorEl, weightEl);
     // console.log(htmlDisc);
     discs.push(htmlDisc);
 
     // deletes old disc html
+
     document.getElementsByClassName("discObj")[currentIndex].remove();
+
+    // console.log(selectOpt[currentIndex]);
+
     // return alert("Must swap currrent Disc")
   }
 
@@ -212,4 +224,4 @@ class GameApp {
 
 const game = new GameApp();
 
-export { currentplayer };
+export { currentplayer, currentIndex };
