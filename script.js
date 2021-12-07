@@ -164,12 +164,13 @@ class GameApp {
     let weightEl =
       document.getElementsByClassName("discWeight")[currentIndex].innerHTML;
 
-    Array.from(selectOpt).forEach((node) => {
-      let nv = node.childNodes;
-      if ((nv.value == moldEl, plasticEl, colorEl, weightEl)) {
-        selectOpt.removeChild(nv);
-      }
-    });
+    // Array.from(selectOpt).forEach((node) => {
+    //   let nv = node.childNodes;
+    //   if ((nv.value == moldEl, plasticEl, colorEl, weightEl)) {
+    //     selectOpt.removeChild(nv);
+    //   }
+    // });
+
     // if ((selectOpt.value == moldEl, plasticEl, colorEl, weightEl)) {
     //   console.log(selectOpt.value);
     //   selectOpt.remove();
@@ -185,7 +186,12 @@ class GameApp {
     document.getElementsByClassName("discObj")[currentIndex].remove();
 
     // console.log(selectOpt[currentIndex]);
-
+    for (let i = 0; i <= selectOpt.length; i++) {
+      if ((selectOpt[i].value == moldEl, plasticEl, colorEl, weightEl)) {
+        selectOpt.remove(i);
+        return;
+      }
+    }
     // return alert("Must swap currrent Disc")
   }
 
