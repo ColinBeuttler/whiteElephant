@@ -164,9 +164,12 @@ class GameApp {
     let weightEl =
       document.getElementsByClassName("discWeight")[currentIndex].innerHTML;
 
-    let nv = selectOpt.nodeValue;
-
-    console.log(nv);
+    Array.from(selectOpt).forEach((node) => {
+      let nv = node.childNodes;
+      if ((nv.value == moldEl, plasticEl, colorEl, weightEl)) {
+        selectOpt.removeChild(nv);
+      }
+    });
     // if ((selectOpt.value == moldEl, plasticEl, colorEl, weightEl)) {
     //   console.log(selectOpt.value);
     //   selectOpt.remove();
