@@ -164,7 +164,14 @@ class GameApp {
     let weightEl =
       document.getElementsByClassName("discWeight")[currentIndex].innerHTML;
 
-    selectOpt.remove(currentIndex);
+    let nv = selectOpt.nodeValue;
+
+    console.log(nv);
+    // if ((selectOpt.value == moldEl, plasticEl, colorEl, weightEl)) {
+    //   console.log(selectOpt.value);
+    //   selectOpt.remove();
+    // }
+
     // Use Html to create and push discs back to array
     htmlDisc = new Disc(moldEl, plasticEl, colorEl, weightEl);
     // console.log(htmlDisc);
