@@ -14,7 +14,7 @@ let playerEl = document.querySelectorAll(".boxclass");
 // determines current player and disc turns
 let currentIndex = 0;
 let currentplayer = playerEl[currentIndex];
-let currentDisc = discEl[currentIndex];
+// let currentDisc = discEl[currentIndex];
 
 // const players = [];
 
