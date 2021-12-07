@@ -185,14 +185,13 @@ class GameApp {
 
     document.getElementsByClassName("discObj")[currentIndex].remove();
 
-    // console.log(selectOpt[currentIndex]);
+    // deletes old disc option from select dropdown
     for (let i = 0; i <= selectOpt.length; i++) {
       if ((selectOpt[i].value == moldEl, plasticEl, colorEl, weightEl)) {
         selectOpt.remove(i);
         return;
       }
     }
-    // return alert("Must swap currrent Disc")
   }
 
   _discSelect() {
