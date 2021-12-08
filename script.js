@@ -14,7 +14,7 @@ let playerEl = document.querySelectorAll(".boxclass");
 // determines current player and disc turns
 let currentIndex = 0;
 let currentplayer = playerEl[currentIndex];
-let currentDisc = discEl[currentIndex];
+// let currentDisc = discEl[currentIndex];
 
 // const players = [];
 
@@ -164,7 +164,18 @@ class GameApp {
     let weightEl =
       document.getElementsByClassName("discWeight")[currentIndex].innerHTML;
 
-    selectOpt.remove(currentIndex);
+    // Array.from(selectOpt).forEach((node) => {
+    //   let nv = node.childNodes;
+    //   if ((nv.value == moldEl, plasticEl, colorEl, weightEl)) {
+    //     selectOpt.removeChild(nv);
+    //   }
+    // });
+
+    // if ((selectOpt.value == moldEl, plasticEl, colorEl, weightEl)) {
+    //   console.log(selectOpt.value);
+    //   selectOpt.remove();
+    // }
+
     // Use Html to create and push discs back to array
     htmlDisc = new Disc(moldEl, plasticEl, colorEl, weightEl);
     // console.log(htmlDisc);
@@ -174,9 +185,13 @@ class GameApp {
 
     document.getElementsByClassName("discObj")[currentIndex].remove();
 
-    // console.log(selectOpt[currentIndex]);
-
-    // return alert("Must swap currrent Disc")
+    // deletes old disc option from select dropdown
+    for (let i = 0; i <= selectOpt.length; i++) {
+      if ((selectOpt[i].value == moldEl, plasticEl, colorEl, weightEl)) {
+        selectOpt.remove(i);
+        return;
+      }
+    }
   }
 
   _discSelect() {
