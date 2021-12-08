@@ -11,24 +11,25 @@ class SwapRound {
     this._getLocalStorage();
     // Button iniates for swaping discs
 
-    swapDiscEl.addEventListener("click", this._swapDisc.bind(this));
+    swapDiscEl.addEventListener("click", this._initiateSwap.bind(this));
 
     // discEl.addEventListener("click", this._initiateClick.bind(this));
   }
 
   // Methods for swaping
-  _swapDisc() {
-    let optCollection = document.getElementsByClassName("selectorOption");
-    console.log("swap disc");
+  _initiateSwap() {
+    let select = document.getElementById("selector");
+    let discHtml = document.getElementsByClassName("discObj");
+    // console.log("swap disc");
 
-    !optCollection[currentIndex]
+    !select[currentIndex]
       ? alert("Cannot Swap Nothing")
-      : console.log(optCollection[currentIndex]);
+      : console.log(select.value);
 
     // Element.parentNode.insertBefore(elem, elem.parentNode.firstChild);
   }
 
-  _initiateClick() {
+  _swapHtml() {
     console.log("swap initiated");
   }
 

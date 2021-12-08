@@ -110,7 +110,7 @@ class GameApp {
   }
 
   _renderDisc(discs) {
-    let html = `<div class="discObj">
+    let html = `<div class="discObj" value="${discs.mold}, ${discs.plastic}, ${discs.color}, ${discs.weight}">
     <p class="discMold">${discs.mold}</p>
     <p class="discPlastic">${discs.plastic}</p>
     <p class="discColor">${discs.color}</p>
@@ -121,6 +121,7 @@ class GameApp {
     if (currentplayer.childNodes.length >= 6) {
       this._replaceFromHtml();
     }
+    // console.log(html);
 
     // display to currentplayer html
     currentplayer.insertAdjacentHTML("beforeend", html);
