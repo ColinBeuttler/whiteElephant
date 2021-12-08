@@ -6,6 +6,8 @@ import { Disc } from "./discObj.js";
 const btnRoll = document.querySelector(".btn--roll");
 // const btnHold = document.querySelector(".btn--hold");
 const btnNew = document.querySelector(".btn--new");
+const swapDiscEl = document.querySelector(".btn--swap");
+// const select = document.getElementById("selector");
 
 // non-const html collections
 let discEl = document.querySelectorAll(".playerDisc");
@@ -98,6 +100,8 @@ class GameApp {
     // btnHold.addEventListener("click", this._discSelect.bind(this));
 
     btnNew.addEventListener("click", this._clearGame.bind(this));
+
+    swapDiscEl.addEventListener("click", this._initiateSwap.bind(this));
   }
 
   // Button Functions
@@ -202,6 +206,24 @@ class GameApp {
     this._switchPlayers();
   }
 
+  // Methods for swaping
+  _initiateSwap() {
+    let select = document.getElementById("selector");
+    let discHtml = document.getElementsByClassName("discObj");
+    // console.log("swap disc");
+
+    !select[currentIndex]
+      ? alert("Cannot Swap Nothing")
+      : console.log(select.value);
+
+    // Element.parentNode.insertBefore(elem, elem.parentNode.firstChild);
+  }
+
+  _swapHtml() {
+    console.log("swap initiated");
+    this._switchPlayers();
+  }
+
   _switchPlayers() {
     playerEl = document.querySelectorAll(".boxclass");
     currentplayer.classList.remove("currentPlayer");
@@ -225,8 +247,9 @@ class GameApp {
   _getLocalStorage() {
     const discsArr = JSON.parse(localStorage.getItem("discs"));
     const playersArr = JSON.parse(localStorage.getItem("players"));
+    const data = JSON.parse(localStorage.getItem("discObjs"));
 
-    if (!discsArr || !playersArr) return;
+    if (!discsArr || !playersArr || !data) return;
 
     this.playersObj = playersArr;
 
