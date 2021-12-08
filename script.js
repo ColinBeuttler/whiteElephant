@@ -204,6 +204,13 @@ class GameApp {
       ? alert("Cannot Swap Nothing")
       : console.log(select.value);
 
+    for (let i = 0; i < discHtml.length; i++) {
+      if (discHtml[i].value == select.value) {
+        console.log(discHtml[i].value);
+        return;
+      }
+    }
+
     // Element.parentNode.insertBefore(elem, elem.parentNode.firstChild);
   }
 
