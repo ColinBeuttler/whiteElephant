@@ -197,15 +197,16 @@ class GameApp {
   // Methods for swaping
   _initiateSwap() {
     let select = document.getElementById("selector");
-    let discHtml = document.getElementById("playerDisc");
-    // console.log(discHtml[1].value);
+    let discHtml = document.getElementsByClassName("discObj");
+    // let htmlValue = discHtml.value;
+    console.log(discHtml);
 
     !select[currentIndex]
       ? alert("Cannot Swap Nothing")
       : console.log(select.value);
 
     for (let i = 0; i < discHtml.length; i++) {
-      if (discHtml[i].value == select.value) {
+      if (discHtml[i] == select.value) {
         console.log(discHtml[i].innerHTML);
         return;
       }
