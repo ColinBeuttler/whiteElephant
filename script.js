@@ -114,7 +114,7 @@ class GameApp {
   }
 
   _renderDisc(discs) {
-    let html = `<div class="discObj" value="${discs.mold}, ${discs.plastic}, ${discs.color}, ${discs.weight}">
+    let html = `<div class="discObj" >
     <p class="discMold">${discs.mold}</p>
     <p class="discPlastic">${discs.plastic}</p>
     <p class="discColor">${discs.color}</p>
@@ -199,15 +199,15 @@ class GameApp {
     let select = document.getElementById("selector");
     let discHtml = document.getElementsByClassName("discObj");
     // let htmlValue = discHtml.value;
-    console.log(discHtml);
+    console.log(discHtml[0].textContent);
 
     !select[currentIndex]
       ? alert("Cannot Swap Nothing")
       : console.log(select.value);
 
     for (let i = 0; i < discHtml.length; i++) {
-      if (discHtml[i] == select.value) {
-        console.log(discHtml[i].innerHTML);
+      if (discHtml[i].textContent.includes(select.value)) {
+        console.log(discHtml[i]);
         return;
       }
     }
