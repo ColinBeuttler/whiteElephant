@@ -198,16 +198,17 @@ class GameApp {
   _initiateSwap() {
     let select = document.getElementById("selector");
     let discHtml = document.getElementsByClassName("discObj");
+    let optValue = select.value.replace(/,/g, " ");
     // let htmlValue = discHtml.value;
-    console.log(discHtml[0].textContent);
+    // console.log(optValue);
 
     !select[currentIndex]
       ? alert("Cannot Swap Nothing")
-      : console.log(select.value);
+      : console.log(optValue);
 
-    for (let i = 0; i < discHtml.length; i++) {
-      if (discHtml[i].textContent.includes(select.value)) {
-        console.log(discHtml[i]);
+    for (let i = 0; i <= discHtml.length; i++) {
+      if (discHtml[i].textContent == optValue) {
+        console.log(discHtml[i].textContent);
         return;
       }
     }
