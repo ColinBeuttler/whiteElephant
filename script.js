@@ -198,7 +198,7 @@ class GameApp {
   _initiateSwap() {
     let select = document.getElementById("selector");
     let discHtml = document.getElementsByClassName("discObj");
-    let optValue = select.value.replace(/,/g, " ");
+    let optValue = select.value.replace(/,/g, "");
     // let htmlValue = discHtml.value;
     // console.log(optValue);
 
@@ -207,9 +207,14 @@ class GameApp {
       : console.log(optValue);
 
     for (let i = 0; i <= discHtml.length; i++) {
-      if (discHtml[i].textContent == optValue) {
-        console.log(discHtml[i].textContent);
+      let optString = JSON.stringify(optValue);
+      let discString = JSON.stringify(discHtml[i].textContent);
+      console.log(discString);
+      if (discString == optString) {
+        console.log(discHtml[i]);
         return;
+      } else {
+        console.log("false");
       }
     }
 
