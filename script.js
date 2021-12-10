@@ -207,11 +207,11 @@ class GameApp {
       : console.log(optValue);
 
     for (let i = 0; i <= discHtml.length; i++) {
-      let optString = JSON.stringify(optValue);
-      let discString = JSON.stringify(discHtml[i].textContent);
+      // let optString = JSON.stringify(optValue);
+      let discString = discHtml[i];
       console.log(discString);
-      if (discString == optString) {
-        console.log(discHtml[i]);
+      if (discString.contains(optValue)) {
+        console.log(discString);
         return;
       } else {
         console.log("false");
