@@ -210,12 +210,14 @@ class GameApp {
       // let optString = JSON.stringify(optValue);
       let discString = discHtml[i];
       console.log(discString);
-      if (discString.contains(optValue)) {
-        console.log(discString);
-        return;
-      } else {
-        console.log("false");
-      }
+      // discString.contains(optValue);
+
+      // if (discString.contains(optValue)) {
+      //   console.log(discString);
+      //   return;
+      // } else {
+      //   console.log("false");
+      // }
     }
 
     // Element.parentNode.insertBefore(elem, elem.parentNode.firstChild);
