@@ -206,7 +206,7 @@ class GameApp {
       ? alert("Cannot Swap Nothing")
       : console.log(optValue);
 
-    for (let i = 0; i <= discHtml.length; i++) {
+    for (let i = 0; i < discHtml.length; i++) {
       let moldHtml =
       document.getElementsByClassName("discMold")[i].innerHTML;
     let plasticHtml =
@@ -216,8 +216,14 @@ class GameApp {
     let weightHtml =
       document.getElementsByClassName("discWeight")[i].innerHTML;
 
-      if(moldHtml, plasticHtml, colorHtml, weightHtml == select.value){
+      console.log(moldHtml, plasticHtml, colorHtml, weightHtml)
+
+      if(moldHtml, plasticHtml, colorHtml, weightHtml == optValue){
         console.log(discHtml[i])
+        return
+      }
+      else{
+        console.log('false')
       }
       // let optString = JSON.stringify(optValue);
       // let discString = discHtml[i];
