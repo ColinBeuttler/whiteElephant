@@ -207,10 +207,22 @@ class GameApp {
       : console.log(optValue);
 
     for (let i = 0; i <= discHtml.length; i++) {
+      let moldHtml =
+      document.getElementsByClassName("discMold")[i].innerHTML;
+    let plasticHtml =
+      document.getElementsByClassName("discPlastic")[i].innerHTML;
+    let colorHtml =
+      document.getElementsByClassName("discColor")[i].innerHTML;
+    let weightHtml =
+      document.getElementsByClassName("discWeight")[i].innerHTML;
+
+      if(moldHtml, plasticHtml, colorHtml, weightHtml == select.value){
+        console.log(discHtml[i])
+      }
       // let optString = JSON.stringify(optValue);
-      let discString = discHtml[i];
-      console.log(discString);
-      // discString.contains(optValue);
+      // let discString = discHtml[i];
+      // console.log(discString);
+      // discString.contains(optValue); 
 
       // if (discString.contains(optValue)) {
       //   console.log(discString);
