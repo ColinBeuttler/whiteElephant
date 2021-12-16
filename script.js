@@ -215,7 +215,8 @@ class GameApp {
       document.getElementsByClassName("discColor")[i].innerHTML;
     let weightHtml =
       document.getElementsByClassName("discWeight")[i].innerHTML;
-      let valueArr = moldHtml+plasticHtml+colorHtml+weightHtml
+      
+    let valueArr = moldHtml+plasticHtml+colorHtml+weightHtml
 
       // console.log(valueArr)
       // console.log(optValue)
