@@ -215,12 +215,12 @@ class GameApp {
       document.getElementsByClassName("discColor")[i].innerHTML;
     let weightHtml =
       document.getElementsByClassName("discWeight")[i].innerHTML;
-      
+      let valueArr = moldHtml+plasticHtml+colorHtml+weightHtml
 
-      console.log(moldHtml, plasticHtml, colorHtml, weightHtml)
-      console.log(optValue)
+      // console.log(valueArr)
+      // console.log(optValue)
 
-      if(moldHtml, plasticHtml, colorHtml, weightHtml==optValue){
+      if(valueArr==optValue){
         console.log('true')
         return
       }
