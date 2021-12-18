@@ -6,6 +6,8 @@ import { Disc } from "./discObj.js";
 const btnRoll = document.querySelector(".btn--roll");
 // const btnHold = document.querySelector(".btn--hold");
 const btnNew = document.querySelector(".btn--new");
+const swapDiscEl = document.querySelector(".btn--swap");
+// const select = document.getElementById("selector");
 
 // non-const html collections
 let discEl = document.querySelectorAll(".playerDisc");
@@ -98,6 +100,8 @@ class GameApp {
     // btnHold.addEventListener("click", this._discSelect.bind(this));
 
     btnNew.addEventListener("click", this._clearGame.bind(this));
+
+    swapDiscEl.addEventListener("click", this._initiateSwap.bind(this));
   }
 
   // Button Functions
@@ -110,7 +114,7 @@ class GameApp {
   }
 
   _renderDisc(discs) {
-    let html = `<div class="discObj">
+    let html = `<div class="discObj" >
     <p class="discMold">${discs.mold}</p>
     <p class="discPlastic">${discs.plastic}</p>
     <p class="discColor">${discs.color}</p>
@@ -121,6 +125,7 @@ class GameApp {
     if (currentplayer.childNodes.length >= 6) {
       this._replaceFromHtml();
     }
+    // console.log(html);
 
     // display to currentplayer html
     currentplayer.insertAdjacentHTML("beforeend", html);
@@ -164,18 +169,6 @@ class GameApp {
     let weightEl =
       document.getElementsByClassName("discWeight")[currentIndex].innerHTML;
 
-    // Array.from(selectOpt).forEach((node) => {
-    //   let nv = node.childNodes;
-    //   if ((nv.value == moldEl, plasticEl, colorEl, weightEl)) {
-    //     selectOpt.removeChild(nv);
-    //   }
-    // });
-
-    // if ((selectOpt.value == moldEl, plasticEl, colorEl, weightEl)) {
-    //   console.log(selectOpt.value);
-    //   selectOpt.remove();
-    // }
-
     // Use Html to create and push discs back to array
     htmlDisc = new Disc(moldEl, plasticEl, colorEl, weightEl);
     // console.log(htmlDisc);
@@ -198,6 +191,61 @@ class GameApp {
     // cut current roll from array
     discs.splice(0, 1);
     console.log(discs);
+    this._switchPlayers();
+  }
+
+  // Methods for swaping
+  _initiateSwap() {
+    let select = document.getElementById("selector");
+    let discHtml = document.getElementsByClassName("discObj");
+    let optValue = select.value.replace(/,/g, "");
+    // let htmlValue = discHtml.value;
+    // console.log(optValue);
+
+    !select[currentIndex]
+      ? alert("Cannot Swap Nothing")
+      : console.log(optValue);
+
+    for (let i = 0; i < discHtml.length; i++) {
+      let moldHtml =
+      document.getElementsByClassName("discMold")[i].innerHTML;
+    let plasticHtml =
+      document.getElementsByClassName("discPlastic")[i].innerHTML;
+    let colorHtml =
+      document.getElementsByClassName("discColor")[i].innerHTML;
+    let weightHtml =
+      document.getElementsByClassName("discWeight")[i].innerHTML;
+      
+    let valueArr = moldHtml+plasticHtml+colorHtml+weightHtml
+
+      // console.log(valueArr)
+      // console.log(optValue)
+
+      if(valueArr==optValue){
+        console.log('true')
+        return
+      }
+      else{
+        console.log('false')
+      }
+      // let optString = JSON.stringify(optValue);
+      // let discString = discHtml[i];
+      // console.log(discString);
+      // discString.contains(optValue); 
+
+      // if (discString.contains(optValue)) {
+      //   console.log(discString);
+      //   return;
+      // } else {
+      //   console.log("false");
+      // }
+    }
+
+    // Element.parentNode.insertBefore(elem, elem.parentNode.firstChild);
+  }
+
+  _swapHtml() {
+    console.log("swap initiated");
     this._switchPlayers();
   }
 
@@ -224,8 +272,9 @@ class GameApp {
   _getLocalStorage() {
     const discsArr = JSON.parse(localStorage.getItem("discs"));
     const playersArr = JSON.parse(localStorage.getItem("players"));
+    const data = JSON.parse(localStorage.getItem("discObjs"));
 
-    if (!discsArr || !playersArr) return;
+    if (!discsArr || !playersArr || !data) return;
 
     this.playersObj = playersArr;
 
