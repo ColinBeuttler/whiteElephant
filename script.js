@@ -152,15 +152,7 @@ class GameApp {
         let el = document.createElement("option");
         el.textContent = opt;
         el.value = opt;
-
-    for (let i = 0; i <= select.length; i++) {
-      
-      if ((select[i] != opt)) {
-        console.log(select[i])
         select.add(el);
-        return;
-      }
-    }
     
   }
 
@@ -204,7 +196,6 @@ class GameApp {
 
   // Methods for swaping
   _initiateSwap() {
-    let htmlDisc
     let select = document.getElementById("selector");
     let discHtml = document.getElementsByClassName("discObj");
     let optValue = select.value.replace(/,/g, "");
@@ -225,13 +216,14 @@ class GameApp {
       document.getElementsByClassName("discColor")[i].innerHTML;
     let weightHtml =
       document.getElementsByClassName("discWeight")[i].innerHTML;
+    let swapDiscObj = document.getElementsByClassName("discObj")[i].innerHTML
 
     let valueArr = moldHtml+plasticHtml+colorHtml+weightHtml
-    htmlDisc = new Disc(moldHtml, plasticHtml, colorHtml, weightHtml);
+  
 
       if(valueArr==optValue){
-        console.log(valueArr, optValue, currentDiscObj)
-      this._renderDisc(htmlDisc)
+        console.log(currentDiscObj, swapDiscObj)
+    
 
         console.log('true')
         return
