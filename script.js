@@ -196,19 +196,11 @@ class GameApp {
 
   // Methods for swaping
   _initiateSwap() {
+    let htmlDisc
     let select = document.getElementById("selector");
     let discHtml = document.getElementsByClassName("discObj");
     let optValue = select.value.replace(/,/g, "");
-    let moldCurrent =
-    document.getElementsByClassName("discMold")[currentIndex].innerHTML;
-  let plasticCurrent =
-    document.getElementsByClassName("discPlastic")[currentIndex].innerHTML;
-  let colorCurrent =
-    document.getElementsByClassName("discColor")[currentIndex].innerHTML;
-  let weightCurrent =
-    document.getElementsByClassName("discWeight")[currentIndex].innerHTML;
-
-  let currentDiscObj = moldCurrent+ plasticCurrent+ colorCurrent+ weightCurrent
+   let currentDiscObj = document.getElementsByClassName("discObj")[currentIndex].innerHTML
     // let htmlValue = discHtml.value;
     // console.log(optValue);
 
@@ -227,9 +219,11 @@ class GameApp {
       document.getElementsByClassName("discWeight")[i].innerHTML;
 
     let valueArr = moldHtml+plasticHtml+colorHtml+weightHtml
+    htmlDisc = new Disc(moldHtml, plasticHtml, colorHtml, weightHtml);
 
       if(valueArr==optValue){
         console.log(valueArr, optValue, currentDiscObj)
+      this._renderDisc(htmlDisc)
 
         console.log('true')
         return
