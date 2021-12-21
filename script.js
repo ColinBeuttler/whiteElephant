@@ -148,12 +148,20 @@ class GameApp {
       document.getElementsByClassName("discWeight")[currentIndex].innerHTML;
 
     console.log(children);
-
     let opt = [moldEl, plasticEl, colorEl, weightEl];
-    let el = document.createElement("option");
-    el.textContent = opt;
-    el.value = opt;
-    select.add(el);
+        let el = document.createElement("option");
+        el.textContent = opt;
+        el.value = opt;
+
+    for (let i = 0; i <= select.length; i++) {
+      
+      if ((select[i] != opt)) {
+        console.log(select[i])
+        select.add(el);
+        return;
+      }
+    }
+    
   }
 
   _replaceFromHtml() {
