@@ -199,6 +199,16 @@ class GameApp {
     let select = document.getElementById("selector");
     let discHtml = document.getElementsByClassName("discObj");
     let optValue = select.value.replace(/,/g, "");
+    let moldCurrent =
+    document.getElementsByClassName("discMold")[currentIndex].innerHTML;
+  let plasticCurrent =
+    document.getElementsByClassName("discPlastic")[currentIndex].innerHTML;
+  let colorCurrent =
+    document.getElementsByClassName("discColor")[currentIndex].innerHTML;
+  let weightCurrent =
+    document.getElementsByClassName("discWeight")[currentIndex].innerHTML;
+
+  let currentDiscObj = moldCurrent+ plasticCurrent+ colorCurrent+ weightCurrent
     // let htmlValue = discHtml.value;
     // console.log(optValue);
 
@@ -207,7 +217,7 @@ class GameApp {
       : console.log(optValue);
 
     for (let i = 0; i < discHtml.length; i++) {
-      let moldHtml =
+    let moldHtml =
       document.getElementsByClassName("discMold")[i].innerHTML;
     let plasticHtml =
       document.getElementsByClassName("discPlastic")[i].innerHTML;
@@ -215,13 +225,12 @@ class GameApp {
       document.getElementsByClassName("discColor")[i].innerHTML;
     let weightHtml =
       document.getElementsByClassName("discWeight")[i].innerHTML;
-      
+
     let valueArr = moldHtml+plasticHtml+colorHtml+weightHtml
 
-      // console.log(valueArr)
-      // console.log(optValue)
-
       if(valueArr==optValue){
+        console.log(valueArr, optValue, currentDiscObj)
+
         console.log('true')
         return
       }
