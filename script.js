@@ -226,7 +226,9 @@ class GameApp {
         console.log(currentDiscObj, swapDiscObj)
         currentplayer.insertAdjacentHTML("beforeend", swapDiscObj);
         swapedPlayer.insertAdjacentHTML('beforeend', currentDiscObj)
-  
+        document.getElementsByClassName("discObj")[i].remove();
+        document.getElementsByClassName("discObj")[currentIndex].remove();
+        
         console.log('true')
         return
       }
