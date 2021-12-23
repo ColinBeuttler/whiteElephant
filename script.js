@@ -222,9 +222,11 @@ class GameApp {
   
 
       if(valueArr==optValue){
+        let swapedPlayer = playerEl[i]
         console.log(currentDiscObj, swapDiscObj)
-    
-
+        currentplayer.insertAdjacentHTML("beforeend", swapDiscObj);
+        swapedPlayer.insertAdjacentHTML('beforeend', currentDiscObj)
+  
         console.log('true')
         return
       }
