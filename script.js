@@ -116,7 +116,8 @@ class GameApp {
   }
 
   _renderDisc(discs) {
-    let discEl = document.getElementsByClassName(".playerDisc")[currentIndex];
+    let discEl = document.getElementsByClassName("playerDisc")[currentIndex];
+    // let currentPlayerDisc = discEl
     let html = `<div class="discObj" >
     <p class="discMold">${discs.mold}</p>
     <p class="discPlastic">${discs.plastic}</p>
@@ -125,13 +126,14 @@ class GameApp {
   </div>`;
 
     // checks if disc object is child
-    if (currentplayer.childNodes.length >= 6) {
+    if (discEl.children.length > 0) {
       this._replaceFromHtml();
+      console.log('true')
     }
-    // console.log(html);
+    console.log(discEl.children);
 
-    // display to currentplayer html
-    currentplayer.insertAdjacentHTML("beforeend", html);
+    // display to currentdisc html
+    discEl.insertAdjacentHTML("beforeend", html);
     this._createOption();
     this._discSelect();
 
