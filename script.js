@@ -148,12 +148,12 @@ class GameApp {
       document.getElementsByClassName("discWeight")[currentIndex].innerHTML;
 
     console.log(children);
-
     let opt = [moldEl, plasticEl, colorEl, weightEl];
-    let el = document.createElement("option");
-    el.textContent = opt;
-    el.value = opt;
-    select.add(el);
+        let el = document.createElement("option");
+        el.textContent = opt;
+        el.value = opt;
+        select.add(el);
+    
   }
 
   _replaceFromHtml() {
@@ -199,6 +199,7 @@ class GameApp {
     let select = document.getElementById("selector");
     let discHtml = document.getElementsByClassName("discObj");
     let optValue = select.value.replace(/,/g, "");
+   let currentDiscObj = document.getElementsByClassName("discObj")[currentIndex].innerHTML
     // let htmlValue = discHtml.value;
     // console.log(optValue);
 
@@ -207,7 +208,7 @@ class GameApp {
       : console.log(optValue);
 
     for (let i = 0; i < discHtml.length; i++) {
-      let moldHtml =
+    let moldHtml =
       document.getElementsByClassName("discMold")[i].innerHTML;
     let plasticHtml =
       document.getElementsByClassName("discPlastic")[i].innerHTML;
@@ -215,13 +216,19 @@ class GameApp {
       document.getElementsByClassName("discColor")[i].innerHTML;
     let weightHtml =
       document.getElementsByClassName("discWeight")[i].innerHTML;
-      
-    let valueArr = moldHtml+plasticHtml+colorHtml+weightHtml
+    let swapDiscObj = document.getElementsByClassName("discObj")[i].innerHTML
 
-      // console.log(valueArr)
-      // console.log(optValue)
+    let valueArr = moldHtml+plasticHtml+colorHtml+weightHtml
+  
 
       if(valueArr==optValue){
+        let swapedPlayer = playerEl[i]
+        console.log(currentDiscObj, swapDiscObj)
+        currentplayer.insertAdjacentHTML("beforeend", swapDiscObj);
+        swapedPlayer.insertAdjacentHTML('beforeend', currentDiscObj)
+        document.getElementsByClassName("discObj")[i].remove();
+        document.getElementsByClassName("discObj")[currentIndex].remove();
+        
         console.log('true')
         return
       }
