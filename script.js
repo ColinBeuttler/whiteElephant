@@ -10,8 +10,10 @@ const swapDiscEl = document.querySelector(".btn--swap");
 // const select = document.getElementById("selector");
 
 // non-const html collections
-let discEl = document.querySelectorAll(".playerDisc");
+// let discEl = document.getElementsByClassName(".playerDisc");
 let playerEl = document.querySelectorAll(".boxclass");
+
+
 
 // determines current player and disc turns
 let currentIndex = 0;
@@ -114,6 +116,7 @@ class GameApp {
   }
 
   _renderDisc(discs) {
+    let discEl = document.getElementsByClassName(".playerDisc")[currentIndex];
     let html = `<div class="discObj" >
     <p class="discMold">${discs.mold}</p>
     <p class="discPlastic">${discs.plastic}</p>
@@ -219,7 +222,9 @@ class GameApp {
     let swapDiscObj = document.getElementsByClassName("discObj")[i].innerHTML
 
     let valueArr = moldHtml+plasticHtml+colorHtml+weightHtml
-  
+    let discObjArr = document.getElementsByClassName('discObj')
+
+  console.log(discObjArr)
 
       if(valueArr==optValue){
         let swapedPlayer = playerEl[i]
