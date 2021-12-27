@@ -202,9 +202,9 @@ class GameApp {
   // Methods for swaping
   _initiateSwap() {
     let select = document.getElementById("selector");
-    let discHtml = document.getElementsByClassName("discObj");
+    let discHtml = document.getElementsByClassName("playerDisc");
     let optValue = select.value.replace(/,/g, "");
-   let currentDiscObj = document.getElementsByClassName("discObj")[currentIndex].innerHTML
+   let currentDiscObj = document.getElementsByClassName("playerDisc")[currentIndex].innerHTML
     // let htmlValue = discHtml.value;
     // console.log(optValue);
 
@@ -221,20 +221,21 @@ class GameApp {
       document.getElementsByClassName("discColor")[i].innerHTML;
     let weightHtml =
       document.getElementsByClassName("discWeight")[i].innerHTML;
-    let swapDiscObj = document.getElementsByClassName("discObj")[i].innerHTML
+    let swapDiscObj = document.getElementsByClassName("playerDisc")[i].innerHTML
 
     let valueArr = moldHtml+plasticHtml+colorHtml+weightHtml
-    let discObjArr = document.getElementsByClassName('discObj')
+    
 
-  console.log(discObjArr)
+  // console.log()
 
       if(valueArr==optValue){
         let swapedPlayer = playerEl[i]
         console.log(currentDiscObj, swapDiscObj)
-        currentplayer.insertAdjacentHTML("beforeend", swapDiscObj);
-        swapedPlayer.insertAdjacentHTML('beforeend', currentDiscObj)
         document.getElementsByClassName("discObj")[i].remove();
         document.getElementsByClassName("discObj")[currentIndex].remove();
+        currentplayer.insertAdjacentHTML("beforeend", swapDiscObj);
+        swapedPlayer.insertAdjacentHTML('beforeend', currentDiscObj)
+        this._switchPlayers()
         
         console.log('true')
         return
