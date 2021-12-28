@@ -226,13 +226,22 @@ class GameApp {
     let valueArr = moldHtml+plasticHtml+colorHtml+weightHtml
     
 
-  // console.log()
+  // 
 
       if(valueArr==optValue){
+        // console.log()
         let swapedPlayer = playerEl[i]
         console.log(currentDiscObj, swapDiscObj)
+
+       if(currentIndex > 0){
+        document.getElementsByClassName('discObj')[currentIndex].remove();
         document.getElementsByClassName("discObj")[i].remove();
-        document.getElementsByClassName("discObj")[currentIndex].remove();
+        
+       }
+       else{
+        document.getElementsByClassName("discObj")[i].remove();
+        document.getElementsByClassName('discObj')[currentIndex].remove();
+       }
         currentplayer.insertAdjacentHTML("beforeend", swapDiscObj);
         swapedPlayer.insertAdjacentHTML('beforeend', currentDiscObj)
         this._switchPlayers()
