@@ -126,7 +126,7 @@ class GameApp {
   </div>`;
 
     // checks if disc object is child
-    if (discEl.children.length > 0) {
+    if (discEl.children.length >= 1) {
       this._replaceFromHtml();
       console.log('true')
     }
@@ -204,7 +204,7 @@ class GameApp {
     let select = document.getElementById("selector");
     let discHtml = document.getElementsByClassName("playerDisc");
     let optValue = select.value.replace(/,/g, "");
-   let currentDiscObj = document.getElementsByClassName("playerDisc")[currentIndex].innerHTML
+   let currentDiscObj = document.getElementsByClassName("playerDisc")[currentIndex]
     // let htmlValue = discHtml.value;
     // console.log(optValue);
 
@@ -221,7 +221,7 @@ class GameApp {
       document.getElementsByClassName("discColor")[i].innerHTML;
     let weightHtml =
       document.getElementsByClassName("discWeight")[i].innerHTML;
-    let swapDiscObj = document.getElementsByClassName("playerDisc")[i].innerHTML
+    let swapDiscObj = document.getElementsByClassName("playerDisc")[i]
 
     let valueArr = moldHtml+plasticHtml+colorHtml+weightHtml
     
@@ -232,18 +232,21 @@ class GameApp {
         // console.log()
         let swapedPlayer = playerEl[i]
         console.log(currentDiscObj, swapDiscObj)
+        let swapClone = swapDiscObj.cloneNode(true)
+        let currentClone = currentDiscObj.cloneNode(true)
 
-       if(currentIndex > 0){
-        document.getElementsByClassName('discObj')[currentIndex].remove();
-        document.getElementsByClassName("discObj")[i].remove();
+      //  if(currentIndex > 0){
+      //   currentDiscObj.removeChild(currentDiscObj.firstChild);
+      //   swapDiscObj.removeChild(swapDiscObj.firstChild);
         
-       }
-       else{
-        document.getElementsByClassName("discObj")[i].remove();
-        document.getElementsByClassName('discObj')[currentIndex].remove();
-       }
-        currentplayer.insertAdjacentHTML("beforeend", swapDiscObj);
-        swapedPlayer.insertAdjacentHTML('beforeend', currentDiscObj)
+      //  }
+      //  else{
+      //   swapDiscObj.removeChild(swapDiscObj.firstChild);
+      //   currentDiscObj.removeChild(currentDiscObj.firstChild);
+    
+      //  }
+        currentplayer.replaceChild(swapClone, currentDiscObj)
+        swapedPlayer.replaceChild(currentClone, swapDiscObj)
         this._switchPlayers()
         
         console.log('true')
