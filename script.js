@@ -241,6 +241,7 @@ class GameApp {
         //   currentDiscObj.removeChild(currentDiscObj.firstChild);
 
         //  }
+
         currentplayer.replaceChild(swapClone, currentDiscObj);
         swapedPlayer.replaceChild(currentClone, swapDiscObj);
         stolenDiscs.push(swapClone);
