@@ -10,8 +10,10 @@ const swapDiscEl = document.querySelector(".btn--swap");
 // const select = document.getElementById("selector");
 
 // non-const html collections
-let discEl = document.querySelectorAll(".playerDisc");
+// let discEl = document.getElementsByClassName(".playerDisc");
 let playerEl = document.querySelectorAll(".boxclass");
+
+
 
 // determines current player and disc turns
 let currentIndex = 0;
@@ -114,6 +116,8 @@ class GameApp {
   }
 
   _renderDisc(discs) {
+    let discEl = document.getElementsByClassName("playerDisc")[currentIndex];
+    // let currentPlayerDisc = discEl
     let html = `<div class="discObj" >
     <p class="discMold">${discs.mold}</p>
     <p class="discPlastic">${discs.plastic}</p>
@@ -122,13 +126,14 @@ class GameApp {
   </div>`;
 
     // checks if disc object is child
-    if (currentplayer.childNodes.length >= 6) {
+    if (discEl.children.length >= 1) {
       this._replaceFromHtml();
+      console.log('true')
     }
-    // console.log(html);
+    console.log(discEl.children);
 
-    // display to currentplayer html
-    currentplayer.insertAdjacentHTML("beforeend", html);
+    // display to currentdisc html
+    discEl.insertAdjacentHTML("beforeend", html);
     this._createOption();
     this._discSelect();
 
@@ -197,9 +202,9 @@ class GameApp {
   // Methods for swaping
   _initiateSwap() {
     let select = document.getElementById("selector");
-    let discHtml = document.getElementsByClassName("discObj");
+    let discHtml = document.getElementsByClassName("playerDisc");
     let optValue = select.value.replace(/,/g, "");
-   let currentDiscObj = document.getElementsByClassName("discObj")[currentIndex].innerHTML
+   let currentDiscObj = document.getElementsByClassName("playerDisc")[currentIndex]
     // let htmlValue = discHtml.value;
     // console.log(optValue);
 
@@ -216,18 +221,33 @@ class GameApp {
       document.getElementsByClassName("discColor")[i].innerHTML;
     let weightHtml =
       document.getElementsByClassName("discWeight")[i].innerHTML;
-    let swapDiscObj = document.getElementsByClassName("discObj")[i].innerHTML
+    let swapDiscObj = document.getElementsByClassName("playerDisc")[i]
 
     let valueArr = moldHtml+plasticHtml+colorHtml+weightHtml
-  
+    
+
+  // 
 
       if(valueArr==optValue){
+        // console.log()
         let swapedPlayer = playerEl[i]
         console.log(currentDiscObj, swapDiscObj)
-        currentplayer.insertAdjacentHTML("beforeend", swapDiscObj);
-        swapedPlayer.insertAdjacentHTML('beforeend', currentDiscObj)
-        document.getElementsByClassName("discObj")[i].remove();
-        document.getElementsByClassName("discObj")[currentIndex].remove();
+        let swapClone = swapDiscObj.cloneNode(true)
+        let currentClone = currentDiscObj.cloneNode(true)
+
+      //  if(currentIndex > 0){
+      //   currentDiscObj.removeChild(currentDiscObj.firstChild);
+      //   swapDiscObj.removeChild(swapDiscObj.firstChild);
+        
+      //  }
+      //  else{
+      //   swapDiscObj.removeChild(swapDiscObj.firstChild);
+      //   currentDiscObj.removeChild(currentDiscObj.firstChild);
+    
+      //  }
+        currentplayer.replaceChild(swapClone, currentDiscObj)
+        swapedPlayer.replaceChild(currentClone, swapDiscObj)
+        this._switchPlayers()
         
         console.log('true')
         return
