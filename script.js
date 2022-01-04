@@ -279,7 +279,7 @@ class GameApp {
     currentIndex < playerEl.length - 1 ? currentIndex++ : (currentIndex = 0),
       (stolenDiscs = []);
     currentplayer = playerEl[currentIndex];
-    console.log(stolenDiscs);
+    // console.log(stolenDiscs);
     // console.log(currentplayer);
     this._currentplayerFunc(currentplayer);
   }
