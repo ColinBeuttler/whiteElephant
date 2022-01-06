@@ -85,6 +85,7 @@ body {
 }
 
 .newPlayer {
+  min-width: 170px;
   margin-bottom: 3%;
   margin-right: 5%;
   background-color: white;
@@ -98,8 +99,9 @@ body {
 .newDisc {
   /* margin-bottom: 3%; */
   /* float: right; */
-  /* margin-right: 5%; */
+  margin-right: 5%;
   max-width: 18%;
+  min-width: 170px;
   background-color: white;
   border: black;
   border-style: ridge;
@@ -112,9 +114,9 @@ input#discInput {
 }
 
 .gameBtns {
-  /* margin-bottom: 3%;
-  float: left;
-  margin-right: 5%; */
+   /* margin-bottom: 3%; */
+  /* float: left; */
+  margin-top: 5%; 
   background-color: white;
   border: black;
   border-style: ridge;
