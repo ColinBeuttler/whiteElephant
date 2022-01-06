@@ -154,11 +154,11 @@ class GameApp {
 
     console.log(children);
     let opt = [moldEl, plasticEl, colorEl, weightEl];
-        let el = document.createElement("option");
-        el.textContent = opt;
-        el.value = opt;
-        select.add(el);
-    
+    let el = document.createElement("option");
+    el.textContent = opt;
+    el.value = opt;
+    select.add(el);
+
   }
 
   _replaceFromHtml() {
@@ -204,7 +204,7 @@ class GameApp {
     let select = document.getElementById("selector");
     let discHtml = document.getElementsByClassName("playerDisc");
     let optValue = select.value.replace(/,/g, "");
-   let currentDiscObj = document.getElementsByClassName("playerDisc")[currentIndex]
+    let currentDiscObj = document.getElementsByClassName("playerDisc")[currentIndex]
     // let htmlValue = discHtml.value;
     // console.log(optValue);
 
@@ -213,46 +213,46 @@ class GameApp {
       : console.log(optValue);
 
     for (let i = 0; i < discHtml.length; i++) {
-    let moldHtml =
-      document.getElementsByClassName("discMold")[i].innerHTML;
-    let plasticHtml =
-      document.getElementsByClassName("discPlastic")[i].innerHTML;
-    let colorHtml =
-      document.getElementsByClassName("discColor")[i].innerHTML;
-    let weightHtml =
-      document.getElementsByClassName("discWeight")[i].innerHTML;
-    let swapDiscObj = document.getElementsByClassName("playerDisc")[i]
+      let moldHtml =
+        document.getElementsByClassName("discMold")[i].innerHTML;
+      let plasticHtml =
+        document.getElementsByClassName("discPlastic")[i].innerHTML;
+      let colorHtml =
+        document.getElementsByClassName("discColor")[i].innerHTML;
+      let weightHtml =
+        document.getElementsByClassName("discWeight")[i].innerHTML;
+      let swapDiscObj = document.getElementsByClassName("playerDisc")[i]
 
-    let valueArr = moldHtml+plasticHtml+colorHtml+weightHtml
-    
+      let valueArr = moldHtml + plasticHtml + colorHtml + weightHtml
 
-  // 
 
-      if(valueArr==optValue){
+      // 
+
+      if (valueArr == optValue) {
         // console.log()
         let swapedPlayer = playerEl[i]
         console.log(currentDiscObj, swapDiscObj)
         let swapClone = swapDiscObj.cloneNode(true)
         let currentClone = currentDiscObj.cloneNode(true)
 
-      //  if(currentIndex > 0){
-      //   currentDiscObj.removeChild(currentDiscObj.firstChild);
-      //   swapDiscObj.removeChild(swapDiscObj.firstChild);
-        
-      //  }
-      //  else{
-      //   swapDiscObj.removeChild(swapDiscObj.firstChild);
-      //   currentDiscObj.removeChild(currentDiscObj.firstChild);
-    
-      //  }
+        //  if(currentIndex > 0){
+        //   currentDiscObj.removeChild(currentDiscObj.firstChild);
+        //   swapDiscObj.removeChild(swapDiscObj.firstChild);
+
+        //  }
+        //  else{
+        //   swapDiscObj.removeChild(swapDiscObj.firstChild);
+        //   currentDiscObj.removeChild(currentDiscObj.firstChild);
+
+        //  }
         currentplayer.replaceChild(swapClone, currentDiscObj)
         swapedPlayer.replaceChild(currentClone, swapDiscObj)
         this._switchPlayers()
-        
+
         console.log('true')
         return
       }
-      else{
+      else {
         console.log('false')
       }
       // let optString = JSON.stringify(optValue);
