@@ -4,9 +4,30 @@ body {
   height: 100vh;
   color: #333;
   /* background-image: linear-gradient(to top left, #684ff8 0%, #f369dc 100%); */
-  margin-left: 7%;
-  margin-top: 5%;
 }
+
+.navBar{
+overflow: hidden;
+background-image: linear-gradient(to top left, #684ff8 0%, #f369dc 80%);
+/* background-color: rgb(247, 115, 240); */
+margin-bottom: 3%;
+border-radius: 15px;
+}
+
+.navBar a {
+  float: left;
+  color: #fcf9f9;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.navBar a.active {
+  background-color: #000201;
+  color: white;
+}
+
 .boxclass {
   height: 10rem;
   width: 10rem;
