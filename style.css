@@ -3,7 +3,7 @@ body {
   font-weight: 400;
   height: 100vh;
   color: #333;
-  background-image: linear-gradient(to top left, #684ff8 0%, #f369dc 100%);
+  /* background-image: linear-gradient(to top left, #684ff8 0%, #f369dc 100%); */
   margin-left: 7%;
   margin-top: 5%;
 }
@@ -117,4 +117,12 @@ input#discInput {
   border: black;
   border-style: ridge;
   padding: 0.5%;
+}
+
+.topGameBar{
+  display: inherit;
+}
+
+.playerList{
+  display: table-row;
 }
