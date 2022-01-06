@@ -10,12 +10,14 @@
     <script type="module" src="discObj.js"></script>
   </head>
   <body>
+    
     <div class="newPlayer">
       <form class="newPlayerForm">
         <input type="text" placeholder="New Player Name" class="form__input form__input--playerName"/>
         <input type="button" value="Add New Player" class="btn btn--playerSub"></input>
       </form>
     </div>  
+
      <div class="newDisc">
       <form class="newDiscForm">
         <input type="text" placeholder="Disc Mold" class="input--mold" id="discInput" />
@@ -25,6 +27,18 @@
         <input type="button" value="Add Disc" class="btn btn--discSub"></input>
       </form>
     </div>
+
+    <div class="gameBtns">
+      <button class="btn btn--new">New game</button>
+      
+      <button class="btn btn--roll">Pick</button>
+
+      <button class="btn btn--swap">Swap</button>
+
+      <select id="selector" required name='Disc Options'>  
+      </select>
+    </div>
+
     <div class="playerList">
     <div class="boxclass">
       <h1>Player 1</h1>
@@ -38,15 +52,7 @@
     </div> 
    </div>
   
-    <div class="gameBtns">
-      <button class="btn btn--new">New game</button>
-      <button class="btn btn--roll">Pick</button>
-      <button class="btn btn--swap">Swap</button>
-
-      <select id="selector" required name='Disc Options'>  
-      </select>
-
-    </div>
+    
 
   </body>
 </html>

@@ -95,9 +95,10 @@ body {
 }
 
 .newDisc {
-  margin-bottom: 3%;
-  float: right;
-  margin-right: 5%;
+  /* margin-bottom: 3%; */
+  /* float: right; */
+  /* margin-right: 5%; */
+  max-width: 18%;
   background-color: white;
   border: black;
   border-style: ridge;

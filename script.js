@@ -157,11 +157,7 @@ class GameApp {
     el.textContent = opt;
     el.value = opt;
     select.add(el);
-<<<<<<< HEAD
-
-=======
->>>>>>> bfc63eac4fb8fdd84a5c6271dbdad40d32202f7c
-  }
+  };
 
   _replaceFromHtml() {
     // Get values from html for discs
@@ -206,12 +202,8 @@ class GameApp {
     let select = document.getElementById("selector");
     let discHtml = document.getElementsByClassName("playerDisc");
     let optValue = select.value.replace(/,/g, "");
-<<<<<<< HEAD
-    let currentDiscObj = document.getElementsByClassName("playerDisc")[currentIndex]
-=======
     let currentDiscObj =
       document.getElementsByClassName("playerDisc")[currentIndex];
->>>>>>> bfc63eac4fb8fdd84a5c6271dbdad40d32202f7c
     // let htmlValue = discHtml.value;
     // console.log(optValue);
 
@@ -220,29 +212,6 @@ class GameApp {
       : console.log(optValue);
 
     for (let i = 0; i < discHtml.length; i++) {
-<<<<<<< HEAD
-      let moldHtml =
-        document.getElementsByClassName("discMold")[i].innerHTML;
-      let plasticHtml =
-        document.getElementsByClassName("discPlastic")[i].innerHTML;
-      let colorHtml =
-        document.getElementsByClassName("discColor")[i].innerHTML;
-      let weightHtml =
-        document.getElementsByClassName("discWeight")[i].innerHTML;
-      let swapDiscObj = document.getElementsByClassName("playerDisc")[i]
-
-      let valueArr = moldHtml + plasticHtml + colorHtml + weightHtml
-
-
-      // 
-
-      if (valueArr == optValue) {
-        // console.log()
-        let swapedPlayer = playerEl[i]
-        console.log(currentDiscObj, swapDiscObj)
-        let swapClone = swapDiscObj.cloneNode(true)
-        let currentClone = currentDiscObj.cloneNode(true)
-=======
       let moldHtml = document.getElementsByClassName("discMold")[i].innerHTML;
       let plasticHtml =
         document.getElementsByClassName("discPlastic")[i].innerHTML;
@@ -261,7 +230,6 @@ class GameApp {
         // clones used to replace html
         let swapClone = swapDiscObj.cloneNode(true);
         let currentClone = currentDiscObj.cloneNode(true);
->>>>>>> bfc63eac4fb8fdd84a5c6271dbdad40d32202f7c
 
         //  if(currentIndex > 0){
         //   currentDiscObj.removeChild(currentDiscObj.firstChild);
@@ -273,17 +241,6 @@ class GameApp {
         //   currentDiscObj.removeChild(currentDiscObj.firstChild);
 
         //  }
-<<<<<<< HEAD
-        currentplayer.replaceChild(swapClone, currentDiscObj)
-        swapedPlayer.replaceChild(currentClone, swapDiscObj)
-        this._switchPlayers()
-
-        console.log('true')
-        return
-      }
-      else {
-        console.log('false')
-=======
         if (!stolenDiscs.includes(valueArr)) {
           // replaces the html with the clones
           currentplayer.replaceChild(swapClone, currentDiscObj);
@@ -297,7 +254,6 @@ class GameApp {
         } else {
           alert("Disc has already been stolen this turn!!");
         }
->>>>>>> bfc63eac4fb8fdd84a5c6271dbdad40d32202f7c
       }
       // let optString = JSON.stringify(optValue);
       // let discString = discHtml[i];
