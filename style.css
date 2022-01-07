@@ -8,10 +8,10 @@ body {
 
 .navBar{
 overflow: hidden;
-background-image: linear-gradient(to top left, #684ff8 0%, #f369dc 80%);
-/* background-color: rgb(247, 115, 240); */
+/* background-image: linear-gradient(to top left, #684ff8 0%, #f369dc 80%); */
+background-color: rgb(247, 115, 240);
 margin-bottom: 3%;
-border-radius: 15px;
+border-radius: 5px
 }
 
 .navBar a {
@@ -21,11 +21,17 @@ border-radius: 15px;
   padding: 14px 16px;
   text-decoration: none;
   font-size: 17px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 .navBar a.active {
   background-color: #000201;
   color: white;
+}
+
+.navBar a:hover {
+  background-color: #ddd;
+  color: black;
 }
 
 .boxclass {
@@ -106,28 +112,32 @@ border-radius: 15px;
 }
 
 .newPlayer {
-  min-width: 170px;
-  margin-bottom: 3%;
-  margin-right: 5%;
+  margin: 0% auto;
+  width: 170px;
+  max-height: 42px;
+  /* margin-bottom: 3%;
+  margin-right: 5%; */
   background-color: white;
   border: black;
   border-style: ridge;
   padding: 0.5%;
-  max-width: 18%;
-  display: inline-block;
+  border-radius: 5px;
+  /* max-width: 170px; */
 }
 
 .newDisc {
   /* margin-bottom: 3%; */
   /* float: right; */
-  margin-right: 5%;
+  margin: 0% auto;
+  /* margin-right: 5%; */
+  border-radius: 5px;
   max-width: 18%;
   min-width: 170px;
   background-color: white;
   border: black;
   border-style: ridge;
   padding: 0.5%;
-  display: inline-block;
+
 }
 
 input#discInput {
@@ -137,17 +147,22 @@ input#discInput {
 .gameBtns {
    /* margin-bottom: 3%; */
   /* float: left; */
-  margin-top: 5%; 
+  /* margin-top: 5%;  */
+  border-radius: 5px;
+  max-height: 20px;
   background-color: white;
   border: black;
   border-style: ridge;
   padding: 0.5%;
-  display: inline-block;
+  margin: 0% auto;
+  
 }
 
 .topGameBar{
+  align-content: center;
+  display:flex;
   position: relative;
-  display:inline-block
+  
 }
 
 .playerList{
