@@ -1,4 +1,4 @@
-"use strict";
+
 // get needed imports
 import { Disc } from "./discObj.js";
 
