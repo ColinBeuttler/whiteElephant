@@ -43,11 +43,11 @@ input#discInput {
   display: block;
 }
 
-.gameBtns {
+/* .gameBtns {
    /* margin-bottom: 3%; */
   /* float: left; */
   /* margin-top: 5%;  */
-  border-radius: 5px;
+  /* border-radius: 5px;
   max-height: 20px;
   background-color: white;
   border: black;
@@ -55,7 +55,7 @@ input#discInput {
   padding: 0.5%;
   margin: 0% auto;
   
-}
+}  */
 
 .topGameBar{
   align-content: center;
