@@ -1,5 +1,12 @@
 
-let popupHtml =`
+class Popup{
+  constructor(){
+    this._getPopup()
+
+    
+  }
+  _getPopup(){
+    let popupHtml =`
 <div class='popupWin'>
   <div class="newPlayer">
   <form class="newPlayerForm">
@@ -7,6 +14,7 @@ let popupHtml =`
     <input type="button" value="Add New Player" class="btn btn--playerSub"></input>
   </form>
   </div>
+
   <div class="newDisc">
   <form class="newDiscForm">
     <input type="text" placeholder="Disc Mold" class="input--mold" id="discInput" />
@@ -16,4 +24,18 @@ let popupHtml =`
     <input type="button" value="Add Disc" class="btn btn--discSub"></input>
   </form>
   </div>
+
+  <form>
+  <input type="button" value="Start Game" class="btn btn--gameStart"></input>
+  </form>
+
 </div>`
+
+body.insertAdjacentHTML("afterbegin", popupHtml);
+
+  }
+
+
+}
+
+
