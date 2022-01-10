@@ -1,4 +1,4 @@
-"use strict";
+
 // get needed imports
 import { Disc } from "./discObj.js";
 
@@ -13,11 +13,10 @@ const swapDiscEl = document.querySelector(".btn--swap");
 // let discEl = document.getElementsByClassName(".playerDisc");
 let playerEl = document.querySelectorAll(".boxclass");
 
-
-
 // determines current player and disc turns
 let currentIndex = 0;
 let currentplayer = playerEl[currentIndex];
+let stolenDiscs = [];
 // let currentDisc = discEl[currentIndex];
 
 // const players = [];
@@ -128,7 +127,7 @@ class GameApp {
     // checks if disc object is child
     if (discEl.children.length >= 1) {
       this._replaceFromHtml();
-      console.log('true')
+      console.log("true");
     }
     console.log(discEl.children);
 
@@ -154,12 +153,11 @@ class GameApp {
 
     console.log(children);
     let opt = [moldEl, plasticEl, colorEl, weightEl];
-        let el = document.createElement("option");
-        el.textContent = opt;
-        el.value = opt;
-        select.add(el);
-    
-  }
+    let el = document.createElement("option");
+    el.textContent = opt;
+    el.value = opt;
+    select.add(el);
+  };
 
   _replaceFromHtml() {
     // Get values from html for discs
@@ -204,7 +202,8 @@ class GameApp {
     let select = document.getElementById("selector");
     let discHtml = document.getElementsByClassName("playerDisc");
     let optValue = select.value.replace(/,/g, "");
-   let currentDiscObj = document.getElementsByClassName("playerDisc")[currentIndex]
+    let currentDiscObj =
+      document.getElementsByClassName("playerDisc")[currentIndex];
     // let htmlValue = discHtml.value;
     // console.log(optValue);
 
@@ -213,52 +212,53 @@ class GameApp {
       : console.log(optValue);
 
     for (let i = 0; i < discHtml.length; i++) {
-    let moldHtml =
-      document.getElementsByClassName("discMold")[i].innerHTML;
-    let plasticHtml =
-      document.getElementsByClassName("discPlastic")[i].innerHTML;
-    let colorHtml =
-      document.getElementsByClassName("discColor")[i].innerHTML;
-    let weightHtml =
-      document.getElementsByClassName("discWeight")[i].innerHTML;
-    let swapDiscObj = document.getElementsByClassName("playerDisc")[i]
+      let moldHtml = document.getElementsByClassName("discMold")[i].innerHTML;
+      let plasticHtml =
+        document.getElementsByClassName("discPlastic")[i].innerHTML;
+      let colorHtml = document.getElementsByClassName("discColor")[i].innerHTML;
+      let weightHtml =
+        document.getElementsByClassName("discWeight")[i].innerHTML;
+      let swapDiscObj = document.getElementsByClassName("playerDisc")[i];
 
-    let valueArr = moldHtml+plasticHtml+colorHtml+weightHtml
-    
+      let valueArr = moldHtml + plasticHtml + colorHtml + weightHtml;
 
-  // 
+      //
 
-      if(valueArr==optValue){
-        // console.log()
-        let swapedPlayer = playerEl[i]
-        console.log(currentDiscObj, swapDiscObj)
-        let swapClone = swapDiscObj.cloneNode(true)
-        let currentClone = currentDiscObj.cloneNode(true)
+      if (valueArr == optValue) {
+        let swapedPlayer = playerEl[i];
+        console.log(currentDiscObj, swapDiscObj);
+        // clones used to replace html
+        let swapClone = swapDiscObj.cloneNode(true);
+        let currentClone = currentDiscObj.cloneNode(true);
 
-      //  if(currentIndex > 0){
-      //   currentDiscObj.removeChild(currentDiscObj.firstChild);
-      //   swapDiscObj.removeChild(swapDiscObj.firstChild);
-        
-      //  }
-      //  else{
-      //   swapDiscObj.removeChild(swapDiscObj.firstChild);
-      //   currentDiscObj.removeChild(currentDiscObj.firstChild);
-    
-      //  }
-        currentplayer.replaceChild(swapClone, currentDiscObj)
-        swapedPlayer.replaceChild(currentClone, swapDiscObj)
-        this._switchPlayers()
-        
-        console.log('true')
-        return
-      }
-      else{
-        console.log('false')
+        //  if(currentIndex > 0){
+        //   currentDiscObj.removeChild(currentDiscObj.firstChild);
+        //   swapDiscObj.removeChild(swapDiscObj.firstChild);
+
+        //  }
+        //  else{
+        //   swapDiscObj.removeChild(swapDiscObj.firstChild);
+        //   currentDiscObj.removeChild(currentDiscObj.firstChild);
+
+        //  }
+        if (!stolenDiscs.includes(valueArr)) {
+          // replaces the html with the clones
+          currentplayer.replaceChild(swapClone, currentDiscObj);
+          swapedPlayer.replaceChild(currentClone, swapDiscObj);
+          stolenDiscs.push(valueArr);
+          console.log(stolenDiscs);
+          this._switchPlayers();
+
+          console.log("true");
+          return;
+        } else {
+          alert("Disc has already been stolen this turn!!");
+        }
       }
       // let optString = JSON.stringify(optValue);
       // let discString = discHtml[i];
       // console.log(discString);
-      // discString.contains(optValue); 
+      // discString.contains(optValue);
 
       // if (discString.contains(optValue)) {
       //   console.log(discString);
@@ -280,7 +280,11 @@ class GameApp {
     playerEl = document.querySelectorAll(".boxclass");
     currentplayer.classList.remove("currentPlayer");
     currentIndex < playerEl.length - 1 ? currentIndex++ : (currentIndex = 0);
+    if (currentIndex == 0) {
+      stolenDiscs = [];
+    }
     currentplayer = playerEl[currentIndex];
+    // console.log(stolenDiscs);
     // console.log(currentplayer);
     this._currentplayerFunc(currentplayer);
   }
