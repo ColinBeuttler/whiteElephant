@@ -3,7 +3,7 @@ class Popup{
   constructor(){
     this._getPopup()
 
-    
+
   }
   _getPopup(){
     let popupHtml =`
