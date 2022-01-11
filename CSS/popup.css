@@ -30,16 +30,12 @@
   }
 
   .popupWin{
-    min-width: 100%;
-    min-height: 100%;
+    width: 100%;
+    height: 100%;
     position: absolute;
-    background-color: rgb(245, 241, 241, 0.9);
-    border-radius: 10px;
-    border: rgb(194, 191, 191);
+    background:rgba(0,0,0,.4);
     /* box-shadow: 5px 5px; */
-    
-
-  text-align: center;
+    text-align: center;
     /* display: none; */
     z-index : 1;
   }
