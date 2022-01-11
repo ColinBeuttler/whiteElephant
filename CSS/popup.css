@@ -8,13 +8,15 @@
     border: black;
     border-style: ridge;
     padding: 0.5%;
-    border-radius: 5px;    
+    border-radius: 5px; 
+    display: inline-block;   
     /* max-width: 170px; */
   }
   
   .newDisc {
     /* margin-bottom: 3%; */
     /* float: right; */
+    display: inline-block;
     margin: 0% auto;
     /* margin-right: 5%; */
     border-radius: 5px;
@@ -28,20 +30,26 @@
   }
 
   .popupWin{
-    min-width: 80%;
-    min-height: 60%;
+    min-width: 100%;
+    min-height: 100%;
     position: absolute;
-    background-color: rgb(202, 188, 188);
+    background-color: rgb(245, 241, 241, 0.9);
     border-radius: 10px;
-    border: black;
-    display: flex;
-  justify-content: center;
-  align-items: center;
+    border: rgb(194, 191, 191);
+    /* box-shadow: 5px 5px; */
+    
+
+  text-align: center;
     /* display: none; */
     z-index : 1;
   }
 
   .gameStart{
-    display: flex;
-    justify-content: center;
+    position: relative;
+    inset-block-start: 1px;
+    
+  }
+
+  .gameEntry{
+    text-align: center;
   }
