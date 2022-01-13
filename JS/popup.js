@@ -1,10 +1,10 @@
+import {currentIndex} from "./gameScript.js"
+
 // Html elements
-const popUpEl = document.querySelector(".popUpWin")
+const popUpEl = document.querySelector(".popUpBack")
 const gameStartEl = document.querySelector('.btn--startGame')
 
 // console.log(document.querySelector('.popUpWin'))
-
-
 
 class Popup{
   constructor(){
@@ -20,9 +20,17 @@ console.log('Window Load')
   }
 
   _startGame(){
-    console.log(true)
-    
+
+    console.log()
     popUpEl.style.display = "none";
+    this._currentplayerFunc()
+  }
+
+  _currentplayerFunc() {
+    let currentplayer = document.getElementsByClassName('boxclass')[0]
+    console.log(currentplayer)
+    
+    currentplayer.classList.add("currentPlayer");
   }
 
 

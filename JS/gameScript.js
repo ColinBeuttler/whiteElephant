@@ -10,12 +10,10 @@ const swapDiscEl = document.querySelector(".btn--swap");
 // const select = document.getElementById("selector");
 
 // non-const html collections
-// let discEl = document.getElementsByClassName(".playerDisc");
-let playerEl = document.querySelectorAll(".boxclass");
 
 // determines current player and disc turns
 let currentIndex = 0;
-let currentplayer = playerEl[currentIndex];
+
 let stolenDiscs = [];
 // let currentDisc = discEl[currentIndex];
 
@@ -93,7 +91,7 @@ class GameApp {
     this._getLocalStorage();
 
     // add CSS to currentplayer
-    this._currentplayerFunc();
+    // this._currentplayerFunc();
 
     // Set up button calls
     btnRoll.addEventListener("click", this._discSort.bind(this));
@@ -199,6 +197,8 @@ class GameApp {
 
   // Methods for swaping
   _initiateSwap() {
+    let playerEl = document.querySelectorAll(".boxclass");
+    let currentplayer = playerEl[currentIndex];
     let select = document.getElementById("selector");
     let discHtml = document.getElementsByClassName("playerDisc");
     let optValue = select.value.replace(/,/g, "");
@@ -277,7 +277,8 @@ class GameApp {
   }
 
   _switchPlayers() {
-    playerEl = document.querySelectorAll(".boxclass");
+    let playerEl = document.querySelectorAll(".boxclass");
+    let currentplayer = playerEl[currentIndex];
     currentplayer.classList.remove("currentPlayer");
     currentIndex < playerEl.length - 1 ? currentIndex++ : (currentIndex = 0);
     if (currentIndex == 0) {
@@ -297,6 +298,8 @@ class GameApp {
 
   // turn into method handled by confirm listener
   _currentplayerFunc() {
+    let playerEl = document.querySelectorAll(".boxclass");
+    let currentplayer = playerEl[currentIndex];
     currentplayer.classList.add("currentPlayer");
   }
 
@@ -319,4 +322,4 @@ class GameApp {
 
 const game = new GameApp();
 
-export { currentplayer, currentIndex };
+export { currentIndex };

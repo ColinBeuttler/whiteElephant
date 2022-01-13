@@ -1,3 +1,26 @@
+.popUpBack{
+    width: 98.7%;
+    height: 100%;
+    position: absolute;
+    background:rgba(0,0,0,.4);
+    /* box-shadow: 5px 5px; */
+    /* text-align: center; */
+    /* display: none; */
+    z-index : 1;
+  }
+
+.popUpWin{
+  max-width: 70%;
+  background-color: rgb(255, 255, 255);
+  position: relative;
+  box-shadow: 10px 10px 60px #555;
+  /* box-shadow: 5px 5px; */
+  text-align: center;
+  border-radius: 5px;
+  padding: 10px 10px 10px 10px;
+  /* display: none; */
+  z-index : 1;
+}
 .newPlayer {
     margin: 0% auto;
     width: 170px;
@@ -29,17 +52,7 @@
   
   }
 
-  .popUpWin{
-    width: 98.7%;
-    height: 100%;
-    position: absolute;
-    background:rgba(0,0,0,.4);
-    /* box-shadow: 5px 5px; */
-    text-align: center;
-    /* display: none; */
-    z-index : 1;
-  }
-
+  
   .gameStart{
     position: relative;
     inset-block-start: 1px;
