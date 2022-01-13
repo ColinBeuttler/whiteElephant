@@ -15,7 +15,7 @@ class Popup{
 
   }
   _getPopup(){
-
+console.log('Window Load')
 
   }
 
@@ -28,4 +28,4 @@ class Popup{
 
 }
 
-
+const PopUpWindow = new Popup();
