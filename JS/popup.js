@@ -15,24 +15,19 @@ class Popup{
 
   }
   _getPopup(){
-console.log('Window Load')
+    popUpEl.style.display = 'inline-block'
 
   }
 
   _startGame(){
-
-    console.log()
     popUpEl.style.display = "none";
     this._currentplayerFunc()
   }
 
   _currentplayerFunc() {
     let currentplayer = document.getElementsByClassName('boxclass')[0]
-    console.log(currentplayer)
-    
     currentplayer.classList.add("currentPlayer");
   }
-
 
 }
 
