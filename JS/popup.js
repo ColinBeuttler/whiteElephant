@@ -20,6 +20,16 @@ class Popup{
   }
 
   _startGame(){
+    let playersList = JSON.parse(localStorage.getItem("players"));
+    console.log(playersList.length)
+    if (!playersList){
+      alert('Enter First Player')
+      return
+    }
+    if(playersList.length == 1){
+      alert('Need another player')
+      return
+    }
     popUpEl.style.display = "none";
     this._currentplayerFunc()
   }
