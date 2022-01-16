@@ -52,6 +52,7 @@
   }
   
   .newDisc {
+    margin-top: 5%;
     /* margin-bottom: 3%; */
     /* float: right; */
     display: inline-block;
@@ -70,9 +71,13 @@
   .gameStart{
     position: relative;
     inset-block-start: 1px;
-    
+    position: relative;
+    height: 80px;
   }
 
   .gameEntry{
     text-align: center;
+    /* top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); */
   }
