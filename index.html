@@ -16,25 +16,46 @@
     <script type="module" src="JS/discObj.js"></script>
   </head>
   <body>
-    <nav class="navBar">
+    <div class="navBar">
       <a class="active">
         🐘 White Elephant 🐘 
       </a>
-      <a>
+      <!-- <a>
         beutt102@mail.chapman.edu
-      </a>
-    </nav>
+      </a> -->
+    </div>
+<div class="popUpBack">
+    <div class='popUpWin'>
 
-  <div class="topGameBar">
-    <div class="newPlayer">
-      <form class="newPlayerForm">
-        <input type="text" placeholder="New Player Name" class="form__input form__input--playerName"/>
-        <input type="button" value="Add New Player" class="btn btn--playerSub"></input>
-      </form>
-    </div>  
+        <div class="gameEntry">
+          <div class="newPlayer">
+          <form class="newPlayerForm">
+            <input type="text" placeholder="New Player Name" class="form__input form__input--playerName"/>
+            <input type="button" value="Add New Player" class="btn btn--playerSub"></input>
+          </form>
+        </div>  
+
+        <div class="newDisc">
+          <form class="newDiscForm">
+            <input type="text" placeholder="Disc Mold" class="input--mold" id="discInput" />
+            <input type="text" placeholder="Disc Plastic" class="input--plastic" id="discInput"/>
+            <input type="text" placeholder="Disc Color" class="input--color" id="discInput"/>
+            <input type="text" placeholder="Disc Weight" class="input--weight" id="discInput"/>
+            <input type="button" value="Add Disc" class="btn btn--discSub"></input>
+          </form>
+        </div>  
+    </div> 
+
+      <div class="gameStart">
+              <input type="button" value="Start Game" class="btn btn--startGame"></input>
+      </div>
+
+    </div> 
+</div>
+       
 
       <div class="gameBtns">
-        <button class="btn btn--new" >New game</button>
+        <button class="btn btn--new">New game</button>
         
         <button class="btn btn--roll">Pick</button>
 
@@ -44,31 +65,18 @@
         </select>
       </div>
 
-     <div class="newDisc">
-      <form class="newDiscForm">
-        <input type="text" placeholder="Disc Mold" class="input--mold" id="discInput" />
-        <input type="text" placeholder="Disc Plastic" class="input--plastic" id="discInput"/>
-        <input type="text" placeholder="Disc Color" class="input--color" id="discInput"/>
-        <input type="text" placeholder="Disc Weight" class="input--weight" id="discInput"/>
-        <input type="button" value="Add Disc" class="btn btn--discSub"></input>
-      </form>
-    </div>
-
-  
-</div>
-
     <div class="playerList">
-    <div class="boxclass">
-      <h1>Player 1</h1>
-      <div class="playerDisc">
+      <!-- <div class="boxclass">
+        <h1>Player 1</h1>
+        <div class="playerDisc">
+        </div>
       </div>
+      <div class="boxclass">
+        <h1>Player 2</h1>
+        <div class="playerDisc">
+        </div>
+      </div>  -->
     </div>
-    <div class="boxclass">
-      <h1>Player 2</h1>
-      <div class="playerDisc">
-      </div>
-    </div> 
-   </div>
   
     
 

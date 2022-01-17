@@ -1,41 +1,44 @@
+import {currentIndex} from "./gameScript.js"
+
+// Html elements
+const popUpEl = document.querySelector(".popUpBack")
+const gameStartEl = document.querySelector('.btn--startGame')
+
+// console.log(document.querySelector('.popUpWin'))
 
 class Popup{
   constructor(){
     this._getPopup()
 
+    gameStartEl.addEventListener('click', this._startGame.bind(this))
+
 
   }
   _getPopup(){
-    let popupHtml =`
-<div class='popupWin'>
-  <div class="newPlayer">
-  <form class="newPlayerForm">
-    <input type="text" placeholder="New Player Name" class="form__input form__input--playerName"/>
-    <input type="button" value="Add New Player" class="btn btn--playerSub"></input>
-  </form>
-  </div>
-
-  <div class="newDisc">
-  <form class="newDiscForm">
-    <input type="text" placeholder="Disc Mold" class="input--mold" id="discInput" />
-    <input type="text" placeholder="Disc Plastic" class="input--plastic" id="discInput"/>
-    <input type="text" placeholder="Disc Color" class="input--color" id="discInput"/>
-    <input type="text" placeholder="Disc Weight" class="input--weight" id="discInput"/>
-    <input type="button" value="Add Disc" class="btn btn--discSub"></input>
-  </form>
-  </div>
-
-  <form>
-  <input type="button" value="Start Game" class="btn btn--gameStart"></input>
-  </form>
-
-</div>`
-
-body.insertAdjacentHTML("afterbegin", popupHtml);
+    popUpEl.style.display = 'inline-block'
 
   }
 
+  _startGame(){
+    let playersList = JSON.parse(localStorage.getItem("players"));
+    console.log(playersList.length)
+    if (!playersList){
+      alert('Enter First Player')
+      return
+    }
+    if(playersList.length == 1){
+      alert('Need another player')
+      return
+    }
+    popUpEl.style.display = "none";
+    this._currentplayerFunc()
+  }
+
+  _currentplayerFunc() {
+    let currentplayer = document.getElementsByClassName('boxclass')[0]
+    currentplayer.classList.add("currentPlayer");
+  }
 
 }
 
-
+const PopUpWindow = new Popup();

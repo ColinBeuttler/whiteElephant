@@ -3,6 +3,8 @@
 
 /* CSS */
 .btn--new,
+.btn--roll,
+.btn--roll:after,
 .btn--new:after {
   width: 70px;
   height: 50px;
@@ -21,7 +23,8 @@
   touch-action: manipulation;
 }
 
-.btn--new:after {
+.btn--new:after,
+.btn--roll:after {
   --slice-0: inset(50% 50% 50% 50%);
   --slice-1: inset(80% -6px 0 0);
   --slice-2: inset(50% -6px 30% 0);
@@ -41,7 +44,8 @@
   clip-path: var(--slice-0);
 }
 
-.btn--new:hover:after {
+.btn--new:hover:after,
+.btn--roll:hover:after {
   animation: 1s glitch;
   animation-timing-function: steps(2, end);
 }
@@ -95,10 +99,16 @@
 
 @media (min-width: 768px) {
   .btn--new,
+  .btn--roll,
+  .btn--roll:after,
   .btn--new:after {
-    width: 200px;
-    height: 86px;
-    line-height: 88px;
+    width: 160px;
+    height: 50px;
+    line-height: 30px;
   }
+}
+
+.btn--startGame{
+  margin-top: 15%;
 }
 
