@@ -12,7 +12,8 @@
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.html"
+    "start": "node index.html",
+    "build": "node build index.html "
   },
   "repository": {
     "type": "git",
