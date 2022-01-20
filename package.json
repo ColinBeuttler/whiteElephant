@@ -2,15 +2,16 @@
   "name": "whiteelephant",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "index.html",
   "dependencies": {
     "express": "^4.17.2",
-    "heroku-logger": "^0.3.3"
+    "heroku-logger": "^0.3.3",
+    "parcel": "^2.2.1"
   },
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "index.html"
+    "start": "parcel index.html"
   },
   "repository": {
     "type": "git",
