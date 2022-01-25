@@ -1,0 +1,56 @@
+body {
+  font-family: "Nunito", sans-serif;
+  font-weight: 400;
+  height: 100vh;
+  color: #333;
+  /* background-image: linear-gradient(to top left, #684ff8 0%, #f369dc 100%); */
+}
+
+.boxclass {
+  height: 10rem;
+  width: 10rem;
+  margin-left: 5rem;
+  margin-top: 5rem;
+  display: inline-block;
+  /* float: left; */
+  word-wrap: break-word;
+  /* margin-bottom: 10rem; */
+}
+.currentPlayer {
+  border-radius: 10px;
+  padding-left: 30px;
+  min-height: 230px;
+  background-color: rgb(75, 73, 73);
+  color: white;
+}
+
+.discdisplay {
+  height: 40rem;
+  width: 30rem;
+  margin-left: 10rem;
+  margin-top: 10rem;
+  text-decoration-color: ivory;
+}
+
+.hidden {
+  transform: translate3d();
+  height: 0;
+  padding: 0;
+  display: none;
+}
+
+input#discInput {
+  display: block;
+}
+
+.gameBtns {
+  justify-content: center;
+  display: flex;
+  /* position: relative; */
+  
+} 
+
+
+.playerList{
+  display: table-row;
+}
