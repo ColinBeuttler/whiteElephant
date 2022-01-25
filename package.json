@@ -2,24 +2,23 @@
   "name": "whiteelephant",
   "version": "1.0.0",
   "description": "",
-  "main": "index.html",
+  "main": "Public/index.html",
   "dependencies": {
     "express": "^4.17.2",
     "heroku": "^7.59.2",
     "heroku-logger": "^0.3.3",
-    "parcel": "^2.2.1"
+    "node": "^17.3.1"
   },
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.html",
-    "build": "node build index.html "
+    "start": "node procfile.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ColinBeuttler/whiteElephant.git"
   },
-  "author": "",
+  "author": "Colin Beuttler",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/ColinBeuttler/whiteElephant/issues"
