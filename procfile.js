@@ -7,14 +7,14 @@ const PORT = process.env.PORT || 8080;
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(express.static(__dirname+"/public"));
+app.use(express.static(__dirname+"/Public"));
 
 
 // Define path routes here
 
 // Define any path routes before this runs
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname+ "/public/index.html"));
+  res.sendFile(path.join(__dirname+ "/Public/index.html"));
 });
 
 
