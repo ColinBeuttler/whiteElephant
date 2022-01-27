@@ -3,8 +3,8 @@ import {currentIndex} from "./gameScript.js"
 // Html elements
 const popUpEl = document.querySelector(".popUpBack")
 const gameStartEl = document.querySelector('.btn--startGame')
-const swapDiscFormEl = document.querySelector('.btn disc--formswap')
-const swapGiftFormEl = document.querySelector('.btn gift--formswap')
+const swapDiscForm = document.querySelector('.disc--formswap')
+const swapGiftForm = document.querySelector('.gift--formswap')
 const newGiftEl = document.querySelector('.newGift')
 const newDiscEl = document.querySelector('.newDisc')
 
@@ -16,9 +16,9 @@ class Popup{
 
     gameStartEl.addEventListener('click', this._startGame.bind(this))
 
-    swapDiscFormEl.addEventListener('click', this._swapToGifts.bind(this))
+    swapDiscForm.addEventListener('click', this._swapToGifts.bind(this))
 
-    swapGiftFormEl.addEventListener('click', this._swapToDiscs.bind(this))
+    swapGiftForm.addEventListener('click', this._swapToDiscs.bind(this))
 
 
   }
@@ -28,11 +28,15 @@ class Popup{
   }
 
   _swapToGifts(){
+    newGiftEl.classList.remove('hidden')
+    newDiscEl.classList.add('hidden')
 
   }
 
   _swapToDiscs(){
-
+    newGiftEl.classList.add('hidden')
+    newDiscEl.classList.remove('hidden')
+    
   }
 
   _startGame(){
