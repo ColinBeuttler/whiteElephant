@@ -28,9 +28,9 @@ class Popup{
   }
 
   _swapToGifts(){
-    newGiftEl.classList.remove('hidden')
     newDiscEl.classList.add('hidden')
-
+    newGiftEl.classList.remove('hidden')
+    
   }
 
   _swapToDiscs(){

@@ -53,10 +53,7 @@
   
   .newDisc {
     margin-top: 5%;
-    /* margin-bottom: 3%; */
-    /* float: right; */
-    display: inline-block;
-    /* margin-right: 5%; */
+    /* display: inline-block; */
     border-radius: 5px;
     max-width: 18%;
     min-width: 170px;
