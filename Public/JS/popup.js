@@ -3,6 +3,10 @@ import {currentIndex} from "./gameScript.js"
 // Html elements
 const popUpEl = document.querySelector(".popUpBack")
 const gameStartEl = document.querySelector('.btn--startGame')
+const swapDiscFormEl = document.querySelector('.btn disc--formswap')
+const swapGiftFormEl = document.querySelector('.btn gift--formswap')
+const newGiftEl = document.querySelector('.newGift')
+const newDiscEl = document.querySelector('.newDisc')
 
 // console.log(document.querySelector('.popUpWin'))
 
@@ -12,10 +16,22 @@ class Popup{
 
     gameStartEl.addEventListener('click', this._startGame.bind(this))
 
+    swapDiscFormEl.addEventListener('click', this._swapToGifts.bind(this))
+
+    swapGiftFormEl.addEventListener('click', this._swapToDiscs.bind(this))
+
 
   }
   _getPopup(){
     popUpEl.style.display = 'inline-block'
+
+  }
+
+  _swapToGifts(){
+
+  }
+
+  _swapToDiscs(){
 
   }
 
