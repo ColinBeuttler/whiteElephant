@@ -8,7 +8,8 @@ let gifts = [];
 
 // new Gift object prototype
 class Gift {
-  constructor(gift) {
+  constructor(gift, giftValue) {
     this.gift = gift;
+    this.giftValue = giftValue
   }
 }
