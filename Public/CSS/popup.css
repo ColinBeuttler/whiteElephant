@@ -18,6 +18,7 @@
   background-color: rgb(255, 255, 255);
   position: relative;
   box-shadow: 12px 12px 60px rgb(5, 5, 5);
+  /* display:block; */
   /* box-shadow: 5px 5px; */
   text-align: center;
   border-radius: 5px;
@@ -53,7 +54,7 @@
   
   .newDisc {
     margin-top: 5%;
-    /* display: inline-block; */
+    display: inline-block;
     border-radius: 5px;
     max-width: 18%;
     min-width: 170px;
@@ -63,6 +64,20 @@
     padding: 0.5%;
   
   }
+
+  .newGift{
+    margin-top: 5%;
+    display: none;
+    border-radius: 5px;
+    max-width: 18%;
+    min-width: 170px;
+    background-color: white;
+    border: black;
+    border-style: ridge;
+    padding: 0.5%;
+  
+  }
+
 
   
   .gameStart{

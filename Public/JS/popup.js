@@ -28,14 +28,14 @@ class Popup{
   }
 
   _swapToGifts(){
-    newDiscEl.classList.add('hidden')
-    newGiftEl.classList.remove('hidden')
+    newDiscEl.style.display = 'none'
+    newGiftEl.style.display = 'inline-block'
     
   }
 
   _swapToDiscs(){
-    newGiftEl.classList.add('hidden')
-    newDiscEl.classList.remove('hidden')
+    newGiftEl.style.display = 'none'
+    newDiscEl.style.display = 'inline-block'
     
   }
 
