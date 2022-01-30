@@ -14,6 +14,8 @@ class Popup{
   constructor(){
     this._getPopup()
 
+    this._getLocalStorage()
+
     gameStartEl.addEventListener('click', this._startGame.bind(this))
 
     swapDiscForm.addEventListener('click', this._swapToGifts.bind(this))
@@ -57,6 +59,16 @@ class Popup{
   _currentplayerFunc() {
     let currentplayer = document.getElementsByClassName('boxclass')[0]
     currentplayer.classList.add("currentPlayer");
+  }
+
+  _getLocalStorage(){
+    let playersArr =JSON.parse(localStorage.getItem("players"))
+    let discsArr =JSON.parse(localStorage.getItem("discs"))
+    let giftsArr = JSON.parse(localStorage.getItem("gifts"))
+
+    // if(!players || !discs || !gifts) return 
+
+    console.log(playersArr, discsArr, giftsArr)
   }
 
 }
