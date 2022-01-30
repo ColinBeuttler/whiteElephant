@@ -38,12 +38,19 @@ class GiftAdd{
 
     gifts.push(gift)
     console.log(gifts)
+    this._setLocalGifts(gifts)
 
    } 
+
+   _setLocalGifts(gifts){
+    localStorage.setItem("gifts", JSON.stringify(gifts));
+    console.log(localStorage);
+   }
 
    _getLocalGifts(){
 
    }
+
 }
 
 const giftApp = new GiftAdd()
