@@ -7,6 +7,8 @@ const swapDiscForm = document.querySelector('.disc--formswap')
 const swapGiftForm = document.querySelector('.gift--formswap')
 const newGiftEl = document.querySelector('.newGift')
 const newDiscEl = document.querySelector('.newDisc')
+const discListEl =document.querySelector('.discList')
+const giftListEl = document.querySelector('.giftList')
 
 // console.log(document.querySelector('.popUpWin'))
 
@@ -31,13 +33,17 @@ class Popup{
 
   _swapToGifts(){
     newDiscEl.style.display = 'none'
+    discListEl.style.display= 'none'
     newGiftEl.style.display = 'inline-block'
+    giftListEl.style.display ='inline-block'
     
   }
 
   _swapToDiscs(){
     newGiftEl.style.display = 'none'
+    giftListEl.style.display ='none'
     newDiscEl.style.display = 'inline-block'
+    discListEl.style.display = 'inline-block'
     
   }
 

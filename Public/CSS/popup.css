@@ -78,8 +78,22 @@
   
   }
 
+  .playerListPopUp{
+    /* display: inline-block; */
+    float:left;
+    position: relative;
+  }
 
+  .discList{
+    display: inline-block;
+    position: relative;
+  }
   
+  .giftList{
+    display: none;
+    position: relative;
+  }
+
   .gameStart{
     position: relative;
     inset-block-start: 1px;
