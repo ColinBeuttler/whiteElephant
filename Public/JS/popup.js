@@ -74,8 +74,8 @@ class Popup{
   }
  
   _getLocalStorage(){
-    let playersArr =JSON.parse(localStorage.getItem("players"))
-    let discsArr =JSON.parse(localStorage.getItem("discs"))
+    let playersArr = JSON.parse(localStorage.getItem("players"))
+    let discsArr = JSON.parse(localStorage.getItem("discs"))
     let giftsArr = JSON.parse(localStorage.getItem("gifts"))
 
     // if(!players || !discs || !gifts) return 

@@ -1,7 +1,7 @@
 // gift Form elements for event listeners
 const inputGiftEl = document.querySelector(".input--gift");
 const btnGiftForm = document.querySelector(".btn--giftSub");
-const giftList = document.querySelector(".giftList");
+const giftText = document.querySelector(".giftText");
 const inputGiftValue = document.querySelector('.input--giftValue')
 
 // Gift objects global variable
@@ -40,11 +40,12 @@ class GiftAdd{
     console.log(gifts)
     this._setLocalGifts(gifts)
 
-   } 
+   } l
 
    _setLocalGifts(gifts){
     localStorage.setItem("gifts", JSON.stringify(gifts));
     console.log(localStorage);
+    // giftText.insertAdjacentHTML('beforeend', html)
    }
 
    _getLocalGifts(){
