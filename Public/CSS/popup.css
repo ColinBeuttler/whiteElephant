@@ -84,6 +84,11 @@
     position: relative;
   }
 
+  .listItems{
+    text-align: center;
+    
+  }
+
   .discList{
     display: inline-block;
     position: relative;

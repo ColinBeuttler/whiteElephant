@@ -78,8 +78,10 @@ class Popup{
     let discsArr = JSON.parse(localStorage.getItem("discs"))
     let giftsArr = JSON.parse(localStorage.getItem("gifts"))
 
+    let playersArrText = playersArr
+    console.log(playersArrText)
     // if(!players || !discs || !gifts) return 
-    // playerTextBox.insertAdjacentHTML("beforeend", html);
+    playerTextBox.insertAdjacentHTML("beforeend", playersArrText);
     // discTextBox.insertAdjacentHTML("beforeend", html);
     // giftTextBox.insertAdjacentHTML("beforeend", html);
 
