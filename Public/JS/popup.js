@@ -3,12 +3,18 @@ import {currentIndex} from "./gameScript.js"
 // Html elements
 const popUpEl = document.querySelector(".popUpBack")
 const gameStartEl = document.querySelector('.btn--startGame')
+// btns needed to swap form baxes
 const swapDiscForm = document.querySelector('.disc--formswap')
 const swapGiftForm = document.querySelector('.gift--formswap')
+// divs that change CSS on form swap
 const newGiftEl = document.querySelector('.newGift')
 const newDiscEl = document.querySelector('.newDisc')
-const discListEl =document.querySelector('.discList')
+const discListEl = document.querySelector('.discList')
 const giftListEl = document.querySelector('.giftList')
+// lists that display added game data
+const playerTextBox = document.querySelector('.playerText')
+const discTextBox = document.querySelector('.discText')
+const giftTextBox = document.querySelector('.giftText')
 
 // console.log(document.querySelector('.popUpWin'))
 
@@ -33,15 +39,15 @@ class Popup{
 
   _swapToGifts(){
     newDiscEl.style.display = 'none'
-    discListEl.style.display= 'none'
+    discListEl.style.display = 'none'
     newGiftEl.style.display = 'inline-block'
-    giftListEl.style.display ='inline-block'
+    giftListEl.style.display = 'inline-block'
     
   }
 
   _swapToDiscs(){
     newGiftEl.style.display = 'none'
-    giftListEl.style.display ='none'
+    giftListEl.style.display = 'none'
     newDiscEl.style.display = 'inline-block'
     discListEl.style.display = 'inline-block'
     
@@ -66,13 +72,16 @@ class Popup{
     let currentplayer = document.getElementsByClassName('boxclass')[0]
     currentplayer.classList.add("currentPlayer");
   }
-
+ 
   _getLocalStorage(){
     let playersArr =JSON.parse(localStorage.getItem("players"))
     let discsArr =JSON.parse(localStorage.getItem("discs"))
     let giftsArr = JSON.parse(localStorage.getItem("gifts"))
 
     // if(!players || !discs || !gifts) return 
+    // playerTextBox.insertAdjacentHTML("beforeend", html);
+    // discTextBox.insertAdjacentHTML("beforeend", html);
+    // giftTextBox.insertAdjacentHTML("beforeend", html);
 
     console.log(playersArr, discsArr, giftsArr)
   }
