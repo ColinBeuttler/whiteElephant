@@ -78,19 +78,28 @@ class Popup{
     let discsArr = JSON.parse(localStorage.getItem("discs"))
     let giftsArr = JSON.parse(localStorage.getItem("gifts"))
 
-    for(let i =0; i< playersArr.length; i++){
-     let playersArrText = playersArr[i].name
-     console.log(playersArrText)
-    playerTextBox.insertAdjacentHTML("beforeend", playersArrText);
-    }
-
-    // discsArr.array.forEach(el => { discTextBox.insertAdjacentHTML('beforeend', el.name)});
-    // if(!players || !discs || !gifts) return 
+    if(playersArr) this._writePlayers(playersArr)
+   
+    if(discsArr) this._countDiscs(discsArr)
     
-    // discTextBox.insertAdjacentHTML("beforeend", html);
-    // giftTextBox.insertAdjacentHTML("beforeend", html);
+    
+    // discsAmount.insertAdjacentHTML("beforeend", discsAmount);
+    // giftTextBox.insertAdjacentHTML("beforeend", gistsAmount);
 
     console.log(playersArr, discsArr, giftsArr)
+  }
+
+  _writePlayers(playersArr){
+    playersArr.forEach(el => { playerTextBox.insertAdjacentHTML('beforeend', el.name)});
+  }
+  _countDiscs(discsArr){
+    let discsAmount = discsArr.length
+    console.log(discsAmount)
+    // discsAmount.insertAdjacentHTML("beforeend", discsAmount);
+  }
+
+  _countGifts(){
+
   }
 
 }
