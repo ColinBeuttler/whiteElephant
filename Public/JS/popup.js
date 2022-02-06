@@ -13,8 +13,8 @@ const discListEl = document.querySelector('.discList')
 const giftListEl = document.querySelector('.giftList')
 // lists that display added game data
 const playerTextBox = document.querySelector('.playerText')
-const discTextBox = document.querySelector('.discText')
-const giftTextBox = document.querySelector('.giftText')
+const discsCount = document.querySelector('.discText')
+const giftsCount = document.querySelector('.giftText')
 
 // console.log(document.querySelector('.popUpWin'))
 
@@ -81,6 +81,8 @@ class Popup{
     if(playersArr) this._writePlayers(playersArr)
    
     if(discsArr) this._countDiscs(discsArr)
+
+    if(giftsArr) this._countGifts(giftsArr)
     
     
     // discsAmount.insertAdjacentHTML("beforeend", discsAmount);
@@ -93,13 +95,15 @@ class Popup{
     playersArr.forEach(el => { playerTextBox.insertAdjacentHTML('beforeend', el.name)});
   }
   _countDiscs(discsArr){
-    let discsAmount = discsArr.length
-    console.log(discsAmount)
-    // discsAmount.insertAdjacentHTML("beforeend", discsAmount);
+    let discsAmount = `${discsArr.length}`
+    // console.log(discsAmount)
+    discsCount.textContent = discsAmount;
   }
 
-  _countGifts(){
-
+  _countGifts(giftsArr){
+    let giftsAmount = `${giftsArr.length}`
+    // console.log(giftsAmount)
+    giftsCount.textContent = giftsAmount;
   }
 
 }
