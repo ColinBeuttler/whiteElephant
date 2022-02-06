@@ -83,10 +83,6 @@ class Popup{
     if(discsArr) this._countDiscs(discsArr)
 
     if(giftsArr) this._countGifts(giftsArr)
-    
-    
-    // discsAmount.insertAdjacentHTML("beforeend", discsAmount);
-    // giftTextBox.insertAdjacentHTML("beforeend", gistsAmount);
 
     console.log(playersArr, discsArr, giftsArr)
   }
@@ -95,15 +91,11 @@ class Popup{
     playersArr.forEach(el => { playerTextBox.insertAdjacentHTML('beforeend', el.name)});
   }
   _countDiscs(discsArr){
-    let discsAmount = `${discsArr.length}`
-    // console.log(discsAmount)
-    discsCount.textContent = discsAmount;
+    discsCount.textContent = `${discsArr.length}`;
   }
 
   _countGifts(giftsArr){
-    let giftsAmount = `${giftsArr.length}`
-    // console.log(giftsAmount)
-    giftsCount.textContent = giftsAmount;
+    giftsCount.textContent = `${giftsArr.length}`;
   }
 
 }
