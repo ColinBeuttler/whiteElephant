@@ -39,7 +39,7 @@ class GiftAdd{
     gifts.push(gift);
     console.log(gifts);
     this._setLocalGifts(gifts);
-    this._writegiftCount();
+    this._writeGiftCount();
 
    } l
 
@@ -49,7 +49,7 @@ class GiftAdd{
     // giftText.insertAdjacentHTML('beforeend', html)
    }
 
-   _writegiftCount(){
+   _writeGiftCount(){
     let giftsArr = JSON.parse(localStorage.getItem("gifts"));
     console.log(giftsArr);
     giftsCount.textContent = `${giftsArr.length}`;
