@@ -2,6 +2,7 @@
 const inputNameEl = document.querySelector(".form__input--playerName");
 const btnPlayerForm = document.querySelector(".btn--playerSub");
 const playerList = document.querySelector(".playerList");
+const playerTextBox = document.querySelector('.playerText')
 
 // player objects global variable
 let players = [];
@@ -43,6 +44,7 @@ class PlayerAdd {
     console.log(players);
     this._renderPlayer(player);
     this._setLocalStorage(players);
+    this._writePlayerToList();
   }
 
   _renderPlayer(player) {
@@ -52,6 +54,11 @@ class PlayerAdd {
     </div>
   </div>`;
     playerList.insertAdjacentHTML("beforeend", html);
+  }
+
+  _writePlayerToList(){
+    let playerText = players[0].name
+    playerTextBox.insertAdjacentHTML('beforeend', playerText)
   }
 
   _getLocalPlayers() {
