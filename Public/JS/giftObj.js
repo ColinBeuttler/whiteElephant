@@ -1,8 +1,8 @@
 // gift Form elements for event listeners
 const inputGiftEl = document.querySelector(".input--gift");
 const btnGiftForm = document.querySelector(".btn--giftSub");
-const giftText = document.querySelector(".giftText");
 const inputGiftValue = document.querySelector('.input--giftValue')
+const giftsCount = document.querySelector('.giftText')
 
 // Gift objects global variable
 let gifts = [];
@@ -17,7 +17,7 @@ class Gift {
 
 class GiftAdd{
     constructor(){
-        this._getLocalGifts();
+        // this._getLocalGifts();
 
         btnGiftForm.addEventListener('click', this._createGift.bind(this))
     }
@@ -36,9 +36,10 @@ class GiftAdd{
 
     gift = new Gift(giftName, giftValue)
 
-    gifts.push(gift)
-    console.log(gifts)
-    this._setLocalGifts(gifts)
+    gifts.push(gift);
+    console.log(gifts);
+    this._setLocalGifts(gifts);
+    this._writegiftCount();
 
    } l
 
@@ -48,9 +49,11 @@ class GiftAdd{
     // giftText.insertAdjacentHTML('beforeend', html)
    }
 
-   _getLocalGifts(){
-
-   }
+   _writegiftCount(){
+    let giftsArr = JSON.parse(localStorage.getItem("gifts"));
+    console.log(giftsArr);
+    giftsCount.textContent = `${giftsArr.length}`;
+  }
 
 }
 
