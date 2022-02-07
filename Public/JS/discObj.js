@@ -7,6 +7,9 @@ const weightEl = document.querySelector(".input--weight");
 //Submit button element
 const submitNewDisc = document.querySelector(".btn--discSub");
 
+// Display Disc Count to Popup Window
+const discsCount = document.querySelector('.discText')
+
 // disc array for local storage
 let discs = [];
 
@@ -25,8 +28,8 @@ class DiscApp {
     // Button Call
     submitNewDisc.addEventListener("click", this._createDisc.bind(this));
   }
-  // Button Function
 
+  // Button Function
   _createDisc() {
     let mold = moldEl.value;
     let plastic = plasticEl.value;
@@ -47,11 +50,20 @@ class DiscApp {
     discs.push(disc);
     console.log(discs);
     this._setLocalStorage(discs);
+    this._writeDiscCount()
   }
+
   _setLocalStorage(discs) {
     localStorage.setItem("discs", JSON.stringify(discs));
     console.log(localStorage);
   }
+
+  _writeDiscCount(){
+    let discsArr = JSON.parse(localStorage.getItem("discs"))
+    console.log(discsArr)
+    discsCount.textContent = `${discsArr.length}`;
+  }
+
 }
 
 const DiscGame = new DiscApp();

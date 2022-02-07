@@ -16,6 +16,10 @@ const playerTextBox = document.querySelector('.playerText')
 const discsCount = document.querySelector('.discText')
 const giftsCount = document.querySelector('.giftText')
 
+// Set default Popup Values
+discsCount.textContent = 0
+giftsCount.textContent = 0
+
 // console.log(document.querySelector('.popUpWin'))
 
 class Popup{
