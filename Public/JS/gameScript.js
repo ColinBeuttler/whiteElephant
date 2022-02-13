@@ -300,7 +300,7 @@ class GameApp {
   _currentplayerFunc() {
     let playerEl = document.querySelectorAll(".boxclass");
     let currentplayer = playerEl[currentIndex];
-    currentplayer.classList.add("currentPlayer");
+    currentplayer.classList.add("currentPlayer"); 
   }
 
   _getLocalStorage() {

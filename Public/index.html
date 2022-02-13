@@ -14,6 +14,7 @@
     <script type="module" src="JS/playerObj.js"></script>
     <script type="module" src="JS/popup.js"></script>
     <script type="module" src="JS/discObj.js"></script>
+    <script type="module" src="JS/giftObj.js"></script>
   </head>
   <body>
     <div class="navBar">
@@ -35,7 +36,19 @@
           </form>
         </div>  
 
+        
+
+        <div class="newGift">
+        <button class="btn gift--formswap">Switch to Discs</button>
+          <form class="newGiftForm">
+            <input type="text" placeholder="Gift description" class="input--gift" id="GiftInput" />
+            <input type="text" placeholder="Gift Value" class="input--giftValue" id="GiftValue" />
+            <input type="button" value="Add Gift" class="btn btn--giftSub"></input>
+          </form>
+        </div> 
+
         <div class="newDisc">
+          <button class="btn disc--formswap">Switch to Gifts</button>
           <form class="newDiscForm">
             <input type="text" placeholder="Disc Mold" class="input--mold" id="discInput" />
             <input type="text" placeholder="Disc Plastic" class="input--plastic" id="discInput"/>
@@ -45,6 +58,30 @@
           </form>
         </div>  
     </div> 
+
+    <div class="playerListPopUp">
+      <a>Players:</a>
+      <div class="playerText listItems">
+
+      </div>
+
+    </div>
+
+    <div class="discList">
+      <a>Discs Count:</a>
+      <div class="discText listItems">
+
+      </div>
+
+    </div>
+
+    <div class="giftList">
+      <a>Gifts Count:</a>
+      <div class="giftText listItems">
+
+      </div>
+
+    </div>
 
       <div class="gameStart">
               <input type="button" value="Start Game" class="btn btn--startGame"></input>

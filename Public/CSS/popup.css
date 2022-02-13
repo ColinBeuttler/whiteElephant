@@ -18,6 +18,7 @@
   background-color: rgb(255, 255, 255);
   position: relative;
   box-shadow: 12px 12px 60px rgb(5, 5, 5);
+  /* display:block; */
   /* box-shadow: 5px 5px; */
   text-align: center;
   border-radius: 5px;
@@ -53,10 +54,7 @@
   
   .newDisc {
     margin-top: 5%;
-    /* margin-bottom: 3%; */
-    /* float: right; */
     display: inline-block;
-    /* margin-right: 5%; */
     border-radius: 5px;
     max-width: 18%;
     min-width: 170px;
@@ -67,7 +65,40 @@
   
   }
 
+  .newGift{
+    margin-top: 5%;
+    display: none;
+    border-radius: 5px;
+    max-width: 18%;
+    min-width: 170px;
+    background-color: white;
+    border: black;
+    border-style: ridge;
+    padding: 0.5%;
   
+  }
+
+  .playerListPopUp{
+    /* display: inline-block; */
+    float:left;
+    position: relative;
+  }
+
+  .listItems{
+    text-align: center;
+    
+  }
+
+  .discList{
+    display: inline-block;
+    position: relative;
+  }
+  
+  .giftList{
+    display: none;
+    position: relative;
+  }
+
   .gameStart{
     position: relative;
     inset-block-start: 1px;
