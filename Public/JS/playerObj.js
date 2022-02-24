@@ -57,7 +57,7 @@ class PlayerAdd {
   }
 
   _writePlayerToList(){
-    let playerText = players[0].name
+    let playerText = `<li>${players[0].name}</li>`
     playerTextBox.insertAdjacentHTML('beforeend', playerText)
   }
 
