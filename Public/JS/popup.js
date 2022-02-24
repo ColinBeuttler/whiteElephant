@@ -92,7 +92,12 @@ class Popup{
   }
 
   _writePlayers(playersArr){
-    playersArr.forEach(el => { playerTextBox.insertAdjacentHTML('beforeend', el.name)});
+    for(let i =0; i< playersArr.length; i++){
+      let el = playersArr[i]
+      let playerLi =`<li>${el.name}</li>`
+      playerTextBox.insertAdjacentHTML('beforeend', playerLi)
+    }
+    // playersArr.forEach(el => { playerTextBox.insertAdjacentHTML('beforeend', el.name)});
   }
   _countDiscs(discsArr){
     discsCount.textContent = `${discsArr.length}`;
