@@ -1,16 +1,16 @@
-.popUpBack{
-    width: 98.7%;
-    height: 100%;
-    position: absolute;
-    background:rgba(0,0,0,.4);
-    display: none;
-    /* box-shadow: 5px 5px; */
-    /* text-align: center; */
-    /* display: none; */
-    z-index : 1;
-  }
+.popUpBack {
+  width: 98.7%;
+  height: 100%;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.4);
+  display: none;
+  /* box-shadow: 5px 5px; */
+  /* text-align: center; */
+  /* display: none; */
+  z-index: 1;
+}
 
-.popUpWin{
+.popUpWin {
   top: 10%;
   margin: auto;
   min-height: 40%;
@@ -24,91 +24,92 @@
   border-radius: 5px;
   padding: 10px 10px 10px 10px;
   /* display: none; */
-  z-index : 1;
+  z-index: 1;
 }
-@media (min-width: 800px){
-  .popUpWin{
+@media (min-width: 800px) {
+  .popUpWin {
     max-width: 45%;
   }
 }
 
-@media (min-width: 1080px){
-  .popUpWin{
+@media (min-width: 1080px) {
+  .popUpWin {
     max-width: 35%;
   }
 }
 
 .newPlayer {
-    width: 170px;
-    max-height: 42px;
-    /* margin-bottom: 3%;
+  width: 170px;
+  max-height: 42px;
+  /* margin-bottom: 3%;
     margin-right: 5%; */
-    background-color: white;
-    border: black;
-    border-style: ridge;
-    padding: 0.5%;
-    border-radius: 5px; 
-    display: inline-block;   
-    /* max-width: 170px; */
-  }
-  
-  .newDisc {
-    margin-top: 5%;
-    display: inline-block;
-    border-radius: 5px;
-    max-width: 18%;
-    min-width: 170px;
-    background-color: white;
-    border: black;
-    border-style: ridge;
-    padding: 0.5%;
-  
-  }
+  background-color: white;
+  border: black;
+  border-style: ridge;
+  padding: 0.5%;
+  border-radius: 5px;
+  display: inline-block;
+  /* max-width: 170px; */
+}
 
-  .newGift{
-    margin-top: 5%;
-    display: none;
-    border-radius: 5px;
-    max-width: 18%;
-    min-width: 170px;
-    background-color: white;
-    border: black;
-    border-style: ridge;
-    padding: 0.5%;
-  
-  }
+.newDisc {
+  margin-top: 5%;
+  display: inline-block;
+  border-radius: 5px;
+  max-width: 18%;
+  min-width: 170px;
+  background-color: white;
+  border: black;
+  border-style: ridge;
+  padding: 0.5%;
+}
 
-  .playerListPopUp{
-    /* display: inline-block; */
-    float:left;
-    position: relative;
-  }
+.newGift {
+  margin-top: 5%;
+  display: none;
+  border-radius: 5px;
+  max-width: 18%;
+  min-width: 170px;
+  background-color: white;
+  border: black;
+  border-style: ridge;
+  padding: 0.5%;
+}
 
-  .listItems{
-    text-align: center;
-    
-  }
+.playerListPopUp {
+  /* display: inline-block; */
+  float: left;
+  position: relative;
+}
 
-  .discList{
-    display: inline-block;
-    position: relative;
-  }
-  
-  .giftList{
-    display: none;
-    position: relative;
-  }
+.playerText {
+  display: inline-block;
+}
 
-  .gameStart{
-    position: relative;
-    inset-block-start: 1px;
-    position: relative;
-    height: 80px;
-  }
+.listItems {
+  text-align: center;
+}
 
-  .gameEntry{
-    text-align: center;
-    /* top: 50%;
+.discList {
+  display: inline-block;
+  position: relative;
+}
+
+.giftList {
+  display: none;
+  position: relative;
+}
+
+.gameStart {
+  position: relative;
+  inset-block-start: 1px;
+  position: relative;
+  height: 80px;
+}
+
+.gameEntry {
+  text-align: center;
+  /* top: 50%;
     left: 50%;
     transform: translate(-50%, -50%); */
-  }
+}
